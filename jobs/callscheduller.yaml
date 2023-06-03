@@ -2,50 +2,52 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: file-uploads-svc
+  name: callscheduller-svc
   namespace: ecollect
-  label:
-    app: file-uploads
+  labels:
+    app: callscheduller
 spec:
   selector:
-    app: file-uploads
+    app: callscheduller
   ports:
     - protocol: TCP
-      port: 4005
-      name: 4005-tcp
-      targetPort: 4005
+      port: 9000
+      name: 9000-tcp
+      targetPort: 9000
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: file-uploads
+  name: callscheduller
   namespace: ecollect
   labels:
-    app: file-uploads
+    app: callscheduller
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: file-uploads
+      app: callscheduller
   template:
     metadata:
       labels:
-        app: file-uploads
+        app: callscheduller
     spec:
       containers:
-      - name: file-uploads
-        image: docker.io/migutak/file_uploads:5.3.2
+      - name: callscheduller
+        image: ecollect-registry.co-opbank.co.ke:30388/callscheduller:18072022155511.2
         envFrom:
           - configMapRef:
               name: ecol-config
           - secretRef:
                 name: ecol-secrets
         ports:
-        - containerPort: 4005
+        - containerPort: 9000
         resources:
           requests:
-            memory: "200Mi"
+            memory: "500Mi"
             cpu: '100m'
           limits:
-            memory: "1Gi"
-            cpu: '100m'
+            memory: "500Mi"
+            cpu: '200m'
+      imagePullSecrets:
+      - name: reg-cred-secret

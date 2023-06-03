@@ -1,26 +1,9 @@
 ---
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: nodeapis-route
-  namespace: ecol
-  labels:
-    app: nodeapis
-spec:
-  host: nodeapi-ecol.apps.ocpdev.co-opbank.co.ke
-  tls:
-    termination: edge
-    insecureEdgeTerminationPolicy: Redirect
-  to:
-    kind: Service
-    name: nodeapis-svc
-  port:
-    targetPort: 6001-tcp
----
 apiVersion: v1
 kind: Service
 metadata:
   name: nodeapis-svc
+  namespace: ecollect
 spec:
   selector:
     app: nodeapis
@@ -35,11 +18,11 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nodeapis
-  namespace: ecol
+  namespace: ecollect
   labels:
     app: nodeapis
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: nodeapis

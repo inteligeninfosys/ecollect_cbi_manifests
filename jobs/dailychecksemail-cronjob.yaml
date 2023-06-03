@@ -2,7 +2,7 @@ apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
   name: dailychecksemail
-  namespace: ecol
+  namespace: ecollect
 spec:
   schedule: "0 7 * * *"      #everyday at 7am 
   concurrencyPolicy: "Replace"  

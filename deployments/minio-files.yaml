@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: minio-files-svc
-  namespace: ecol
+  namespace: ecollect
   label:
     app: minio-files
 spec:
@@ -19,7 +19,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: minio-files
-  namespace: ecol
+  namespace: ecollect
   labels:
     app: minio-files
 spec:

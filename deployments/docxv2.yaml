@@ -2,50 +2,52 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: file-uploads-svc
+  name: docxv2-svc
   namespace: ecollect
-  label:
-    app: file-uploads
+  labels:
+    app: docxv2
 spec:
   selector:
-    app: file-uploads
+    app: docxv2
   ports:
     - protocol: TCP
-      port: 4005
-      name: 4005-tcp
-      targetPort: 4005
+      port: 8040
+      name: 8040-tcp
+      targetPort: 8040
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: file-uploads
+  name: docxv2
   namespace: ecollect
   labels:
-    app: file-uploads
+    app: docxv2
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
-      app: file-uploads
+      app: docxv2
   template:
     metadata:
       labels:
-        app: file-uploads
+        app: docxv2
     spec:
       containers:
-      - name: file-uploads
-        image: docker.io/migutak/file_uploads:5.3.2
+      - name: docxv2
+        image: ecollect-registry.co-opbank.co.ke:30388/docxv2:18072022131934.10
         envFrom:
           - configMapRef:
               name: ecol-config
           - secretRef:
                 name: ecol-secrets
         ports:
-        - containerPort: 4005
+        - containerPort: 8004
         resources:
           requests:
-            memory: "200Mi"
+            memory: "100Mi"
             cpu: '100m'
           limits:
             memory: "1Gi"
-            cpu: '100m'
+            cpu: '500m'
+      imagePullSecrets:
+      - name: reg-cred-secret

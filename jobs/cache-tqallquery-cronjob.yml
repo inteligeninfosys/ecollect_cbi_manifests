@@ -1,0 +1,29 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: cachetqallquery
+  namespace: ecollect
+spec:
+  schedule: "0 6 * * *"
+  concurrencyPolicy: "Replace"
+  startingDeadlineSeconds: 200
+  suspend: false
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          labels:
+            app: cachetqallquery
+        spec:
+          containers:
+          - name: cachetqallquery
+            image: 172.16.204.72:5100/cache:5.7
+            command: ["node",  "loader_tqallquery.js"]
+            envFrom:
+            - configMapRef:
+                name: ecol-config
+            - secretRef:
+                name: ecol-secrets
+          restartPolicy: OnFailure

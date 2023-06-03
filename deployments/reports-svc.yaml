@@ -2,21 +2,19 @@
 kind: Service
 apiVersion: v1
 metadata:
-  name: backend-db-svc
+  name: reports-svc
   namespace: ecollect
 spec:
   ports:
-  - port: 1560
+  - port: 5601
 ---
 apiVersion: v1
 kind: Endpoints
 metadata:
-  name: backend-db-svc
+  name: reports-svc
   namespace: ecollect
 subsets:
   - addresses:
-      - ip: 172.16.17.92
-      - ip: 172.16.17.91
-      - ip: 172.16.17.93
+      - ip: 172.16.204.37
     ports:
-      - port: 1560
+      - port: 5601

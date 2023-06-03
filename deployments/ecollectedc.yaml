@@ -1,22 +1,4 @@
 ---
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: ecollectedc
-  namespace: ecol
-  labels:
-    app: ecollectedc
-spec:
-  host: ecollectedc-ecol.apps.ocpdev.co-opbank.co.ke
-  tls:
-    termination: edge
-    insecureEdgeTerminationPolicy: Redirect
-  to:
-    kind: Service
-    name: ecollectedc-svc
-  port:
-    targetPort: 4430
----
 apiVersion: v1
 kind: Service
 metadata:
@@ -35,7 +17,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ecollectedc
-  namespace: ecol
+  namespace: ecollect
   labels:
     app: ecollectedc
 spec:

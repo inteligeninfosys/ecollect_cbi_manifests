@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: node-email-svc
-  namespace: ecol
+  namespace: ecollect
   label:
     app: node-email
 spec:
@@ -19,7 +19,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: node-email
-  namespace: ecol
+  namespace: ecollect
   labels:
     app: node-email
 spec:

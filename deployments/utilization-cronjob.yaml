@@ -1,0 +1,33 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: utilizationrpt
+  namespace: ecollect
+spec:
+  schedule: "0 0 30 * *"      #everyday 30th
+  concurrencyPolicy: "Replace"  
+  startingDeadlineSeconds: 200  
+  suspend: false              
+  successfulJobsHistoryLimit: 3 
+  failedJobsHistoryLimit: 3     
+  jobTemplate:                  
+    spec:
+      template:
+        metadata:
+          labels:               
+            app: utilizationrpt
+        spec:
+          containers:
+          - name: utilizationrpt-cron
+            image: docker.io/migutak/accounts_to_elastic:5.6
+            command: ["node",  "utilizationrpt.js"]
+            env:
+            - name: DB_USER
+              value: "ecol"
+            - name: DB_PASSWORD
+              value: "L#TTc011"
+            - name: DB_CONNECTIONSTRING
+              value: "172.16.210.105:1559/ECOLLECT"
+            - name: ELASTICSEARCH
+              value: "http://172.16.19.151:9201/"
+          restartPolicy: OnFailure 

@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: upload-svc
-  namespace: ecol
+  namespace: ecollect
   label:
     app: upload
 spec:
@@ -19,7 +19,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: upload
-  namespace: ecol
+  namespace: ecollect
   labels:
     app: upload
 spec:

@@ -1,0 +1,67 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeapisv3-svc
+  namespace: ecollect
+  labels:
+    app: nodeapisv3
+spec:
+  selector:
+    app: nodeapisv3
+  ports:
+    - protocol: TCP
+      name: 3000-tcp
+      port: 3000
+      targetPort: 3000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapisv3
+  namespace: ecollect
+  labels:
+    app: nodeapisv3
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodeapisv3
+  template:
+    metadata:
+      labels:
+        app: nodeapisv3
+    spec:
+      containers:
+      - name: nodeapisv3
+        image: migutak/oraclenode-apis-lb4-v3:10082022001046.2
+        envFrom:
+          - configMapRef:
+              name: ecol-config
+          - secretRef:
+                name: ecol-secrets
+        ports:
+        - containerPort: 6001
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: "100m"
+          limits:
+            memory: "2Gi"
+            cpu: 1
+      imagePullSecrets:
+      - name: reg-cred-secret
+---
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+ name: hpa-nodeapisv3
+ namespace: ecollect
+spec:
+ scaleTargetRef:
+   apiVersion: apps/v1
+   kind: Deployment
+   name: nodeapisv3
+ minReplicas: 2
+ maxReplicas: 10
+ targetCPUUtilizationPercentage: 70 

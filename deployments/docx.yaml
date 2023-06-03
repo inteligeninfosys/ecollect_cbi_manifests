@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: docx-svc
-  namespace: ecol
+  namespace: ecollect
   label:
     app: docx
 spec:
@@ -19,7 +19,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: docx
-  namespace: ecol
+  namespace: ecollect
   labels:
     app: docx
 spec:

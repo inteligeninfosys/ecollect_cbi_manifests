@@ -3,7 +3,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: accountstoelastic-svc
-  namespace: ecol
+  namespace: ecollect
   label:
     app: accountstoelastic
 spec:
@@ -19,7 +19,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: accountstoelastic
-  namespace: ecol
+  namespace: ecollect
   labels:
     app: accountstoelastic
 spec:
