@@ -12,63 +12,63 @@ spec:
   rules:
   - http:
       paths:
-      - path: /
+      - path: /cbi
         pathType: Prefix
         backend:
           service:
             name: ecollect-app
             port:
               number: 4430
-      - path: /api
+      - path: /cbiapi
         pathType: Prefix
         backend:
           service:
             name: ecollectapis-svc
             port:
               number: 8000
-      - path: /nodeapi
+      - path: /cbinodeapi
         pathType: Prefix
         backend:
           service:
             name: nodeapis-svc
             port:
               number: 6001
-      - path: /nodeapi-v2
+      - path: /cbinodeapi-v2
         pathType: Prefix
         backend:
           service:
             name: nodeapisv3-svc
             port:
               number: 3000
-      - path: /cache
+      - path: /cbicache
         pathType: Prefix
         backend:
           service:
             name: cacheapi-svc
             port:
               number: 5600
-      - path: /adlogin
+      - path: /cbiadlogin
         pathType: Prefix
         backend:
           service:
             name: adlogin-svc
             port:
               number: 6650
-      - path: /mongorest
+      - path: /cbimongorest
         pathType: Prefix
         backend:
           service:
             name: mongorest-svc
             port:
               number: 8501
-      - path: /demandemail
+      - path: /cbidemandemail
         pathType: Prefix
         backend:
           service:
             name: node-email-svc
             port:
               number: 8005
-      - path: /docx
+      - path: /cbidocx
         pathType: Prefix
         backend:
           service:
