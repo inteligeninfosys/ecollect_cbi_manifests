@@ -1,0 +1,62 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: ecollectedc
+  namespace: ecol
+  labels:
+    app: ecollectedc
+spec:
+  host: ecollectedc-ecol.apps.ocpdev.co-opbank.co.ke
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: ecollectedc-svc
+  port:
+    targetPort: 4430
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ecollectedc-svc
+spec:
+  selector:
+    app: ecollectedc
+  ports:
+    - protocol: TCP
+      name: 4430-tcp
+      port: 4430
+      targetPort: 4430
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ecollectedc
+  namespace: ecol
+  labels:
+    app: ecollectedc
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: ecollectedc
+  template:
+    metadata:
+      labels:
+        app: ecollectedc
+    spec:
+      containers:
+      - name: ecollectedc
+        image: docker.io/migutak/ecollectedc:5.2
+        ports:
+        - containerPort: 4430
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"

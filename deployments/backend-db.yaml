@@ -1,0 +1,22 @@
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: backend-db-svc
+  namespace: ecol
+spec:
+  ports:
+  - port: 1560
+---
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: backend-db-svc
+  namespace: ecol
+subsets:
+  - addresses:
+      - ip: 172.16.17.92
+      - ip: 172.16.17.91
+      - ip: 172.16.17.93
+    ports:
+      - port: 1560

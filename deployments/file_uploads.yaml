@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: file-uploads-svc
+  namespace: ecol
+  label:
+    app: file-uploads
+spec:
+  selector:
+    app: file-uploads
+  ports:
+    - protocol: TCP
+      port: 4005
+      name: 4005-tcp
+      targetPort: 4005
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: file-uploads
+  namespace: ecol
+  labels:
+    app: file-uploads
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: file-uploads
+  template:
+    metadata:
+      labels:
+        app: file-uploads
+    spec:
+      containers:
+      - name: file-uploads
+        image: docker.io/migutak/file_uploads:5.3.2
+        envFrom:
+          - configMapRef:
+              name: ecol-config
+          - secretRef:
+                name: ecol-secrets
+        ports:
+        - containerPort: 4005
+        resources:
+          requests:
+            memory: "200Mi"
+            cpu: '100m'
+          limits:
+            memory: "1Gi"
+            cpu: '100m'

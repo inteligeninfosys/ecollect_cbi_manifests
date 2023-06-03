@@ -1,0 +1,95 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: birt-route
+  namespace: ecol
+  labels:
+    app: birt
+spec:
+  host: birt-ecol.apps.ocpdev.co-opbank.co.ke
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: birt-svc
+  port:
+    targetPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: birt-svc
+spec:
+  selector:
+    app: birt
+  ports:
+    - protocol: TCP
+      name: 8080-tcp
+      port: 8080
+      targetPort: 8080
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: birt-pvc
+  namespace: ecol
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: birt-pv
+spec:
+  capacity:
+   storage: 5Gi
+  volumeMode: Filesystem
+  accessModes:
+   - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+   path: /mnt/data
+   server: 172.16.20.139
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: birt
+  namespace: ecol
+  labels:
+    app: birt
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: birt
+  template:
+    metadata:
+      labels:
+        app: birt
+    spec:
+      containers:
+      - name: birt
+        image: docker.io/migutak/birt-live:4.1
+        volumeMounts:
+        - name: birt-volume
+          mountPath: /usr/local/tomcat/webapps/birt/
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            memory: "100Mi"
+            cpu: '100mi'
+          limits:
+            memory: "1Gi"
+            cpu: '200mi'
+      volumes:
+        - name: birt-volume
+          persistentVolumeClaim:
+            claimName: birt-pvc

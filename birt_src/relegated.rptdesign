@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.9.0.v201905231911</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">java:comp/env/jdbc/ecollect</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Releated" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CASENUMBER</property>
+                    <text-property name="displayName">CASENUMBER</text-property>
+                    <text-property name="heading">CASENUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ACCNUMBER</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <text-property name="heading">ACCNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUSTNUMBER</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <text-property name="heading">CUSTNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUSTNAME</property>
+                    <text-property name="displayName">CUSTNAME</text-property>
+                    <text-property name="heading">CUSTNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DAYSINARR</property>
+                    <text-property name="displayName">DAYSINARR</text-property>
+                    <text-property name="heading">DAYSINARR</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">OUSTBALANCE</property>
+                    <text-property name="displayName">OUSTBALANCE</text-property>
+                    <text-property name="heading">OUSTBALANCE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TOTALARREARS</property>
+                    <text-property name="displayName">TOTALARREARS</text-property>
+                    <text-property name="heading">TOTALARREARS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BUCKET</property>
+                    <text-property name="displayName">BUCKET</text-property>
+                    <text-property name="heading">BUCKET</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PRODUCTCODE</property>
+                    <text-property name="displayName">PRODUCTCODE</text-property>
+                    <text-property name="heading">PRODUCTCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SECTION</property>
+                    <text-property name="displayName">SECTION</text-property>
+                    <text-property name="heading">SECTION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">AROCODE</property>
+                    <text-property name="displayName">AROCODE</text-property>
+                    <text-property name="heading">AROCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RROCODE</property>
+                    <text-property name="displayName">RROCODE</text-property>
+                    <text-property name="heading">RROCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHCODE</property>
+                    <text-property name="displayName">BRANCHCODE</text-property>
+                    <text-property name="heading">BRANCHCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHNAME</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <text-property name="heading">BRANCHNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">APPLINK</property>
+                    <text-property name="displayName">APPLINK</text-property>
+                    <text-property name="heading">APPLINK</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REQUESTDATE</property>
+                    <text-property name="displayName">REQUESTDATE</text-property>
+                    <text-property name="heading">REQUESTDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REQUESTBY</property>
+                    <text-property name="displayName">REQUESTBY</text-property>
+                    <text-property name="heading">REQUESTBY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">APPROVED</property>
+                    <text-property name="displayName">APPROVED</text-property>
+                    <text-property name="heading">APPROVED</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">APPROVALDATE</property>
+                    <text-property name="displayName">APPROVALDATE</text-property>
+                    <text-property name="heading">APPROVALDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">APPROVEDBY</property>
+                    <text-property name="displayName">APPROVEDBY</text-property>
+                    <text-property name="heading">APPROVEDBY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STATUS</property>
+                    <text-property name="displayName">STATUS</text-property>
+                    <text-property name="heading">STATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RROCHANGEDATE</property>
+                    <text-property name="displayName">RROCHANGEDATE</text-property>
+                    <text-property name="heading">RROCHANGEDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RROCHANGEBY</property>
+                    <text-property name="displayName">RROCHANGEBY</text-property>
+                    <text-property name="heading">RROCHANGEBY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FILEREQUESTED</property>
+                    <text-property name="displayName">FILEREQUESTED</text-property>
+                    <text-property name="heading">FILEREQUESTED</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FILEREQUESTDATE</property>
+                    <text-property name="displayName">FILEREQUESTDATE</text-property>
+                    <text-property name="heading">FILEREQUESTDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FILEREQUESTBY</property>
+                    <text-property name="displayName">FILEREQUESTBY</text-property>
+                    <text-property name="heading">FILEREQUESTBY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FILESENDDATE</property>
+                    <text-property name="displayName">FILESENDDATE</text-property>
+                    <text-property name="heading">FILESENDDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FILESENDBY</property>
+                    <text-property name="displayName">FILESENDBY</text-property>
+                    <text-property name="heading">FILESENDBY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FILERECEIVEDDATE</property>
+                    <text-property name="displayName">FILERECEIVEDDATE</text-property>
+                    <text-property name="heading">FILERECEIVEDDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FILERECEIVEDBY</property>
+                    <text-property name="displayName">FILERECEIVEDBY</text-property>
+                    <text-property name="heading">FILERECEIVEDBY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">APPROVAL</property>
+                    <text-property name="displayName">APPROVAL</text-property>
+                    <text-property name="heading">APPROVAL</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CASENUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">ACCNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CUSTNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CUSTNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">DAYSINARR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">OUSTBALANCE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">TOTALARREARS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">BUCKET</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">PRODUCTCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">SECTION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">AROCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">RROCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">BRANCHCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">BRANCHNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">APPLINK</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">REQUESTDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">REQUESTBY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">APPROVED</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">APPROVALDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">APPROVEDBY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">RROCHANGEDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">RROCHANGEBY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">FILEREQUESTED</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">FILEREQUESTDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">FILEREQUESTBY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">FILESENDDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">FILESENDBY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">FILERECEIVEDDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">FILERECEIVEDBY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">APPROVAL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CASENUMBER</property>
+                    <property name="nativeName">CASENUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">ACCNUMBER</property>
+                    <property name="nativeName">ACCNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CUSTNUMBER</property>
+                    <property name="nativeName">CUSTNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CUSTNAME</property>
+                    <property name="nativeName">CUSTNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">DAYSINARR</property>
+                    <property name="nativeName">DAYSINARR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">OUSTBALANCE</property>
+                    <property name="nativeName">OUSTBALANCE</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">TOTALARREARS</property>
+                    <property name="nativeName">TOTALARREARS</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">BUCKET</property>
+                    <property name="nativeName">BUCKET</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">PRODUCTCODE</property>
+                    <property name="nativeName">PRODUCTCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">SECTION</property>
+                    <property name="nativeName">SECTION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">AROCODE</property>
+                    <property name="nativeName">AROCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">RROCODE</property>
+                    <property name="nativeName">RROCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">BRANCHCODE</property>
+                    <property name="nativeName">BRANCHCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">BRANCHNAME</property>
+                    <property name="nativeName">BRANCHNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">APPLINK</property>
+                    <property name="nativeName">APPLINK</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">REQUESTDATE</property>
+                    <property name="nativeName">REQUESTDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">REQUESTBY</property>
+                    <property name="nativeName">REQUESTBY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">APPROVED</property>
+                    <property name="nativeName">APPROVED</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">APPROVALDATE</property>
+                    <property name="nativeName">APPROVALDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">APPROVEDBY</property>
+                    <property name="nativeName">APPROVEDBY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">STATUS</property>
+                    <property name="nativeName">STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">RROCHANGEDATE</property>
+                    <property name="nativeName">RROCHANGEDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">RROCHANGEBY</property>
+                    <property name="nativeName">RROCHANGEBY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">FILEREQUESTED</property>
+                    <property name="nativeName">FILEREQUESTED</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">FILEREQUESTDATE</property>
+                    <property name="nativeName">FILEREQUESTDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">FILEREQUESTBY</property>
+                    <property name="nativeName">FILEREQUESTBY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">FILESENDDATE</property>
+                    <property name="nativeName">FILESENDDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">FILESENDBY</property>
+                    <property name="nativeName">FILESENDBY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">FILERECEIVEDDATE</property>
+                    <property name="nativeName">FILERECEIVEDDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">FILERECEIVEDBY</property>
+                    <property name="nativeName">FILERECEIVEDBY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">APPROVAL</property>
+                    <property name="nativeName">APPROVAL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from tbl_relegations]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="184">
+            <property name="fontSize">14pt</property>
+            <text-property name="text">Accounts Relegated</text-property>
+        </label>
+        <table id="6">
+            <property name="dataSet">Releated</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ACCNUMBER</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ACCNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUSTNUMBER</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CUSTNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUSTNAME</property>
+                    <text-property name="displayName">CUSTNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CUSTNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DAYSINARR</property>
+                    <text-property name="displayName">DAYSINARR</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DAYSINARR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">OUSTBALANCE</property>
+                    <text-property name="displayName">OUSTBALANCE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OUSTBALANCE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TOTALARREARS</property>
+                    <text-property name="displayName">TOTALARREARS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TOTALARREARS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">BUCKET</property>
+                    <text-property name="displayName">BUCKET</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["BUCKET"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PRODUCTCODE</property>
+                    <text-property name="displayName">PRODUCTCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PRODUCTCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SECTION</property>
+                    <text-property name="displayName">SECTION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SECTION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">AROCODE</property>
+                    <text-property name="displayName">AROCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["AROCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RROCODE</property>
+                    <text-property name="displayName">RROCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RROCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BRANCHCODE</property>
+                    <text-property name="displayName">BRANCHCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["BRANCHCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BRANCHNAME</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["BRANCHNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REQUESTDATE</property>
+                    <text-property name="displayName">REQUESTDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REQUESTDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">REQUESTBY</property>
+                    <text-property name="displayName">REQUESTBY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REQUESTBY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">APPROVED</property>
+                    <text-property name="displayName">APPROVED</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["APPROVED"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">APPROVALDATE</property>
+                    <text-property name="displayName">APPROVALDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["APPROVALDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">APPROVEDBY</property>
+                    <text-property name="displayName">APPROVEDBY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["APPROVEDBY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STATUS</property>
+                    <text-property name="displayName">STATUS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["STATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RROCHANGEDATE</property>
+                    <text-property name="displayName">RROCHANGEDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RROCHANGEDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">RROCHANGEBY</property>
+                    <text-property name="displayName">RROCHANGEBY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RROCHANGEBY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FILEREQUESTED</property>
+                    <text-property name="displayName">FILEREQUESTED</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FILEREQUESTED"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FILEREQUESTDATE</property>
+                    <text-property name="displayName">FILEREQUESTDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FILEREQUESTDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">FILEREQUESTBY</property>
+                    <text-property name="displayName">FILEREQUESTBY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FILEREQUESTBY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FILESENDDATE</property>
+                    <text-property name="displayName">FILESENDDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FILESENDDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">FILESENDBY</property>
+                    <text-property name="displayName">FILESENDBY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FILESENDBY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FILERECEIVEDDATE</property>
+                    <text-property name="displayName">FILERECEIVEDDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FILERECEIVEDDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">FILERECEIVEDBY</property>
+                    <text-property name="displayName">FILERECEIVEDBY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FILERECEIVEDBY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">APPROVAL</property>
+                    <text-property name="displayName">APPROVAL</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["APPROVAL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="155"/>
+            <column id="156"/>
+            <column id="157"/>
+            <column id="158"/>
+            <column id="159"/>
+            <column id="160"/>
+            <column id="161"/>
+            <column id="162"/>
+            <column id="163"/>
+            <column id="164"/>
+            <column id="165"/>
+            <column id="166"/>
+            <column id="167"/>
+            <column id="168"/>
+            <column id="169"/>
+            <column id="170"/>
+            <column id="171"/>
+            <column id="172"/>
+            <column id="173"/>
+            <column id="174"/>
+            <column id="175"/>
+            <column id="176"/>
+            <column id="177"/>
+            <column id="178"/>
+            <column id="179"/>
+            <column id="180"/>
+            <column id="181"/>
+            <column id="182"/>
+            <column id="183"/>
+            <header>
+                <row id="7">
+                    <cell id="8">
+                        <label id="9">
+                            <text-property name="text">ACCNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="10">
+                        <label id="11">
+                            <text-property name="text">CUSTNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <label id="13">
+                            <text-property name="text">CUSTNAME</text-property>
+                        </label>
+                    </cell>
+                    <cell id="14">
+                        <label id="15">
+                            <text-property name="text">DAYSINARR</text-property>
+                        </label>
+                    </cell>
+                    <cell id="16">
+                        <label id="17">
+                            <text-property name="text">OUSTBALANCE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <label id="19">
+                            <text-property name="text">TOTALARREARS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <label id="21">
+                            <text-property name="text">BUCKET</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <label id="23">
+                            <text-property name="text">PRODUCTCODE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="24">
+                        <label id="25">
+                            <text-property name="text">SECTION</text-property>
+                        </label>
+                    </cell>
+                    <cell id="26">
+                        <label id="27">
+                            <text-property name="text">AROCODE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="28">
+                        <label id="29">
+                            <text-property name="text">RROCODE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <label id="31">
+                            <text-property name="text">BRANCHCODE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="32">
+                        <label id="33">
+                            <text-property name="text">BRANCHNAME</text-property>
+                        </label>
+                    </cell>
+                    <cell id="34">
+                        <label id="35">
+                            <text-property name="text">REQUESTDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="36">
+                        <label id="37">
+                            <text-property name="text">REQUESTBY</text-property>
+                        </label>
+                    </cell>
+                    <cell id="38">
+                        <label id="39">
+                            <text-property name="text">APPROVED</text-property>
+                        </label>
+                    </cell>
+                    <cell id="40">
+                        <label id="41">
+                            <text-property name="text">APPROVALDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="42">
+                        <label id="43">
+                            <text-property name="text">APPROVEDBY</text-property>
+                        </label>
+                    </cell>
+                    <cell id="44">
+                        <label id="45">
+                            <text-property name="text">STATUS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="46">
+                        <label id="47">
+                            <text-property name="text">RROCHANGEDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="48">
+                        <label id="49">
+                            <text-property name="text">RROCHANGEBY</text-property>
+                        </label>
+                    </cell>
+                    <cell id="50">
+                        <label id="51">
+                            <text-property name="text">FILEREQUESTED</text-property>
+                        </label>
+                    </cell>
+                    <cell id="52">
+                        <label id="53">
+                            <text-property name="text">FILEREQUESTDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="54">
+                        <label id="55">
+                            <text-property name="text">FILEREQUESTBY</text-property>
+                        </label>
+                    </cell>
+                    <cell id="56">
+                        <label id="57">
+                            <text-property name="text">FILESENDDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="58">
+                        <label id="59">
+                            <text-property name="text">FILESENDBY</text-property>
+                        </label>
+                    </cell>
+                    <cell id="60">
+                        <label id="61">
+                            <text-property name="text">FILERECEIVEDDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="62">
+                        <label id="63">
+                            <text-property name="text">FILERECEIVEDBY</text-property>
+                        </label>
+                    </cell>
+                    <cell id="64">
+                        <label id="65">
+                            <text-property name="text">APPROVAL</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="66">
+                    <cell id="67">
+                        <data id="68">
+                            <property name="resultSetColumn">ACCNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="69">
+                        <data id="70">
+                            <property name="resultSetColumn">CUSTNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="71">
+                        <data id="72">
+                            <property name="resultSetColumn">CUSTNAME</property>
+                        </data>
+                    </cell>
+                    <cell id="73">
+                        <data id="74">
+                            <property name="resultSetColumn">DAYSINARR</property>
+                        </data>
+                    </cell>
+                    <cell id="75">
+                        <data id="76">
+                            <property name="resultSetColumn">OUSTBALANCE</property>
+                        </data>
+                    </cell>
+                    <cell id="77">
+                        <data id="78">
+                            <property name="resultSetColumn">TOTALARREARS</property>
+                        </data>
+                    </cell>
+                    <cell id="79">
+                        <data id="80">
+                            <property name="resultSetColumn">BUCKET</property>
+                        </data>
+                    </cell>
+                    <cell id="81">
+                        <data id="82">
+                            <property name="resultSetColumn">PRODUCTCODE</property>
+                        </data>
+                    </cell>
+                    <cell id="83">
+                        <data id="84">
+                            <property name="resultSetColumn">SECTION</property>
+                        </data>
+                    </cell>
+                    <cell id="85">
+                        <data id="86">
+                            <property name="resultSetColumn">AROCODE</property>
+                        </data>
+                    </cell>
+                    <cell id="87">
+                        <data id="88">
+                            <property name="resultSetColumn">RROCODE</property>
+                        </data>
+                    </cell>
+                    <cell id="89">
+                        <data id="90">
+                            <property name="resultSetColumn">BRANCHCODE</property>
+                        </data>
+                    </cell>
+                    <cell id="91">
+                        <data id="92">
+                            <property name="resultSetColumn">BRANCHNAME</property>
+                        </data>
+                    </cell>
+                    <cell id="93">
+                        <data id="94">
+                            <property name="resultSetColumn">REQUESTDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="95">
+                        <data id="96">
+                            <property name="resultSetColumn">REQUESTBY</property>
+                        </data>
+                    </cell>
+                    <cell id="97">
+                        <data id="98">
+                            <property name="resultSetColumn">APPROVED</property>
+                        </data>
+                    </cell>
+                    <cell id="99">
+                        <data id="100">
+                            <property name="resultSetColumn">APPROVALDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="101">
+                        <data id="102">
+                            <property name="resultSetColumn">APPROVEDBY</property>
+                        </data>
+                    </cell>
+                    <cell id="103">
+                        <data id="104">
+                            <property name="resultSetColumn">STATUS</property>
+                        </data>
+                    </cell>
+                    <cell id="105">
+                        <data id="106">
+                            <property name="resultSetColumn">RROCHANGEDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="107">
+                        <data id="108">
+                            <property name="resultSetColumn">RROCHANGEBY</property>
+                        </data>
+                    </cell>
+                    <cell id="109">
+                        <data id="110">
+                            <property name="resultSetColumn">FILEREQUESTED</property>
+                        </data>
+                    </cell>
+                    <cell id="111">
+                        <data id="112">
+                            <property name="resultSetColumn">FILEREQUESTDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="113">
+                        <data id="114">
+                            <property name="resultSetColumn">FILEREQUESTBY</property>
+                        </data>
+                    </cell>
+                    <cell id="115">
+                        <data id="116">
+                            <property name="resultSetColumn">FILESENDDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="117">
+                        <data id="118">
+                            <property name="resultSetColumn">FILESENDBY</property>
+                        </data>
+                    </cell>
+                    <cell id="119">
+                        <data id="120">
+                            <property name="resultSetColumn">FILERECEIVEDDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="121">
+                        <data id="122">
+                            <property name="resultSetColumn">FILERECEIVEDBY</property>
+                        </data>
+                    </cell>
+                    <cell id="123">
+                        <data id="124">
+                            <property name="resultSetColumn">APPROVAL</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="125">
+                    <cell id="126"/>
+                    <cell id="127"/>
+                    <cell id="128"/>
+                    <cell id="129"/>
+                    <cell id="130"/>
+                    <cell id="131"/>
+                    <cell id="132"/>
+                    <cell id="133"/>
+                    <cell id="134"/>
+                    <cell id="135"/>
+                    <cell id="136"/>
+                    <cell id="137"/>
+                    <cell id="138"/>
+                    <cell id="139"/>
+                    <cell id="140"/>
+                    <cell id="141"/>
+                    <cell id="142"/>
+                    <cell id="143"/>
+                    <cell id="144"/>
+                    <cell id="145"/>
+                    <cell id="146"/>
+                    <cell id="147"/>
+                    <cell id="148"/>
+                    <cell id="149"/>
+                    <cell id="150"/>
+                    <cell id="151"/>
+                    <cell id="152"/>
+                    <cell id="153"/>
+                    <cell id="154"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

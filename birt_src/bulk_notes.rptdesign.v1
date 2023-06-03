@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.9.0.v201905231911</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">249</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">249</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">249</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/first_report.gif</property>
+    <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.firstreport</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="cssStyleSheets">
+        <structure>
+            <property name="fileName">slateGray.css</property>
+            <property name="useExternalCss">false</property>
+        </structure>
+    </list-property>
+    <parameters>
+        <scalar-parameter name="startDate" id="393">
+            <text-property name="promptText">Start Date</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="endDate" id="394">
+            <text-property name="promptText">End Date</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Division" id="396">
+            <text-property name="promptText">Select Division</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="dataSetName">division</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["TEAM"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["TEAM"]</expression>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">true</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="248">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin://@172.16.210.30:1564/ECOLLECT</property>
+            <property name="odaUser">ecol</property>
+            <encrypted-property name="odaPassword" encryptionID="base64">TCNUVGMwMTE=</encrypted-property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="249">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ACCNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <text-property name="heading">ACCNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NOTESRC</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">NOTESRC</text-property>
+                    <text-property name="heading">NOTESRC</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUSTNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <text-property name="heading">CUSTNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NOTEMADE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">NOTEMADE</text-property>
+                    <text-property name="heading">NOTEMADE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">OWNER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">OWNER</text-property>
+                    <text-property name="heading">OWNER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NOTEDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">NOTEDATE</text-property>
+                    <text-property name="heading">NOTEDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <text-property name="heading">BRANCHNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGION</text-property>
+                    <text-property name="heading">REGION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REASON</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">REASON</text-property>
+                    <text-property name="heading">REASON</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">startDate</property>
+                    <property name="paramName">startDate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">endDate</property>
+                    <property name="paramName">endDate</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ACCNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">NOTESRC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CUSTNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">NOTEMADE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">OWNER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">NOTEDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">BRANCHNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">REGION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">REASON</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ACCNUMBER</property>
+                    <property name="nativeName">ACCNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">NOTESRC</property>
+                    <property name="nativeName">NOTESRC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CUSTNUMBER</property>
+                    <property name="nativeName">CUSTNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">NOTEMADE</property>
+                    <property name="nativeName">NOTEMADE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">OWNER</property>
+                    <property name="nativeName">OWNER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">NOTEDATE</property>
+                    <property name="nativeName">NOTEDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">BRANCHNAME</property>
+                    <property name="nativeName">BRANCHNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">REGION</property>
+                    <property name="nativeName">REGION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">REASON</property>
+                    <property name="nativeName">REASON</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select ACCNUMBER,NOTESRC,CUSTNUMBER,NOTEMADE,OWNER,NOTEDATE,BRANCHNAME,REGION, 1 "REASON"
+from vallnotes, TBLUSERS, branches
+WHERE upper(vallnotes.OWNER) = upper(TBLUSERS.USERNAME)
+and 
+branches.branchcode = TBLUSERS.branch
+and
+notesrc in ('uploaded note','uploaded comment', 'uploaded a note', 'uploaded a note ')
+and
+(NOTEDATE >= to_date(?, 'YYYY-MM-DD') 
+and 
+NOTEDATE < to_date(?, 'YYYY-MM-DD') + 1)]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="division" id="395">
+            <property name="nullsOrdering">nulls lowest</property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TEAM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TEAM</property>
+                    <property name="nativeName">TEAM</property>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct TEAM
+from tblusers]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="110">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="246">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="247">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="245">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">x-large</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">Bulk uploaded notes report</text-property>
+        </label>
+        <table id="341">
+            <property name="textAlign">left</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ACCNUMBER</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ACCNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUSTNUMBER</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CUSTNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REASON</property>
+                    <text-property name="displayName">REASON</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REASON"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NOTEMADE</property>
+                    <text-property name="displayName">NOTEMADE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NOTEMADE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OWNER</property>
+                    <text-property name="displayName">OWNER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OWNER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">NOTE_DATE</property>
+                    <text-property name="displayName">NOTEDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["NOTEDATE"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">BRANCHNAME</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["BRANCHNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REGION</property>
+                    <text-property name="displayName">REGION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REGION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="385"/>
+            <column id="386"/>
+            <column id="388"/>
+            <column id="389"/>
+            <column id="390"/>
+            <column id="391"/>
+            <column id="392"/>
+            <header>
+                <row id="342">
+                    <cell id="343">
+                        <label id="344">
+                            <text-property name="text">ACCNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="345">
+                        <label id="346">
+                            <text-property name="text">CUSTNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="349">
+                        <label id="350">
+                            <text-property name="text">NOTEMADE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="351">
+                        <label id="352">
+                            <text-property name="text">OWNER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="353">
+                        <label id="354">
+                            <text-property name="text">NOTE DATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="355">
+                        <label id="356">
+                            <text-property name="text">BRANCH NAME</text-property>
+                        </label>
+                    </cell>
+                    <cell id="357">
+                        <label id="358">
+                            <text-property name="text">REGION</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="359">
+                    <cell id="360">
+                        <data id="361">
+                            <property name="resultSetColumn">ACCNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="362">
+                        <data id="363">
+                            <property name="resultSetColumn">CUSTNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="366">
+                        <data id="367">
+                            <property name="resultSetColumn">NOTEMADE</property>
+                        </data>
+                    </cell>
+                    <cell id="368">
+                        <data id="369">
+                            <property name="resultSetColumn">OWNER</property>
+                        </data>
+                    </cell>
+                    <cell id="370">
+                        <data id="371">
+                            <property name="resultSetColumn">NOTE_DATE</property>
+                        </data>
+                    </cell>
+                    <cell id="372">
+                        <data id="373">
+                            <property name="resultSetColumn">BRANCHNAME</property>
+                        </data>
+                    </cell>
+                    <cell id="374">
+                        <data id="375">
+                            <property name="resultSetColumn">REGION</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="376">
+                    <cell id="377"/>
+                    <cell id="378"/>
+                    <cell id="380"/>
+                    <cell id="381"/>
+                    <cell id="382"/>
+                    <cell id="383"/>
+                    <cell id="384"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

@@ -1,0 +1,1818 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.9.0.v201905231911</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Start" id="6">
+            <text-property name="promptText">Select Start of DateDue</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="End" id="7">
+            <text-property name="promptText">Select End of DateDue</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+        <cascading-parameter-group name="NewCascadingParameterGroup" id="131">
+            <text-property name="promptText">Select Region and Branch (use ctrl to multi select)</text-property>
+            <property name="dataSet">region</property>
+            <property name="dataSetMode">multiple</property>
+            <parameters>
+                <scalar-parameter name="region" id="132">
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">region</property>
+                    <expression name="valueExpr">row["REGION"]</expression>
+                    <expression name="labelExpr">row["REGION"]</expression>
+                    <expression name="sortByColumn">dataSetRow["REGION"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="concealValue">false</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+                <scalar-parameter name="branchname" id="133">
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">true</property>
+                    <property name="dataSetName">branchname</property>
+                    <expression name="valueExpr">row["BRANCHNAME"]</expression>
+                    <expression name="labelExpr">row["BRANCHNAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["BRANCHNAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">multi-value</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">java:comp/env/jdbc/ecollect</property>            
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Demandsdue" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ID</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ID</text-property>
+                    <text-property name="heading">ID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUSTNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <text-property name="heading">CUSTNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ACCNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <text-property name="heading">ACCNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CLIENT_NAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CLIENT_NAME</text-property>
+                    <text-property name="heading">CLIENT_NAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SECTION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SECTION</text-property>
+                    <text-property name="heading">SECTION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">OUSTBALANCE</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">OUSTBALANCE</text-property>
+                    <text-property name="heading">OUSTBALANCE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TOTALARREARS</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">TOTALARREARS</text-property>
+                    <text-property name="heading">TOTALARREARS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DAYSINARR</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">DAYSINARR</text-property>
+                    <text-property name="heading">DAYSINARR</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ADDRESS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ADDRESS</text-property>
+                    <text-property name="heading">ADDRESS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">POSTALCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">POSTALCODE</text-property>
+                    <text-property name="heading">POSTALCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TELNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">TELNUMBER</text-property>
+                    <text-property name="heading">TELNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EMAILADDRESS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EMAILADDRESS</text-property>
+                    <text-property name="heading">EMAILADDRESS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATEDUE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DATEDUE</text-property>
+                    <text-property name="heading">DATEDUE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATESENT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DATESENT</text-property>
+                    <text-property name="heading">DATESENT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLOFFICER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COLOFFICER</text-property>
+                    <text-property name="heading">COLOFFICER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">STATUS</text-property>
+                    <text-property name="heading">STATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DEMANDLETTER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DEMANDLETTER</text-property>
+                    <text-property name="heading">DEMANDLETTER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DESTPATH</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DESTPATH</text-property>
+                    <text-property name="heading">DESTPATH</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHCODE</text-property>
+                    <text-property name="heading">BRANCHCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">AROCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">AROCODE</text-property>
+                    <text-property name="heading">AROCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RROCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RROCODE</text-property>
+                    <text-property name="heading">RROCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SENTBY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SENTBY</text-property>
+                    <text-property name="heading">SENTBY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGMICROCREDIT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGMICROCREDIT</text-property>
+                    <text-property name="heading">REGMICROCREDIT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGCORPORATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGCORPORATE</text-property>
+                    <text-property name="heading">REGCORPORATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGMORTAGE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGMORTAGE</text-property>
+                    <text-property name="heading">REGMORTAGE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGASSETFINANCE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGASSETFINANCE</text-property>
+                    <text-property name="heading">REGASSETFINANCE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGPBB</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGPBB</text-property>
+                    <text-property name="heading">REGPBB</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGPORTFOLIO</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGPORTFOLIO</text-property>
+                    <text-property name="heading">REGPORTFOLIO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGSACCO</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGSACCO</text-property>
+                    <text-property name="heading">REGSACCO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGSME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGSME</text-property>
+                    <text-property name="heading">REGSME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGIPF</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGIPF</text-property>
+                    <text-property name="heading">REGIPF</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <text-property name="heading">BRANCHNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGAGRIBUSINESS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGAGRIBUSINESS</text-property>
+                    <text-property name="heading">REGAGRIBUSINESS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHCODE_1</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHCODE</text-property>
+                    <text-property name="heading">BRANCHCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MANAGER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">MANAGER</text-property>
+                    <text-property name="heading">MANAGER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGION</text-property>
+                    <text-property name="heading">REGION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHEMAIL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHEMAIL</text-property>
+                    <text-property name="heading">BRANCHEMAIL</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">startdate</property>
+                    <property name="paramName">Start</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">End</property>
+                    <property name="paramName">End</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ID</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CUSTNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ACCNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CLIENT_NAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">SECTION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">OUSTBALANCE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">TOTALARREARS</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">DAYSINARR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">ADDRESS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">POSTALCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">TELNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">EMAILADDRESS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">DATEDUE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">DATESENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">COLOFFICER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">DEMANDLETTER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">DESTPATH</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">BRANCHCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">AROCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">RROCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">SENTBY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">REGMICROCREDIT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">REGCORPORATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">REGMORTAGE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">REGASSETFINANCE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">REGPBB</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">REGPORTFOLIO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">REGSACCO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">REGSME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">REGIPF</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">BRANCHNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">REGAGRIBUSINESS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
+                        <property name="name">BRANCHCODE_1</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">35</property>
+                        <property name="name">MANAGER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">36</property>
+                        <property name="name">REGION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
+                        <property name="name">BRANCHEMAIL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ID</property>
+                    <property name="nativeName">ID</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CUSTNUMBER</property>
+                    <property name="nativeName">CUSTNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ACCNUMBER</property>
+                    <property name="nativeName">ACCNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CLIENT_NAME</property>
+                    <property name="nativeName">CLIENT_NAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">SECTION</property>
+                    <property name="nativeName">SECTION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">OUSTBALANCE</property>
+                    <property name="nativeName">OUSTBALANCE</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">TOTALARREARS</property>
+                    <property name="nativeName">TOTALARREARS</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">DAYSINARR</property>
+                    <property name="nativeName">DAYSINARR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">ADDRESS</property>
+                    <property name="nativeName">ADDRESS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">POSTALCODE</property>
+                    <property name="nativeName">POSTALCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">TELNUMBER</property>
+                    <property name="nativeName">TELNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">EMAILADDRESS</property>
+                    <property name="nativeName">EMAILADDRESS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">DATEDUE</property>
+                    <property name="nativeName">DATEDUE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">DATESENT</property>
+                    <property name="nativeName">DATESENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">COLOFFICER</property>
+                    <property name="nativeName">COLOFFICER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">STATUS</property>
+                    <property name="nativeName">STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">DEMANDLETTER</property>
+                    <property name="nativeName">DEMANDLETTER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">DESTPATH</property>
+                    <property name="nativeName">DESTPATH</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">BRANCHCODE</property>
+                    <property name="nativeName">BRANCHCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">AROCODE</property>
+                    <property name="nativeName">AROCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">RROCODE</property>
+                    <property name="nativeName">RROCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">SENTBY</property>
+                    <property name="nativeName">SENTBY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">REGMICROCREDIT</property>
+                    <property name="nativeName">REGMICROCREDIT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">REGCORPORATE</property>
+                    <property name="nativeName">REGCORPORATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">REGMORTAGE</property>
+                    <property name="nativeName">REGMORTAGE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">REGASSETFINANCE</property>
+                    <property name="nativeName">REGASSETFINANCE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">REGPBB</property>
+                    <property name="nativeName">REGPBB</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">REGPORTFOLIO</property>
+                    <property name="nativeName">REGPORTFOLIO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">REGSACCO</property>
+                    <property name="nativeName">REGSACCO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">REGSME</property>
+                    <property name="nativeName">REGSME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">REGIPF</property>
+                    <property name="nativeName">REGIPF</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">32</property>
+                    <property name="name">BRANCHNAME</property>
+                    <property name="nativeName">BRANCHNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">33</property>
+                    <property name="name">REGAGRIBUSINESS</property>
+                    <property name="nativeName">REGAGRIBUSINESS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">34</property>
+                    <property name="name">BRANCHCODE_1</property>
+                    <property name="nativeName">BRANCHCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">35</property>
+                    <property name="name">MANAGER</property>
+                    <property name="nativeName">MANAGER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">36</property>
+                    <property name="name">REGION</property>
+                    <property name="nativeName">REGION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">37</property>
+                    <property name="name">BRANCHEMAIL</property>
+                    <property name="nativeName">BRANCHEMAIL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from demandsdue d
+left join branches b on d.branchcode=b.branchcode
+where
+(to_date(DATEDUE, 'YYYY-MM-DD') >= to_date(?, 'YYYY-MM-DD') and to_date(DATEDUE, 'YYYY-MM-DD') < to_date(?, 'YYYY-MM-DD') + 1)]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ID</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ID</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CUSTNUMBER</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CUSTNUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CUSTNUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ACCNUMBER</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ACCNUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ACCNUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CLIENT_NAME</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CLIENT_NAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CLIENT_NAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SECTION</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SECTION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SECTION</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>OUSTBALANCE</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>126</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>OUSTBALANCE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>OUSTBALANCE</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TOTALARREARS</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>126</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>TOTALARREARS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TOTALARREARS</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DAYSINARR</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DAYSINARR</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DAYSINARR</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ADDRESS</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ADDRESS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ADDRESS</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>POSTALCODE</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>POSTALCODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>POSTALCODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>TELNUMBER</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>TELNUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>TELNUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>EMAILADDRESS</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>250</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>EMAILADDRESS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>EMAILADDRESS</design:label>
+            <design:formattingHints>
+              <design:displaySize>250</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DATEDUE</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DATEDUE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DATEDUE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DATESENT</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DATESENT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DATESENT</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>COLOFFICER</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>COLOFFICER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>COLOFFICER</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STATUS</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>STATUS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STATUS</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DEMANDLETTER</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DEMANDLETTER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DEMANDLETTER</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DESTPATH</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DESTPATH</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DESTPATH</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>BRANCHCODE</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>BRANCHCODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BRANCHCODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="region" id="129">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">REGION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGION</text-property>
+                    <text-property name="heading">REGION</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">REGION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">REGION</property>
+                    <property name="nativeName">REGION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct region
+from branches]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="branchname" id="130">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">BRANCHNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <text-property name="heading">BRANCHNAME</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_region</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">BRANCHNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">BRANCHNAME</property>
+                    <property name="nativeName">BRANCHNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct branchname
+from branches where region=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>255</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>BRANCHNAME</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>BRANCHNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BRANCHNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="103">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">medium</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#FFFFE0</property>
+        </style>
+        <style name="table-header" id="104">
+            <property name="backgroundColor">#5C6C7B</property>
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#DEDCD3</property>
+        </style>
+        <style name="table-group-header-1" id="105">
+            <property name="backgroundColor">#859CA1</property>
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#F5F5DC</property>
+        </style>
+        <style name="table-group-header-2" id="106">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bolder</property>
+            <property name="color">#5C6C7B</property>
+        </style>
+        <style name="table-group-header-3" id="107">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="fontStyle">italic</property>
+            <property name="color">#5C6C7B</property>
+        </style>
+        <style name="table-detail" id="108">
+            <property name="backgroundColor">#DEDCD3</property>
+            <property name="fontSize">x-small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#1C515A</property>
+            <property name="borderBottomColor">#859CA1</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftColor">#859CA1</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightColor">#859CA1</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopColor">#859CA1</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+        </style>
+        <style name="table-group-footer-3" id="109">
+            <property name="fontSize">x-small</property>
+            <property name="fontWeight">bold</property>
+            <property name="fontStyle">italic</property>
+            <property name="color">#5C6C7B</property>
+        </style>
+        <style name="table-group-footer-2" id="110">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bolder</property>
+            <property name="color">#5C6C7B</property>
+        </style>
+        <style name="table-group-footer-1" id="111">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bolder</property>
+            <property name="color">#1C515A</property>
+        </style>
+        <style name="table-footer" id="112">
+            <property name="backgroundColor">#5C6C7B</property>
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#DEDCD3</property>
+        </style>
+        <style name="chart" id="113">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="fontStyle">italic</property>
+            <property name="color">#5C6C7B</property>
+            <property name="borderBottomColor">#5C6C7B</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+            <property name="borderLeftColor">#5C6C7B</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">thin</property>
+            <property name="borderRightColor">#5C6C7B</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">thin</property>
+            <property name="borderTopColor">#5C6C7B</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">thin</property>
+        </style>
+        <style name="list-header" id="114">
+            <property name="backgroundColor">#5C6C7B</property>
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#DEDCD3</property>
+        </style>
+        <style name="list-group-header-1" id="115">
+            <property name="backgroundColor">#859CA1</property>
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#F5F5DC</property>
+        </style>
+        <style name="list-group-header-2" id="116">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bolder</property>
+            <property name="color">#5C6C7B</property>
+        </style>
+        <style name="list-group-header-3" id="117">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="fontStyle">italic</property>
+            <property name="color">#5C6C7B</property>
+        </style>
+        <style name="list-detail" id="118">
+            <property name="backgroundColor">#DEDCD3</property>
+            <property name="fontSize">x-small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#1C515A</property>
+            <property name="borderBottomColor">#859CA1</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">thin</property>
+        </style>
+        <style name="list-group-footer-3" id="119">
+            <property name="fontSize">x-small</property>
+            <property name="fontWeight">bold</property>
+            <property name="fontStyle">italic</property>
+            <property name="color">#5C6C7B</property>
+        </style>
+        <style name="list-group-footer-2" id="120">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bolder</property>
+            <property name="color">#5C6C7B</property>
+        </style>
+        <style name="list-group-footer-1" id="121">
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bolder</property>
+            <property name="color">#1C515A</property>
+        </style>
+        <style name="list-footer" id="122">
+            <property name="backgroundColor">#5C6C7B</property>
+            <property name="fontSize">small</property>
+            <property name="fontWeight">bold</property>
+            <property name="color">#DEDCD3</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="102">
+            <property name="fontWeight">bold</property>
+            <property name="color">blue</property>
+            <text-property name="text">Demands Due Status Report - Loans</text-property>
+        </label>
+        <table id="8">
+            <property name="dataSet">Demandsdue</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">CUSTNUMBER</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CUSTNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ACCNUMBER</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ACCNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CLIENT_NAME</property>
+                    <text-property name="displayName">CLIENT_NAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CLIENT_NAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OUSTBALANCE</property>
+                    <text-property name="displayName">OUSTBALANCE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OUSTBALANCE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">TOTALARREARS</property>
+                    <text-property name="displayName">TOTALARREARS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TOTALARREARS"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">DAYSINARR</property>
+                    <text-property name="displayName">DAYSINARR</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DAYSINARR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ADDRESS</property>
+                    <text-property name="displayName">ADDRESS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ADDRESS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">POSTALCODE</property>
+                    <text-property name="displayName">POSTALCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["POSTALCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TELNUMBER</property>
+                    <text-property name="displayName">TELNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TELNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">EMAILADDRESS</property>
+                    <text-property name="displayName">EMAILADDRESS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["EMAILADDRESS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATEDUE</property>
+                    <text-property name="displayName">DATEDUE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATEDUE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">DATESENT</property>
+                    <text-property name="displayName">DATESENT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATESENT"]</expression>
+                    <property name="dataType">string</property>
+                    <property name="allowExport">true</property>
+                </structure>
+                <structure>
+                    <property name="name">COLOFFICER</property>
+                    <text-property name="displayName">COLOFFICER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLOFFICER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DEMANDLETTER</property>
+                    <text-property name="displayName">DEMANDLETTER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DEMANDLETTER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BRANCHCODE</property>
+                    <text-property name="displayName">BRANCHCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["BRANCHCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STATUS</property>
+                    <text-property name="displayName">STATUS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["STATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="87"/>
+            <column id="88"/>
+            <column id="89"/>
+            <column id="90"/>
+            <column id="91"/>
+            <column id="92"/>
+            <column id="93"/>
+            <column id="94"/>
+            <column id="95"/>
+            <column id="96"/>
+            <column id="97"/>
+            <column id="98"/>
+            <column id="99"/>
+            <column id="100"/>
+            <column id="126"/>
+            <column id="101"/>
+            <header>
+                <row id="9">
+                    <property name="fontWeight">bold</property>
+                    <property name="textAlign">left</property>
+                    <cell id="10">
+                        <label id="11">
+                            <text-property name="text">CUSTNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <label id="13">
+                            <text-property name="text">ACCNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="14">
+                        <label id="15">
+                            <text-property name="text">CLIENT_NAME</text-property>
+                        </label>
+                    </cell>
+                    <cell id="16">
+                        <label id="17">
+                            <text-property name="text">OUSTBALANCE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <label id="19">
+                            <text-property name="text">TOTALARREARS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <label id="21">
+                            <text-property name="text">DAYSINARR</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <label id="23">
+                            <text-property name="text">ADDRESS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="24">
+                        <label id="25">
+                            <text-property name="text">POSTALCODE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="26">
+                        <label id="27">
+                            <text-property name="text">TELNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="28">
+                        <label id="29">
+                            <text-property name="text">EMAILADDRESS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <label id="31">
+                            <text-property name="text">DATEDUE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="32">
+                        <label id="33">
+                            <text-property name="text">DATESENT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="34">
+                        <label id="35">
+                            <text-property name="text">COLOFFICER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="36">
+                        <label id="37">
+                            <text-property name="text">DEMANDLETTER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="123">
+                        <data id="127">
+                            <property name="resultSetColumn">STATUS</property>
+                        </data>
+                    </cell>
+                    <cell id="38">
+                        <label id="39">
+                            <text-property name="text">BRANCHCODE</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="40">
+                    <cell id="41">
+                        <data id="42">
+                            <property name="resultSetColumn">CUSTNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="43">
+                        <data id="44">
+                            <property name="resultSetColumn">ACCNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="45">
+                        <data id="46">
+                            <property name="resultSetColumn">CLIENT_NAME</property>
+                        </data>
+                    </cell>
+                    <cell id="47">
+                        <data id="48">
+                            <property name="resultSetColumn">OUSTBALANCE</property>
+                        </data>
+                    </cell>
+                    <cell id="49">
+                        <data id="50">
+                            <property name="resultSetColumn">TOTALARREARS</property>
+                        </data>
+                    </cell>
+                    <cell id="51">
+                        <data id="52">
+                            <property name="resultSetColumn">DAYSINARR</property>
+                        </data>
+                    </cell>
+                    <cell id="53">
+                        <data id="54">
+                            <property name="resultSetColumn">ADDRESS</property>
+                        </data>
+                    </cell>
+                    <cell id="55">
+                        <data id="56">
+                            <property name="resultSetColumn">POSTALCODE</property>
+                        </data>
+                    </cell>
+                    <cell id="57">
+                        <data id="58">
+                            <property name="resultSetColumn">TELNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="59">
+                        <data id="60">
+                            <property name="resultSetColumn">EMAILADDRESS</property>
+                        </data>
+                    </cell>
+                    <cell id="61">
+                        <data id="62">
+                            <structure name="dateTimeFormat">
+                                <property name="category">Medium Date</property>
+                                <property name="pattern">Medium Date</property>
+                            </structure>
+                            <property name="resultSetColumn">DATEDUE</property>
+                        </data>
+                    </cell>
+                    <cell id="63">
+                        <data id="64">
+                            <property name="resultSetColumn">DATESENT</property>
+                        </data>
+                    </cell>
+                    <cell id="65">
+                        <data id="66">
+                            <property name="resultSetColumn">COLOFFICER</property>
+                        </data>
+                    </cell>
+                    <cell id="67">
+                        <data id="68">
+                            <property name="resultSetColumn">DEMANDLETTER</property>
+                        </data>
+                    </cell>
+                    <cell id="124">
+                        <data id="128">
+                            <property name="resultSetColumn">STATUS</property>
+                        </data>
+                    </cell>
+                    <cell id="69">
+                        <data id="70">
+                            <property name="resultSetColumn">BRANCHCODE</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="71">
+                    <cell id="72"/>
+                    <cell id="73"/>
+                    <cell id="74"/>
+                    <cell id="75"/>
+                    <cell id="76"/>
+                    <cell id="77"/>
+                    <cell id="78"/>
+                    <cell id="79"/>
+                    <cell id="80"/>
+                    <cell id="81"/>
+                    <cell id="82"/>
+                    <cell id="83"/>
+                    <cell id="84"/>
+                    <cell id="85"/>
+                    <cell id="125"/>
+                    <cell id="86"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

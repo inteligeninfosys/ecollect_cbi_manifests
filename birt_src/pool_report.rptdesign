@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">84</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaURL">jdbc:oracle:thin://@192.168.78.149:1521/ecol</property>
+            <property name="odaUser">ecol</property>
+            <property name="odaJndiName">java:comp/env/jdbc/BirtPool</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="sms" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">SMSID</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">SMSID</text-property>
+                    <text-property name="heading">SMSID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MESSAGE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">MESSAGE</text-property>
+                    <text-property name="heading">MESSAGE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">OWNER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">OWNER</text-property>
+                    <text-property name="heading">OWNER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUSTNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <text-property name="heading">CUSTNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ARREARS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ARREARS</text-property>
+                    <text-property name="heading">ARREARS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATESENT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DATESENT</text-property>
+                    <text-property name="heading">DATESENT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SENT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SENT</text-property>
+                    <text-property name="heading">SENT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TELNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">TELNUMBER</text-property>
+                    <text-property name="heading">TELNUMBER</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SMSID</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">MESSAGE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">OWNER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CUSTNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ARREARS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">DATESENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">SENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">TELNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SMSID</property>
+                    <property name="nativeName">SMSID</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">MESSAGE</property>
+                    <property name="nativeName">MESSAGE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">OWNER</property>
+                    <property name="nativeName">OWNER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CUSTNUMBER</property>
+                    <property name="nativeName">CUSTNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ARREARS</property>
+                    <property name="nativeName">ARREARS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">DATESENT</property>
+                    <property name="nativeName">DATESENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">SENT</property>
+                    <property name="nativeName">SENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">TELNUMBER</property>
+                    <property name="nativeName">TELNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * from sms offset 0 rows fetch next 30 rows only]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <table id="6">
+            <property name="dataSet">sms</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">SMSID</property>
+                    <text-property name="displayName">SMSID</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SMSID"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">MESSAGE</property>
+                    <text-property name="displayName">MESSAGE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["MESSAGE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OWNER</property>
+                    <text-property name="displayName">OWNER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OWNER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUSTNUMBER</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CUSTNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARREARS</property>
+                    <text-property name="displayName">ARREARS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ARREARS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATESENT</property>
+                    <text-property name="displayName">DATESENT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATESENT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">SENT</property>
+                    <text-property name="displayName">SENT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SENT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TELNUMBER</property>
+                    <text-property name="displayName">TELNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TELNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="50"/>
+            <column id="51"/>
+            <column id="52"/>
+            <column id="53"/>
+            <column id="54"/>
+            <column id="55"/>
+            <column id="56"/>
+            <column id="57"/>
+            <header>
+                <row id="7">
+                    <cell id="8">
+                        <label id="9">
+                            <text-property name="text">SMSID</text-property>
+                        </label>
+                    </cell>
+                    <cell id="10">
+                        <label id="11">
+                            <text-property name="text">MESSAGE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <label id="13">
+                            <text-property name="text">OWNER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="14">
+                        <label id="15">
+                            <text-property name="text">CUSTNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="16">
+                        <label id="17">
+                            <text-property name="text">ARREARS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <label id="19">
+                            <text-property name="text">DATESENT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <label id="21">
+                            <text-property name="text">SENT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <label id="23">
+                            <text-property name="text">TELNUMBER</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="24">
+                    <cell id="25">
+                        <data id="26">
+                            <property name="resultSetColumn">SMSID</property>
+                        </data>
+                    </cell>
+                    <cell id="27">
+                        <data id="28">
+                            <property name="resultSetColumn">MESSAGE</property>
+                        </data>
+                    </cell>
+                    <cell id="29">
+                        <data id="30">
+                            <property name="resultSetColumn">OWNER</property>
+                        </data>
+                    </cell>
+                    <cell id="31">
+                        <data id="32">
+                            <property name="resultSetColumn">CUSTNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="33">
+                        <data id="34">
+                            <property name="resultSetColumn">ARREARS</property>
+                        </data>
+                    </cell>
+                    <cell id="35">
+                        <data id="36">
+                            <property name="resultSetColumn">DATESENT</property>
+                        </data>
+                    </cell>
+                    <cell id="37">
+                        <data id="38">
+                            <property name="resultSetColumn">SENT</property>
+                        </data>
+                    </cell>
+                    <cell id="39">
+                        <data id="40">
+                            <property name="resultSetColumn">TELNUMBER</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="41">
+                    <cell id="42"/>
+                    <cell id="43"/>
+                    <cell id="44"/>
+                    <cell id="45"/>
+                    <cell id="46"/>
+                    <cell id="47"/>
+                    <cell id="48"/>
+                    <cell id="49"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

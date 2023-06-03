@@ -1,0 +1,47 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: adlogin-svc
+  namespace: ecol
+  label:
+    app: adlogin
+spec:
+  selector:
+    app: adlogin
+  ports:
+    - protocol: TCP
+      name: 6650-tcp
+      port: 6650
+      targetPort: 6650
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adlogin
+  namespace: ecol
+  labels:
+    app: adlogin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adlogin
+  template:
+    metadata:
+      labels:
+        app: adlogin
+    spec:
+      containers:
+      - name: adlogin
+        image: docker.io/migutak/adlogin:4.1
+        ports:
+        - containerPort: 6650
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "500m"

@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongorest-svc
+  namespace: ecol
+  label:
+    app: mongorest
+spec:
+  selector:
+    app: mongorest
+  ports:
+    - protocol: TCP
+      port: 8500
+      name: 8500-tcp
+      targetPort: 8500
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mongorest
+  namespace: ecol
+  labels:
+    app: mongorest
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: mongorest
+  template:
+    metadata:
+      labels:
+        app: mongorest
+    spec:
+      containers:
+      - name: mongorest
+        image: docker.io/migutak/mongorest:5.1
+        envFrom:
+          - configMapRef:
+              name: ecol-config
+          - secretRef:
+                name: ecol-secrets
+        ports:
+        - containerPort: 8500
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: 1
+          limits:
+            memory: "4Gi"
+            cpu: 2

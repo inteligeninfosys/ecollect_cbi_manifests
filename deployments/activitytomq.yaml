@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: activitytomq-svc
+  namespace: ecol
+  label:
+    app: activitytomq
+spec:
+  selector:
+    app: activitytomq
+  ports:
+    - protocol: TCP
+      port: 5400
+      name: 5400-tcp
+      targetPort: 5400
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: activitytomq
+  namespace: ecol
+  labels:
+    app: activitytomq
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: activitytomq
+  template:
+    metadata:
+      labels:
+        app: activitytomq
+    spec:
+      containers:
+      - name: activitytomq
+        image: docker.io/migutak/activitytomq:5.4.1
+        envFrom:
+          - configMapRef:
+              name: ecol-config
+          - secretRef:
+                name: ecol-secrets
+        ports:
+        - containerPort: 5400
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: '500m'
+          limits:
+            memory: "4Gi"
+            cpu: 1

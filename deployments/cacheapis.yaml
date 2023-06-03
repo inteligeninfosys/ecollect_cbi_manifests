@@ -1,0 +1,70 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: cacheapi-route
+  namespace: ecol
+  labels:
+    app: cacheapi
+spec:
+  host: cache-ecol.apps.ocpdev.co-opbank.co.ke
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: cacheapi-svc
+    labels:
+      app: cacheapi
+  port:
+    targetPort: 5600
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cacheapi-svc
+  namespace: ecol
+spec:
+  selector:
+    app: cacheapi
+  ports:
+    - protocol: TCP
+      port: 5600
+      name: 5600-tcp
+      targetPort: 5600
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cacheapi
+  namespace: ecol
+  labels:
+    app: cacheapi
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: cacheapi
+  template:
+    metadata:
+      labels:
+        app: cacheapi
+    spec:
+      containers:
+      - name: cacheapi
+        image: docker.io/migutak/cache:5.7
+        envFrom:
+          - configMapRef:
+              name: ecol-config
+          - secretRef:
+                name: ecol-secrets
+        ports:
+        - containerPort: 5600
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: 1
+          limits:
+            memory: "4Gi"
+            cpu: 2

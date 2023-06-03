@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.9.0.v201905231911</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <parameters>
+        <scalar-parameter name="Start" id="101">
+            <text-property name="promptText">Start Date</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="End" id="102">
+            <text-property name="promptText">End Date</text-property>
+            <property name="valueType">static</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">java:comp/env/jdbc/ecollect</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ACCOUNTNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACCOUNTNUMBER</text-property>
+                    <text-property name="heading">ACCOUNTNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">FULLNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FULLNAME</text-property>
+                    <text-property name="heading">FULLNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TEAM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">TEAM</text-property>
+                    <text-property name="heading">TEAM</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">OUTGOING_CALL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">OUTGOING_CALL</text-property>
+                    <text-property name="heading">OUTGOING_CALL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">INCOMING_CALL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">INCOMING_CALL</text-property>
+                    <text-property name="heading">INCOMING_CALL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">VISITED_CUSTOMER</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">VISITED_CUSTOMER</text-property>
+                    <text-property name="heading">VISITED_CUSTOMER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SENT_SMS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SENT_SMS</text-property>
+                    <text-property name="heading">SENT_SMS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UPLOADS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UPLOADS</text-property>
+                    <text-property name="heading">UPLOADS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RIGHT_PARTY_CONTACT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RIGHT_PARTY_CONTACT</text-property>
+                    <text-property name="heading">RIGHT_PARTY_CONTACT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PTP</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PTP</text-property>
+                    <text-property name="heading">PTP</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PROMISEAMOUNT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PROMISEAMOUNT</text-property>
+                    <text-property name="heading">PROMISEAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RESTRUCTURE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RESTRUCTURE</text-property>
+                    <text-property name="heading">RESTRUCTURE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RESTRUCTUREAMOUNT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">RESTRUCTUREAMOUNT</text-property>
+                    <text-property name="heading">RESTRUCTUREAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGION</text-property>
+                    <text-property name="heading">REGION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <text-property name="heading">BRANCHNAME</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">Start</property>
+                    <property name="dataType">string</property>
+                    <property name="position">1</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">End</property>
+                    <property name="dataType">string</property>
+                    <property name="position">2</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ACCOUNTNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">FULLNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">TEAM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">OUTGOING_CALL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">INCOMING_CALL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">VISITED_CUSTOMER</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">SENT_SMS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">UPLOADS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">RIGHT_PARTY_CONTACT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">PTP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">PROMISEAMOUNT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">RESTRUCTURE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">RESTRUCTUREAMOUNT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">REGION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">BRANCHNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ACCOUNTNUMBER</property>
+                    <property name="nativeName">ACCOUNTNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">FULLNAME</property>
+                    <property name="nativeName">FULLNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">TEAM</property>
+                    <property name="nativeName">TEAM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">OUTGOING_CALL</property>
+                    <property name="nativeName">OUTGOING_CALL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">INCOMING_CALL</property>
+                    <property name="nativeName">INCOMING_CALL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">VISITED_CUSTOMER</property>
+                    <property name="nativeName">VISITED_CUSTOMER</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">SENT_SMS</property>
+                    <property name="nativeName">SENT_SMS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">UPLOADS</property>
+                    <property name="nativeName">UPLOADS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">RIGHT_PARTY_CONTACT</property>
+                    <property name="nativeName">RIGHT_PARTY_CONTACT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">PTP</property>
+                    <property name="nativeName">PTP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">PROMISEAMOUNT</property>
+                    <property name="nativeName">PROMISEAMOUNT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">RESTRUCTURE</property>
+                    <property name="nativeName">RESTRUCTURE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">RESTRUCTUREAMOUNT</property>
+                    <property name="nativeName">RESTRUCTUREAMOUNT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">REGION</property>
+                    <property name="nativeName">REGION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">BRANCHNAME</property>
+                    <property name="nativeName">BRANCHNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT ACCOUNTNUMBER, UPPER(FIRSTNAME||' '||SURNAME ||' (' || username || ') ') FULLNAME,TEAM,DECODE(ACTION, 'OC', '1','0') OUTGOING_CALL,DECODE(ACTION, 'IC', '1','0') INCOMING_CALL,DECODE(ACTION, 'MET', '1','0') + DECODE(ACTION, 'EMPVISIT', '1','0') VISITED_CUSTOMER,DECODE(ACTION, 'SMS', '1','0') SENT_SMS
+,DECODE(ACTION, 'UPLOAD', '1','0') UPLOADS,DECODE(PARTY,'1','1','0') RIGHT_PARTY_CONTACT,
+ DECODE(PTP, 'Yes', '1','0') PTP,PROMISEAMOUNT, DECODE(RESTRUCTURE, 'true', '1','0') RESTRUCTURE, RESTRUCTUREAMOUNT, REGION, BRANCHNAME
+FROM ACTIVITYLOGS
+left join TBLUSERS on upper(ACTIVITYLOGS.OWNER) = upper(TBLUSERS.USERNAME)
+left join BRANCHES on branch=branchcode 
+where
+(actiondate >= to_date(?, 'YYYY-MM-DD') and actiondate < to_date(?, 'YYYY-MM-DD') + 1)]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="100">
+            <property name="fontSize">14pt</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <text-property name="text">Collector Activity - raw</text-property>
+        </label>
+        <table id="6">
+            <property name="borderBottomStyle">none</property>
+            <property name="borderLeftStyle">none</property>
+            <property name="borderRightStyle">none</property>
+            <property name="borderTopStyle">none</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ACCOUNTNUMBER</property>
+                    <text-property name="displayName">ACCOUNTNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ACCOUNTNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">FULLNAME</property>
+                    <text-property name="displayName">FULLNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FULLNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">TEAM</property>
+                    <text-property name="displayName">TEAM</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["TEAM"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OUTGOING_CALL</property>
+                    <text-property name="displayName">OUTGOING_CALL</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OUTGOING_CALL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">INCOMING_CALL</property>
+                    <text-property name="displayName">INCOMING_CALL</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["INCOMING_CALL"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">VISITED_CUSTOMER</property>
+                    <text-property name="displayName">VISITED_CUSTOMER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["VISITED_CUSTOMER"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SENT_SMS</property>
+                    <text-property name="displayName">SENT_SMS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SENT_SMS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">UPLOADS</property>
+                    <text-property name="displayName">UPLOADS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["UPLOADS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RIGHT_PARTY_CONTACT</property>
+                    <text-property name="displayName">RIGHT_PARTY_CONTACT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RIGHT_PARTY_CONTACT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PTP</property>
+                    <text-property name="displayName">PTP</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PTP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PROMISEAMOUNT</property>
+                    <text-property name="displayName">PROMISEAMOUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PROMISEAMOUNT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RESTRUCTURE</property>
+                    <text-property name="displayName">RESTRUCTURE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RESTRUCTURE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RESTRUCTUREAMOUNT</property>
+                    <text-property name="displayName">RESTRUCTUREAMOUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RESTRUCTUREAMOUNT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">REGION</property>
+                    <text-property name="displayName">REGION</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REGION"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BRANCHNAME</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["BRANCHNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="85"/>
+            <column id="86"/>
+            <column id="87"/>
+            <column id="88"/>
+            <column id="89"/>
+            <column id="90"/>
+            <column id="91"/>
+            <column id="92"/>
+            <column id="93"/>
+            <column id="94"/>
+            <column id="95"/>
+            <column id="96"/>
+            <column id="97"/>
+            <column id="98"/>
+            <column id="99"/>
+            <header>
+                <row id="7">
+                    <cell id="8">
+                        <label id="9">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">ACCOUNTNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="10">
+                        <label id="11">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">FULLNAME</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <label id="13">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">TEAM</text-property>
+                        </label>
+                    </cell>
+                    <cell id="14">
+                        <label id="15">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">OUTGOING_CALL</text-property>
+                        </label>
+                    </cell>
+                    <cell id="16">
+                        <label id="17">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">INCOMING_CALL</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <label id="19">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">VISITED_CUSTOMER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <label id="21">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">SENT_SMS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <label id="23">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">UPLOADS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="24">
+                        <label id="25">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">RIGHT_PARTY_CONTACT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="26">
+                        <label id="27">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">PTP</text-property>
+                        </label>
+                    </cell>
+                    <cell id="28">
+                        <label id="29">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">PROMISEAMOUNT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <label id="31">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">PROPOSED REMEDIAL PRODUCT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="32">
+                        <label id="33">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">PROPOSED CURE AMOUNT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="34">
+                        <label id="35">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">REGION</text-property>
+                        </label>
+                    </cell>
+                    <cell id="36">
+                        <label id="37">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">BRANCHNAME</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="38">
+                    <cell id="39">
+                        <data id="40">
+                            <property name="borderBottomStyle">none</property>
+                            <property name="borderLeftStyle">none</property>
+                            <property name="borderRightStyle">none</property>
+                            <property name="borderTopStyle">none</property>
+                            <property name="resultSetColumn">ACCOUNTNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="41">
+                        <data id="42">
+                            <property name="resultSetColumn">FULLNAME</property>
+                        </data>
+                    </cell>
+                    <cell id="43">
+                        <data id="44">
+                            <property name="resultSetColumn">TEAM</property>
+                        </data>
+                    </cell>
+                    <cell id="45">
+                        <data id="46">
+                            <property name="resultSetColumn">OUTGOING_CALL</property>
+                        </data>
+                    </cell>
+                    <cell id="47">
+                        <data id="48">
+                            <property name="resultSetColumn">INCOMING_CALL</property>
+                        </data>
+                    </cell>
+                    <cell id="49">
+                        <data id="50">
+                            <property name="resultSetColumn">VISITED_CUSTOMER</property>
+                        </data>
+                    </cell>
+                    <cell id="51">
+                        <data id="52">
+                            <property name="resultSetColumn">SENT_SMS</property>
+                        </data>
+                    </cell>
+                    <cell id="53">
+                        <data id="54">
+                            <property name="resultSetColumn">UPLOADS</property>
+                        </data>
+                    </cell>
+                    <cell id="55">
+                        <data id="56">
+                            <property name="resultSetColumn">RIGHT_PARTY_CONTACT</property>
+                        </data>
+                    </cell>
+                    <cell id="57">
+                        <data id="58">
+                            <property name="resultSetColumn">PTP</property>
+                        </data>
+                    </cell>
+                    <cell id="59">
+                        <data id="60">
+                            <property name="resultSetColumn">PROMISEAMOUNT</property>
+                        </data>
+                    </cell>
+                    <cell id="61">
+                        <data id="62">
+                            <property name="resultSetColumn">RESTRUCTURE</property>
+                        </data>
+                    </cell>
+                    <cell id="63">
+                        <data id="64">
+                            <property name="resultSetColumn">RESTRUCTUREAMOUNT</property>
+                        </data>
+                    </cell>
+                    <cell id="65">
+                        <data id="66">
+                            <property name="resultSetColumn">REGION</property>
+                        </data>
+                    </cell>
+                    <cell id="67">
+                        <data id="68">
+                            <property name="resultSetColumn">BRANCHNAME</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="69">
+                    <cell id="70"/>
+                    <cell id="71"/>
+                    <cell id="72"/>
+                    <cell id="73"/>
+                    <cell id="74"/>
+                    <cell id="75"/>
+                    <cell id="76"/>
+                    <cell id="77"/>
+                    <cell id="78"/>
+                    <cell id="79"/>
+                    <cell id="80"/>
+                    <cell id="81"/>
+                    <cell id="82"/>
+                    <cell id="83"/>
+                    <cell id="84"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

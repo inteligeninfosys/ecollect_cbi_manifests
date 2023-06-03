@@ -1,0 +1,30 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: ecol-config
+  namespace: ecol
+data:
+  CONNECTIONSTRING: copkdrdutil2-scan.co-opbank.co.ke:1560/ECOLECTTST
+  DB_DATABASE: ECOLECTTST
+  DB_PORT: '1560'
+  DB_HOST: dbexternal-svc.ecol.endpoints.cluster.local
+  REDISSVC: redis-svc.ecol.svc.cluster.local
+  REDISPORT: '6379'
+  NODEAPIURL: nodeapis-svc.ecol.svc.cluster.local
+  URL: ecollectapis-svc.ecol.svc.cluster.local
+  MINIO_ENDPOINT: '157.245.253.243'
+  MINIO_PORT: '9005'
+  FILEPATH: "/app/docxletters/demands/"
+  IMAGEPATH: '/app/docxletters/routes/'
+  SENDEMAILURL: 'http://172.16.204.72:8005/ipfcancellation/email'
+  SMTPSERVER: 'smtp.gmail.com'
+  SMTPPORT: '587'
+  footerfirst: 'Directors: John Murugu (Chairman), Dr. Gideon Muriuki (Group M.D & CEO), M. Malonza (Vice Chairman), '
+  footersecond: 'J. Sitienei, B. Simiyu, P. Githendu, W. Ongoro, R. Kimanthi, W. Mwambia, W. Welton (Mrs), M. Karangatha (Mrs), L. Karissa, G. Mburia'
+  footersecond: 'Directors: John Murugu (Chairman), Dr. Gideon Muriuki (Group M.D & CEO), M. Malonza (Vice Chairman), J. Sitienei, B. Simiyu, P. Githendu, W.Ongoro, R.Kimanthi, W. Mwambia, W. Welton (Mrs), M. Karangatha (Mrs), L. Karissa, G. Mburia'
+  MONGODB: 'mongodb://localhost/mongorest'
+  FROM: 'ecollect@co-opbank.co.ke'
+  TO: 'ecollect@co-opbank.co.ke'
+  SERVERURL: 'http://localhost:9005'
+  RABBITMQ: 'amqp://localhost'
+  ELASTICSEARCH: 'http://localhost:9200/'

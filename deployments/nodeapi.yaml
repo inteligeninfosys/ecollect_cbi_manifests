@@ -1,0 +1,67 @@
+---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: nodeapis-route
+  namespace: ecol
+  labels:
+    app: nodeapis
+spec:
+  host: nodeapi-ecol.apps.ocpdev.co-opbank.co.ke
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  to:
+    kind: Service
+    name: nodeapis-svc
+  port:
+    targetPort: 6001-tcp
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeapis-svc
+spec:
+  selector:
+    app: nodeapis
+  ports:
+    - protocol: TCP
+      name: 6001-tcp
+      port: 6001
+      targetPort: 6001
+
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nodeapis
+  namespace: ecol
+  labels:
+    app: nodeapis
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nodeapis
+  template:
+    metadata:
+      labels:
+        app: nodeapis
+    spec:
+      containers:
+      - name: nodeapis
+        image: docker.io/migutak/oraclenode-apis-lb4:6.4
+        envFrom:
+          - configMapRef:
+              name: ecol-config
+          - secretRef:
+                name: ecol-secrets
+        ports:
+        - containerPort: 6001
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: "500m"
+          limits:
+            memory: "4Gi"
+            cpu: "500m"

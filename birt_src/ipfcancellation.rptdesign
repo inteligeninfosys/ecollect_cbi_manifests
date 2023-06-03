@@ -1,0 +1,1405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.9.0.v201905231911</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">java:comp/env/jdbc/ecollect</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">ACCNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <text-property name="heading">ACCNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUSTNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <text-property name="heading">CUSTNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CUSTNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CUSTNAME</text-property>
+                    <text-property name="heading">CUSTNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">NATIONID</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">NATIONID</text-property>
+                    <text-property name="heading">NATIONID</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PRODUCTCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PRODUCTCODE</text-property>
+                    <text-property name="heading">PRODUCTCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SECTION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SECTION</text-property>
+                    <text-property name="heading">SECTION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">OUSTBALANCE</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">OUSTBALANCE</text-property>
+                    <text-property name="heading">OUSTBALANCE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ARREARSAMOUNT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">ARREARSAMOUNT</text-property>
+                    <text-property name="heading">ARREARSAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DAYSINARR</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">DAYSINARR</text-property>
+                    <text-property name="heading">DAYSINARR</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SCHEDULEAMOUNT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">SCHEDULEAMOUNT</text-property>
+                    <text-property name="heading">SCHEDULEAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SCHEDULEDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SCHEDULEDATE</text-property>
+                    <text-property name="heading">SCHEDULEDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ORIGDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ORIGDATE</text-property>
+                    <text-property name="heading">ORIGDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">AROCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">AROCODE</text-property>
+                    <text-property name="heading">AROCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RROCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RROCODE</text-property>
+                    <text-property name="heading">RROCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">POLICYNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">POLICYNUMBER</text-property>
+                    <text-property name="heading">POLICYNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">INSURANCE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">INSURANCE</text-property>
+                    <text-property name="heading">INSURANCE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BROKER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BROKER</text-property>
+                    <text-property name="heading">BROKER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">STATUS</text-property>
+                    <text-property name="heading">STATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STAGEDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">STAGEDATE</text-property>
+                    <text-property name="heading">STAGEDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CANCELLATIONDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CANCELLATIONDATE</text-property>
+                    <text-property name="heading">CANCELLATIONDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REINSTATEMENTDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REINSTATEMENTDATE</text-property>
+                    <text-property name="heading">REINSTATEMENTDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PAYMENTDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PAYMENTDATE</text-property>
+                    <text-property name="heading">PAYMENTDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">WRITEOFFAMOUNT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">WRITEOFFAMOUNT</text-property>
+                    <text-property name="heading">WRITEOFFAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CASENUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CASENUMBER</text-property>
+                    <text-property name="heading">CASENUMBER</text-property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">ACCNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CUSTNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CUSTNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">NATIONID</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">PRODUCTCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">SECTION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">OUSTBALANCE</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">ARREARSAMOUNT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">DAYSINARR</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">SCHEDULEAMOUNT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">SCHEDULEDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">ORIGDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">AROCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">RROCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">POLICYNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">INSURANCE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">BROKER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">STATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">STAGEDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">CANCELLATIONDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">REINSTATEMENTDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">PAYMENTDATE</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">WRITEOFFAMOUNT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">CASENUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">ACCNUMBER</property>
+                    <property name="nativeName">ACCNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CUSTNUMBER</property>
+                    <property name="nativeName">CUSTNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CUSTNAME</property>
+                    <property name="nativeName">CUSTNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">NATIONID</property>
+                    <property name="nativeName">NATIONID</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">PRODUCTCODE</property>
+                    <property name="nativeName">PRODUCTCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">SECTION</property>
+                    <property name="nativeName">SECTION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">OUSTBALANCE</property>
+                    <property name="nativeName">OUSTBALANCE</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">ARREARSAMOUNT</property>
+                    <property name="nativeName">ARREARSAMOUNT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">DAYSINARR</property>
+                    <property name="nativeName">DAYSINARR</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">SCHEDULEAMOUNT</property>
+                    <property name="nativeName">SCHEDULEAMOUNT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">SCHEDULEDATE</property>
+                    <property name="nativeName">SCHEDULEDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">ORIGDATE</property>
+                    <property name="nativeName">ORIGDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">AROCODE</property>
+                    <property name="nativeName">AROCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">RROCODE</property>
+                    <property name="nativeName">RROCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">POLICYNUMBER</property>
+                    <property name="nativeName">POLICYNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">INSURANCE</property>
+                    <property name="nativeName">INSURANCE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">BROKER</property>
+                    <property name="nativeName">BROKER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">STATUS</property>
+                    <property name="nativeName">STATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">STAGEDATE</property>
+                    <property name="nativeName">STAGEDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">CANCELLATIONDATE</property>
+                    <property name="nativeName">CANCELLATIONDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">REINSTATEMENTDATE</property>
+                    <property name="nativeName">REINSTATEMENTDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">PAYMENTDATE</property>
+                    <property name="nativeName">PAYMENTDATE</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">WRITEOFFAMOUNT</property>
+                    <property name="nativeName">WRITEOFFAMOUNT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">CASENUMBER</property>
+                    <property name="nativeName">CASENUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from tbl_ipf where daysinarr > 7]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ACCNUMBER</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ACCNUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ACCNUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CUSTNUMBER</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CUSTNUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CUSTNUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CUSTNAME</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CUSTNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CUSTNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>NATIONID</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>NATIONID</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>NATIONID</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PRODUCTCODE</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>PRODUCTCODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PRODUCTCODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SECTION</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SECTION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SECTION</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>OUSTBALANCE</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>126</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>OUSTBALANCE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>OUSTBALANCE</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ARREARSAMOUNT</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>126</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ARREARSAMOUNT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ARREARSAMOUNT</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DAYSINARR</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>38</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DAYSINARR</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DAYSINARR</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SCHEDULEAMOUNT</design:name>
+              <design:position>10</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>126</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SCHEDULEAMOUNT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SCHEDULEAMOUNT</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>SCHEDULEDATE</design:name>
+              <design:position>11</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>SCHEDULEDATE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>SCHEDULEDATE</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>ORIGDATE</design:name>
+              <design:position>12</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>ORIGDATE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>ORIGDATE</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>AROCODE</design:name>
+              <design:position>13</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>AROCODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>AROCODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>RROCODE</design:name>
+              <design:position>14</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>RROCODE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>RROCODE</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>POLICYNUMBER</design:name>
+              <design:position>15</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>POLICYNUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>POLICYNUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>INSURANCE</design:name>
+              <design:position>16</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>INSURANCE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>INSURANCE</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>BROKER</design:name>
+              <design:position>17</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>BROKER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BROKER</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STATUS</design:name>
+              <design:position>18</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>STATUS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STATUS</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>STAGEDATE</design:name>
+              <design:position>19</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>6</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>STAGEDATE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>STAGEDATE</design:label>
+            <design:formattingHints>
+              <design:displaySize>11</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CANCELLATIONDATE</design:name>
+              <design:position>20</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CANCELLATIONDATE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CANCELLATIONDATE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>REINSTATEMENTDATE</design:name>
+              <design:position>21</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>REINSTATEMENTDATE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>REINSTATEMENTDATE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>PAYMENTDATE</design:name>
+              <design:position>22</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>93</design:nativeDataTypeCode>
+            <design:precision>0</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>PAYMENTDATE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>PAYMENTDATE</design:label>
+            <design:formattingHints>
+              <design:displaySize>7</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>WRITEOFFAMOUNT</design:name>
+              <design:position>23</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>2</design:nativeDataTypeCode>
+            <design:precision>126</design:precision>
+            <design:scale>-127</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>WRITEOFFAMOUNT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>WRITEOFFAMOUNT</design:label>
+            <design:formattingHints>
+              <design:displaySize>39</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CASENUMBER</design:name>
+              <design:position>24</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>100</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CASENUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CASENUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>100</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="136">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">large</property>
+            <text-property name="text">IPF Cancellation Status Report</text-property>
+        </label>
+        <table id="6">
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">ACCNUMBER</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ACCNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUSTNUMBER</property>
+                    <text-property name="displayName">CUSTNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CUSTNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CUSTNAME</property>
+                    <text-property name="displayName">CUSTNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CUSTNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PRODUCTCODE</property>
+                    <text-property name="displayName">PRODUCTCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PRODUCTCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OUSTBALANCE</property>
+                    <text-property name="displayName">OUSTBALANCE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OUSTBALANCE"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">ARREARSAMOUNT</property>
+                    <text-property name="displayName">ARREARSAMOUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ARREARSAMOUNT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">DAYSINARR</property>
+                    <text-property name="displayName">DAYSINARR</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DAYSINARR"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SCHEDULEAMOUNT</property>
+                    <text-property name="displayName">SCHEDULEAMOUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SCHEDULEAMOUNT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+                <structure>
+                    <property name="name">SCHEDULEDATE</property>
+                    <text-property name="displayName">SCHEDULEDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["SCHEDULEDATE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ORIGDATE</property>
+                    <text-property name="displayName">ORIGDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ORIGDATE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">AROCODE</property>
+                    <text-property name="displayName">AROCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["AROCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RROCODE</property>
+                    <text-property name="displayName">RROCODE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RROCODE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">POLICYNUMBER</property>
+                    <text-property name="displayName">POLICYNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["POLICYNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">INSURANCE</property>
+                    <text-property name="displayName">INSURANCE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["INSURANCE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BROKER</property>
+                    <text-property name="displayName">BROKER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["BROKER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STATUS</property>
+                    <text-property name="displayName">STATUS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["STATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">STAGEDATE</property>
+                    <text-property name="displayName">STAGEDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["STAGEDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">CANCELLATIONDATE</property>
+                    <text-property name="displayName">CANCELLATIONDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CANCELLATIONDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">REINSTATEMENTDATE</property>
+                    <text-property name="displayName">REINSTATEMENTDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REINSTATEMENTDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">PAYMENTDATE</property>
+                    <text-property name="displayName">PAYMENTDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PAYMENTDATE"]</expression>
+                    <property name="dataType">date-time</property>
+                </structure>
+                <structure>
+                    <property name="name">WRITEOFFAMOUNT</property>
+                    <text-property name="displayName">WRITEOFFAMOUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["WRITEOFFAMOUNT"]</expression>
+                    <property name="dataType">decimal</property>
+                </structure>
+            </list-property>
+            <column id="115"/>
+            <column id="116"/>
+            <column id="117"/>
+            <column id="118"/>
+            <column id="119"/>
+            <column id="120"/>
+            <column id="121"/>
+            <column id="122"/>
+            <column id="123"/>
+            <column id="124"/>
+            <column id="125"/>
+            <column id="126"/>
+            <column id="127"/>
+            <column id="128"/>
+            <column id="129"/>
+            <column id="130"/>
+            <column id="131"/>
+            <column id="132"/>
+            <column id="133"/>
+            <column id="134"/>
+            <column id="135"/>
+            <header>
+                <row id="7">
+                    <cell id="8">
+                        <label id="9">
+                            <text-property name="text">ACCNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="10">
+                        <label id="11">
+                            <text-property name="text">CUSTNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <label id="13">
+                            <text-property name="text">CUSTNAME</text-property>
+                        </label>
+                    </cell>
+                    <cell id="14">
+                        <label id="15">
+                            <text-property name="text">PRODUCTCODE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="16">
+                        <label id="17">
+                            <text-property name="text">OUSTBALANCE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <label id="19">
+                            <text-property name="text">ARREARSAMOUNT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <label id="21">
+                            <text-property name="text">DAYSINARR</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <label id="23">
+                            <text-property name="text">SCHEDULEAMOUNT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="24">
+                        <label id="25">
+                            <text-property name="text">SCHEDULEDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="26">
+                        <label id="27">
+                            <text-property name="text">ORIGDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="28">
+                        <label id="29">
+                            <text-property name="text">AROCODE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <label id="31">
+                            <text-property name="text">RROCODE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="32">
+                        <label id="33">
+                            <text-property name="text">POLICYNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="34">
+                        <label id="35">
+                            <text-property name="text">INSURANCE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="36">
+                        <label id="37">
+                            <text-property name="text">BROKER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="38">
+                        <label id="39">
+                            <text-property name="text">STATUS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="40">
+                        <label id="41">
+                            <text-property name="text">STAGEDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="42">
+                        <label id="43">
+                            <text-property name="text">CANCELLATIONDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="44">
+                        <label id="45">
+                            <text-property name="text">REINSTATEMENTDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="46">
+                        <label id="47">
+                            <text-property name="text">PAYMENTDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="48">
+                        <label id="49">
+                            <text-property name="text">WRITEOFFAMOUNT</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="50">
+                    <cell id="51">
+                        <data id="52">
+                            <property name="resultSetColumn">ACCNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="53">
+                        <data id="54">
+                            <property name="resultSetColumn">CUSTNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="55">
+                        <data id="56">
+                            <property name="resultSetColumn">CUSTNAME</property>
+                        </data>
+                    </cell>
+                    <cell id="57">
+                        <data id="58">
+                            <property name="resultSetColumn">PRODUCTCODE</property>
+                        </data>
+                    </cell>
+                    <cell id="59">
+                        <data id="60">
+                            <property name="resultSetColumn">OUSTBALANCE</property>
+                        </data>
+                    </cell>
+                    <cell id="61">
+                        <data id="62">
+                            <property name="resultSetColumn">ARREARSAMOUNT</property>
+                        </data>
+                    </cell>
+                    <cell id="63">
+                        <data id="64">
+                            <property name="resultSetColumn">DAYSINARR</property>
+                        </data>
+                    </cell>
+                    <cell id="65">
+                        <data id="66">
+                            <property name="resultSetColumn">SCHEDULEAMOUNT</property>
+                        </data>
+                    </cell>
+                    <cell id="67">
+                        <data id="68">
+                            <property name="resultSetColumn">SCHEDULEDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="69">
+                        <data id="70">
+                            <property name="resultSetColumn">ORIGDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="71">
+                        <data id="72">
+                            <property name="resultSetColumn">AROCODE</property>
+                        </data>
+                    </cell>
+                    <cell id="73">
+                        <data id="74">
+                            <property name="resultSetColumn">RROCODE</property>
+                        </data>
+                    </cell>
+                    <cell id="75">
+                        <data id="76">
+                            <property name="resultSetColumn">POLICYNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="77">
+                        <data id="78">
+                            <property name="resultSetColumn">INSURANCE</property>
+                        </data>
+                    </cell>
+                    <cell id="79">
+                        <data id="80">
+                            <property name="resultSetColumn">BROKER</property>
+                        </data>
+                    </cell>
+                    <cell id="81">
+                        <data id="82">
+                            <property name="resultSetColumn">STATUS</property>
+                        </data>
+                    </cell>
+                    <cell id="83">
+                        <data id="84">
+                            <property name="resultSetColumn">STAGEDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="85">
+                        <data id="86">
+                            <property name="resultSetColumn">CANCELLATIONDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="87">
+                        <data id="88">
+                            <property name="resultSetColumn">REINSTATEMENTDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="89">
+                        <data id="90">
+                            <property name="resultSetColumn">PAYMENTDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="91">
+                        <data id="92">
+                            <property name="resultSetColumn">WRITEOFFAMOUNT</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="93">
+                    <cell id="94"/>
+                    <cell id="95"/>
+                    <cell id="96"/>
+                    <cell id="97"/>
+                    <cell id="98"/>
+                    <cell id="99"/>
+                    <cell id="100"/>
+                    <cell id="101"/>
+                    <cell id="102"/>
+                    <cell id="103"/>
+                    <cell id="104"/>
+                    <cell id="105"/>
+                    <cell id="106"/>
+                    <cell id="107"/>
+                    <cell id="108"/>
+                    <cell id="109"/>
+                    <cell id="110"/>
+                    <cell id="111"/>
+                    <cell id="112"/>
+                    <cell id="113"/>
+                    <cell id="114"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

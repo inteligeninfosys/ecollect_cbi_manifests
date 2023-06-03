@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: callscheduller-svc
+  namespace: ecol
+  label:
+    app: callscheduller
+spec:
+  selector:
+    app: callscheduller
+  ports:
+    - protocol: TCP
+      port: 9000
+      name: 9000-tcp
+      targetPort: 9000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: callscheduller
+  namespace: ecol
+  labels:
+    app: callscheduller
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: callscheduller
+  template:
+    metadata:
+      labels:
+        app: callscheduller
+    spec:
+      containers:
+      - name: callscheduller
+        image: docker.io/migutak/callscheduller:5.7.5
+        envFrom:
+          - configMapRef:
+              name: ecol-config
+          - secretRef:
+                name: ecol-secrets
+        ports:
+        - containerPort: 8004
+        resources:
+          requests:
+            memory: "1Gi"
+            cpu: '200m'
+          limits:
+            memory: "200Mi"
+            cpu: '200m'

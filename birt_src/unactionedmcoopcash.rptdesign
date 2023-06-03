@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="4">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.driver.OracleDriver</property>
+            <property name="odaJndiName">java:comp/env/jdbc/ecollect</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="5">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">LOANACCNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">LOANACCNUMBER</text-property>
+                    <text-property name="heading">LOANACCNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PHONENUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PHONENUMBER</text-property>
+                    <text-property name="heading">PHONENUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CLIENTNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CLIENTNAME</text-property>
+                    <text-property name="heading">CLIENTNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">IDNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">IDNUMBER</text-property>
+                    <text-property name="heading">IDNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ADDRESS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ADDRESS</text-property>
+                    <text-property name="heading">ADDRESS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EMPLOYER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EMPLOYER</text-property>
+                    <text-property name="heading">EMPLOYER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LOANAMOUNT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">LOANAMOUNT</text-property>
+                    <text-property name="heading">LOANAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATEOPEN</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DATEOPEN</text-property>
+                    <text-property name="heading">DATEOPEN</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LASTPAYMENTDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">LASTPAYMENTDATE</text-property>
+                    <text-property name="heading">LASTPAYMENTDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DUEDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DUEDATE</text-property>
+                    <text-property name="heading">DUEDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LOANSTATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">LOANSTATUS</text-property>
+                    <text-property name="heading">LOANSTATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ARREARS_CATEGORY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ARREARS_CATEGORY</text-property>
+                    <text-property name="heading">ARREARS_CATEGORY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REPAYMENTAMOUNT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REPAYMENTAMOUNT</text-property>
+                    <text-property name="heading">REPAYMENTAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REVIEWDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REVIEWDATE</text-property>
+                    <text-property name="heading">REVIEWDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ACTIONDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACTIONDATE</text-property>
+                    <text-property name="heading">ACTIONDATE</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">LOANACCNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">PHONENUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CLIENTNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">IDNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">ADDRESS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">EMPLOYER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">LOANAMOUNT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">DATEOPEN</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">LASTPAYMENTDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">DUEDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">LOANSTATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">ARREARS_CATEGORY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">REPAYMENTAMOUNT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">REVIEWDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">ACTIONDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">LOANACCNUMBER</property>
+                    <property name="nativeName">LOANACCNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">PHONENUMBER</property>
+                    <property name="nativeName">PHONENUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CLIENTNAME</property>
+                    <property name="nativeName">CLIENTNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">IDNUMBER</property>
+                    <property name="nativeName">IDNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">ADDRESS</property>
+                    <property name="nativeName">ADDRESS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">EMPLOYER</property>
+                    <property name="nativeName">EMPLOYER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">LOANAMOUNT</property>
+                    <property name="nativeName">LOANAMOUNT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">DATEOPEN</property>
+                    <property name="nativeName">DATEOPEN</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">LASTPAYMENTDATE</property>
+                    <property name="nativeName">LASTPAYMENTDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">DUEDATE</property>
+                    <property name="nativeName">DUEDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">LOANSTATUS</property>
+                    <property name="nativeName">LOANSTATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">ARREARS_CATEGORY</property>
+                    <property name="nativeName">ARREARS_CATEGORY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">REPAYMENTAMOUNT</property>
+                    <property name="nativeName">REPAYMENTAMOUNT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">REVIEWDATE</property>
+                    <property name="nativeName">REVIEWDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">ACTIONDATE</property>
+                    <property name="nativeName">ACTIONDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select s.loanaccnumber,phonenumber,clientname,idnumber,address,employer,loanamount,dateopen,lastpaymentdate, duedate, loanstatus, arrears_category, repaymentamount, reviewdate, actiondate from mcoopcash_stage s 
+left join 
+mcoopcash_static t on s.loanaccnumber=t.loanaccnumber
+]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="100">
+            <property name="fontWeight">bold</property>
+            <text-property name="text">Unactioned accounts - E-Credit</text-property>
+        </label>
+        <table id="6">
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">LOANACCNUMBER</property>
+                    <text-property name="displayName">LOANACCNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LOANACCNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PHONENUMBER</property>
+                    <text-property name="displayName">PHONENUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PHONENUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CLIENTNAME</property>
+                    <text-property name="displayName">CLIENTNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CLIENTNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">IDNUMBER</property>
+                    <text-property name="displayName">IDNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["IDNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ADDRESS</property>
+                    <text-property name="displayName">ADDRESS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ADDRESS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">EMPLOYER</property>
+                    <text-property name="displayName">EMPLOYER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["EMPLOYER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LOANAMOUNT</property>
+                    <text-property name="displayName">LOANAMOUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LOANAMOUNT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATEOPEN</property>
+                    <text-property name="displayName">DATEOPEN</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATEOPEN"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LASTPAYMENTDATE</property>
+                    <text-property name="displayName">LASTPAYMENTDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LASTPAYMENTDATE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DUEDATE</property>
+                    <text-property name="displayName">DUEDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DUEDATE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">LOANSTATUS</property>
+                    <text-property name="displayName">LOANSTATUS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["LOANSTATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ARREARS_CATEGORY</property>
+                    <text-property name="displayName">ARREARS_CATEGORY</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ARREARS_CATEGORY"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REPAYMENTAMOUNT</property>
+                    <text-property name="displayName">REPAYMENTAMOUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REPAYMENTAMOUNT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">REVIEWDATE</property>
+                    <text-property name="displayName">REVIEWDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["REVIEWDATE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ACTIONDATE</property>
+                    <text-property name="displayName">ACTIONDATE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ACTIONDATE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="85"/>
+            <column id="86"/>
+            <column id="87"/>
+            <column id="88"/>
+            <column id="89"/>
+            <column id="90"/>
+            <column id="91"/>
+            <column id="92"/>
+            <column id="93"/>
+            <column id="94"/>
+            <column id="95"/>
+            <column id="96"/>
+            <column id="97"/>
+            <column id="98"/>
+            <column id="99"/>
+            <header>
+                <row id="7">
+                    <cell id="8">
+                        <label id="9">
+                            <text-property name="text">LOANACCNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="10">
+                        <label id="11">
+                            <text-property name="text">PHONENUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="12">
+                        <label id="13">
+                            <text-property name="text">CLIENTNAME</text-property>
+                        </label>
+                    </cell>
+                    <cell id="14">
+                        <label id="15">
+                            <text-property name="text">IDNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="16">
+                        <label id="17">
+                            <text-property name="text">ADDRESS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="18">
+                        <label id="19">
+                            <text-property name="text">EMPLOYER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="20">
+                        <label id="21">
+                            <text-property name="text">LOANAMOUNT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="22">
+                        <label id="23">
+                            <text-property name="text">DATEOPEN</text-property>
+                        </label>
+                    </cell>
+                    <cell id="24">
+                        <label id="25">
+                            <text-property name="text">LASTPAYMENTDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="26">
+                        <label id="27">
+                            <text-property name="text">DUEDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="28">
+                        <label id="29">
+                            <text-property name="text">LOANSTATUS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="30">
+                        <label id="31">
+                            <text-property name="text">ARREARS_CATEGORY</text-property>
+                        </label>
+                    </cell>
+                    <cell id="32">
+                        <label id="33">
+                            <text-property name="text">REPAYMENTAMOUNT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="34">
+                        <label id="35">
+                            <text-property name="text">REVIEWDATE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="36">
+                        <label id="37">
+                            <text-property name="text">ACTIONDATE</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="38">
+                    <cell id="39">
+                        <data id="40">
+                            <property name="resultSetColumn">LOANACCNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="41">
+                        <data id="42">
+                            <property name="resultSetColumn">PHONENUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="43">
+                        <data id="44">
+                            <property name="resultSetColumn">CLIENTNAME</property>
+                        </data>
+                    </cell>
+                    <cell id="45">
+                        <data id="46">
+                            <property name="resultSetColumn">IDNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="47">
+                        <data id="48">
+                            <property name="resultSetColumn">ADDRESS</property>
+                        </data>
+                    </cell>
+                    <cell id="49">
+                        <data id="50">
+                            <property name="resultSetColumn">EMPLOYER</property>
+                        </data>
+                    </cell>
+                    <cell id="51">
+                        <data id="52">
+                            <property name="resultSetColumn">LOANAMOUNT</property>
+                        </data>
+                    </cell>
+                    <cell id="53">
+                        <data id="54">
+                            <property name="resultSetColumn">DATEOPEN</property>
+                        </data>
+                    </cell>
+                    <cell id="55">
+                        <data id="56">
+                            <property name="resultSetColumn">LASTPAYMENTDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="57">
+                        <data id="58">
+                            <property name="resultSetColumn">DUEDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="59">
+                        <data id="60">
+                            <property name="resultSetColumn">LOANSTATUS</property>
+                        </data>
+                    </cell>
+                    <cell id="61">
+                        <data id="62">
+                            <property name="resultSetColumn">ARREARS_CATEGORY</property>
+                        </data>
+                    </cell>
+                    <cell id="63">
+                        <data id="64">
+                            <property name="resultSetColumn">REPAYMENTAMOUNT</property>
+                        </data>
+                    </cell>
+                    <cell id="65">
+                        <data id="66">
+                            <property name="resultSetColumn">REVIEWDATE</property>
+                        </data>
+                    </cell>
+                    <cell id="67">
+                        <data id="68">
+                            <property name="resultSetColumn">ACTIONDATE</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="69">
+                    <cell id="70"/>
+                    <cell id="71"/>
+                    <cell id="72"/>
+                    <cell id="73"/>
+                    <cell id="74"/>
+                    <cell id="75"/>
+                    <cell id="76"/>
+                    <cell id="77"/>
+                    <cell id="78"/>
+                    <cell id="79"/>
+                    <cell id="80"/>
+                    <cell id="81"/>
+                    <cell id="82"/>
+                    <cell id="83"/>
+                    <cell id="84"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

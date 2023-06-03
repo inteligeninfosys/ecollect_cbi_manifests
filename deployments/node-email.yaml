@@ -1,0 +1,51 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-email-svc
+  namespace: ecol
+  label:
+    app: node-email
+spec:
+  selector:
+    app: node-email
+  ports:
+    - protocol: TCP
+      port: 8005
+      name: 8005-tcp
+      targetPort: 8005
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-email
+  namespace: ecol
+  labels:
+    app: node-email
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: node-email
+  template:
+    metadata:
+      labels:
+        app: node-email
+    spec:
+      containers:
+      - name: node-email
+        image: docker.io/migutak/node-email:4.7 
+        envFrom:
+          - configMapRef:
+              name: ecol-config
+          - secretRef:
+                name: ecol-secrets
+        ports:
+        - containerPort: 8005
+        resources:
+          requests:
+            memory: "2Gi"
+            cpu: 1
+          limits:
+            memory: "4Gi"
+            cpu: 2

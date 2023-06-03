@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: dbexternal-svc
+  namespace: ecol
+spec:
+  type: ExternalName
+  externalName: copkdrdutil2-scan.co-opbank.co.ke
+selector: {}

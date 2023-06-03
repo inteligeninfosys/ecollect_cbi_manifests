@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <list-property name="propertyBindings">
+        <structure>
+            <property name="name">queryText</property>
+            <property name="id">249</property>
+        </structure>
+        <structure>
+            <property name="name">queryTimeOut</property>
+            <property name="id">249</property>
+        </structure>
+        <structure>
+            <property name="name">rowFetchSize</property>
+            <property name="id">249</property>
+        </structure>
+    </list-property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/blank_report.gif</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">72</property>
+    <list-property name="cssStyleSheets">
+        <structure>
+            <property name="fileName">slateGray.css</property>
+            <property name="useExternalCss">false</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="248">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaJndiName">java:comp/env/jdbc/ecollect</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="249">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">SPCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SPCODE</text-property>
+                    <text-property name="heading">SPCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SPTITLE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SPTITLE</text-property>
+                    <text-property name="heading">SPTITLE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ADDRESS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ADDRESS</text-property>
+                    <text-property name="heading">ADDRESS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CONTACTPERSON</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CONTACTPERSON</text-property>
+                    <text-property name="heading">CONTACTPERSON</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TELEPHONE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">TELEPHONE</text-property>
+                    <text-property name="heading">TELEPHONE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EMAIL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EMAIL</text-property>
+                    <text-property name="heading">EMAIL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ACCNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACCNUMBER</text-property>
+                    <text-property name="heading">ACCNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">STARTDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">STARTDATE</text-property>
+                    <text-property name="heading">STARTDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ENDOFINDEMNITY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ENDOFINDEMNITY</text-property>
+                    <text-property name="heading">ENDOFINDEMNITY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COVERAGE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COVERAGE</text-property>
+                    <text-property name="heading">COVERAGE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATEADD</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DATEADD</text-property>
+                    <text-property name="heading">DATEADD</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">SPCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">SPTITLE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">ADDRESS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">CONTACTPERSON</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">TELEPHONE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">EMAIL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">ACCNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">STARTDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">ENDOFINDEMNITY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">COVERAGE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">DATEADD</property>
+                        <property name="dataType">date-time</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">SPCODE</property>
+                    <property name="nativeName">SPCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">SPTITLE</property>
+                    <property name="nativeName">SPTITLE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">ADDRESS</property>
+                    <property name="nativeName">ADDRESS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">CONTACTPERSON</property>
+                    <property name="nativeName">CONTACTPERSON</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">TELEPHONE</property>
+                    <property name="nativeName">TELEPHONE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">EMAIL</property>
+                    <property name="nativeName">EMAIL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">ACCNUMBER</property>
+                    <property name="nativeName">ACCNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">STARTDATE</property>
+                    <property name="nativeName">STARTDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">ENDOFINDEMNITY</property>
+                    <property name="nativeName">ENDOFINDEMNITY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">COVERAGE</property>
+                    <property name="nativeName">COVERAGE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">DATEADD</property>
+                    <property name="nativeName">DATEADD</property>
+                    <property name="dataType">date-time</property>
+                    <property name="nativeDataType">93</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select * from sptypes where endofindemnity<sysdate]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <property name="orientation">auto</property>
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="4">
+            <property name="height">3.361111111111111in</property>
+            <property name="width">10.555555555555555in</property>
+            <column id="5">
+                <property name="width">3.7222222222222223in</property>
+            </column>
+            <column id="6">
+                <property name="width">6.513888888888889in</property>
+            </column>
+            <row id="7">
+                <cell id="8">
+                    <image id="49">
+                        <property name="height">69px</property>
+                        <property name="width">172px</property>
+                        <property name="source">embed</property>
+                        <property name="imageName">coop_logo.jpeg</property>
+                    </image>
+                </cell>
+                <cell id="9">
+                    <label id="50">
+                        <property name="fontSize">xx-large</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="color">green</property>
+                        <text-property name="text">Expired Indemnity</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="10">
+                <property name="height">1.5833333333333333in</property>
+                <cell id="11">
+                    <property name="colSpan">2</property>
+                    <property name="rowSpan">1</property>
+                    <table id="310">
+                        <property name="dataSet">Data Set</property>
+                        <list-property name="boundDataColumns">
+                            <structure>
+                                <property name="name">SPCODE</property>
+                                <text-property name="displayName">SPCODE</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SPCODE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">SPTITLE</property>
+                                <text-property name="displayName">SPTITLE</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["SPTITLE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ADDRESS</property>
+                                <text-property name="displayName">ADDRESS</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ADDRESS"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">CONTACTPERSON</property>
+                                <text-property name="displayName">CONTACTPERSON</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["CONTACTPERSON"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">TELEPHONE</property>
+                                <text-property name="displayName">TELEPHONE</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["TELEPHONE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">EMAIL</property>
+                                <text-property name="displayName">EMAIL</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["EMAIL"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ACCNUMBER</property>
+                                <text-property name="displayName">ACCNUMBER</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ACCNUMBER"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">STARTDATE</property>
+                                <text-property name="displayName">STARTDATE</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["STARTDATE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">ENDOFINDEMNITY</property>
+                                <text-property name="displayName">ENDOFINDEMNITY</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["ENDOFINDEMNITY"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">COVERAGE</property>
+                                <text-property name="displayName">COVERAGE</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["COVERAGE"]</expression>
+                                <property name="dataType">string</property>
+                            </structure>
+                            <structure>
+                                <property name="name">DATEADD</property>
+                                <text-property name="displayName">DATEADD</text-property>
+                                <expression name="expression" type="javascript">dataSetRow["DATEADD"]</expression>
+                                <property name="dataType">date-time</property>
+                            </structure>
+                        </list-property>
+                        <column id="369"/>
+                        <column id="370"/>
+                        <column id="371"/>
+                        <column id="372"/>
+                        <column id="373"/>
+                        <column id="374"/>
+                        <column id="375"/>
+                        <column id="376"/>
+                        <column id="377"/>
+                        <column id="378"/>
+                        <column id="379"/>
+                        <header>
+                            <row id="311">
+                                <property name="textAlign">left</property>
+                                <cell id="312">
+                                    <label id="313">
+                                        <text-property name="text">SPCODE</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="314">
+                                    <label id="315">
+                                        <text-property name="text">SPTITLE</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="316">
+                                    <label id="317">
+                                        <text-property name="text">ADDRESS</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="318">
+                                    <label id="319">
+                                        <text-property name="text">CONTACTPERSON</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="320">
+                                    <label id="321">
+                                        <text-property name="text">TELEPHONE</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="322">
+                                    <label id="323">
+                                        <text-property name="text">EMAIL</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="324">
+                                    <label id="325">
+                                        <text-property name="text">ACCNUMBER</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="326">
+                                    <label id="327">
+                                        <text-property name="text">STARTDATE</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="328">
+                                    <label id="329">
+                                        <text-property name="text">ENDOFINDEMNITY</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="330">
+                                    <label id="331">
+                                        <text-property name="text">COVERAGE</text-property>
+                                    </label>
+                                </cell>
+                                <cell id="332">
+                                    <label id="333">
+                                        <text-property name="text">DATEADD</text-property>
+                                    </label>
+                                </cell>
+                            </row>
+                        </header>
+                        <detail>
+                            <row id="334">
+                                <cell id="335">
+                                    <data id="336">
+                                        <property name="resultSetColumn">SPCODE</property>
+                                    </data>
+                                </cell>
+                                <cell id="337">
+                                    <data id="338">
+                                        <property name="resultSetColumn">SPTITLE</property>
+                                    </data>
+                                </cell>
+                                <cell id="339">
+                                    <data id="340">
+                                        <property name="resultSetColumn">ADDRESS</property>
+                                    </data>
+                                </cell>
+                                <cell id="341">
+                                    <data id="342">
+                                        <property name="resultSetColumn">CONTACTPERSON</property>
+                                    </data>
+                                </cell>
+                                <cell id="343">
+                                    <data id="344">
+                                        <property name="resultSetColumn">TELEPHONE</property>
+                                    </data>
+                                </cell>
+                                <cell id="345">
+                                    <data id="346">
+                                        <property name="resultSetColumn">EMAIL</property>
+                                    </data>
+                                </cell>
+                                <cell id="347">
+                                    <data id="348">
+                                        <property name="resultSetColumn">ACCNUMBER</property>
+                                    </data>
+                                </cell>
+                                <cell id="349">
+                                    <data id="350">
+                                        <property name="resultSetColumn">STARTDATE</property>
+                                    </data>
+                                </cell>
+                                <cell id="351">
+                                    <data id="352">
+                                        <property name="resultSetColumn">ENDOFINDEMNITY</property>
+                                    </data>
+                                </cell>
+                                <cell id="353">
+                                    <data id="354">
+                                        <property name="resultSetColumn">COVERAGE</property>
+                                    </data>
+                                </cell>
+                                <cell id="355">
+                                    <data id="356">
+                                        <property name="resultSetColumn">DATEADD</property>
+                                    </data>
+                                </cell>
+                            </row>
+                        </detail>
+                        <footer>
+                            <row id="357">
+                                <cell id="358"/>
+                                <cell id="359"/>
+                                <cell id="360"/>
+                                <cell id="361"/>
+                                <cell id="362"/>
+                                <cell id="363"/>
+                                <cell id="364"/>
+                                <cell id="365"/>
+                                <cell id="366"/>
+                                <cell id="367"/>
+                                <cell id="368"/>
+                            </row>
+                        </footer>
+                    </table>
+                </cell>
+            </row>
+        </grid>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">coop_logo.jpeg</property>
+            <property name="type">image/jpeg</property>
+            <property name="data">
+                /9j/4AAQSkZJRgABAQAAAQABAAD/4gKgSUNDX1BST0ZJTEUAAQEAAAKQbGNtcwQwAABtbnRyUkdCIFhZ
+                WiAH3gAMAAoACQAvAAFhY3NwQVBQTAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA9tYAAQAAAADTLWxj
+                bXMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAtkZXNjAAABCAAA
+                ADhjcHJ0AAABQAAAAE53dHB0AAABkAAAABRjaGFkAAABpAAAACxyWFlaAAAB0AAAABRiWFlaAAAB5AAA
+                ABRnWFlaAAAB+AAAABRyVFJDAAACDAAAACBnVFJDAAACLAAAACBiVFJDAAACTAAAACBjaHJtAAACbAAA
+                ACRtbHVjAAAAAAAAAAEAAAAMZW5VUwAAABwAAAAcAHMAUgBHAEIAIABiAHUAaQBsAHQALQBpAG4AAG1s
+                dWMAAAAAAAAAAQAAAAxlblVTAAAAMgAAABwATgBvACAAYwBvAHAAeQByAGkAZwBoAHQALAAgAHUAcwBl
+                ACAAZgByAGUAZQBsAHkAAAAAWFlaIAAAAAAAAPbWAAEAAAAA0y1zZjMyAAAAAAABDEoAAAXj///zKgAA
+                B5sAAP2H///7ov///aMAAAPYAADAlFhZWiAAAAAAAABvlAAAOO4AAAOQWFlaIAAAAAAAACSdAAAPgwAA
+                tr5YWVogAAAAAAAAYqUAALeQAAAY3nBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbcGFyYQAA
+                AAAAAwAAAAJmZgAA8qcAAA1ZAAAT0AAACltwYXJhAAAAAAADAAAAAmZmAADypwAADVkAABPQAAAKW2No
+                cm0AAAAAAAMAAAAAo9cAAFR7AABMzQAAmZoAACZmAAAPXP/bAEMACAYGBwYFCAcHBwkJCAoMFA0MCwsM
+                GRITDxQdGh8eHRocHCAkLicgIiwjHBwoNyksMDE0NDQfJzk9ODI8LjM0Mv/bAEMBCQkJDAsMGA0NGDIh
+                HCEyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMjIyMv/AABEIASwB
+                LAMBIgACEQEDEQH/xAAcAAEAAwEAAwEAAAAAAAAAAAAABgcIBQEDBAL/xABPEAABAwICAwkMBggFAgcA
+                AAAAAQIDBAUGEQcSIRYXMUFRVFWRlBM2N2Fxc3SBk7PB0hQicnWSshUjMjVCUrHRJFaCoeI0YiUzZaLh
+                8PH/xAAaAQEAAwEBAQAAAAAAAAAAAAAAAQIEAwUG/8QAKBEBAAEEAQIFBQEBAAAAAAAAAAECAwQREhNS
+                FCEyM1EiMUFhcSNC/9oADAMBAAIRAxEAPwCtwAXfNgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAABIsKYMumLqt0dE1I6eNU7rUyZ6jPF418SevLhOJR0stdW09JAmc08jYmJyucqIn+6mrLBZa
+                XD1lprZRtRI4WZK7La93G5fGq7SJa8ax1Z3P2Qq36F8PU0TUrJ6usly+suukbfUibU61Pt3ocI80qO0O
+                J4CNvTjHtx/yge9BhHmlR2hw3oMI80qO0OJ4CNynoW+1A96DCPNKjtDhvQYR5pUdocTwDcnQt9qB70GE
+                eaVHaHDegwjzSo7Q4ngG5Ohb7UD3ocI80qO0OM+VsLaevqIWZ6kcrmJnw5Iqohr5eAypBa5L3jL9GRLk
+                6prXR62X7Kay5r6kzX1Eww5lqmOMUx93QwfgK6YvkWSHKmoWLlJVSIqpnyNT+JepE41TYWtRaGcM08SJ
+                UvrKqTjc6XUTPxI1E/qpOrbbqa1W6Cho4kjp4GIxjU5E4/Gq8KrxqfWNtFrEopj6o3KCb0GEeaVHaHDe
+                gwjzSo7Q4ngI3Lt0Lfage9BhHmlR2hw3oMI80qO0OJ4BuToW+1A96DCPNKjtDhvQYR5pUdocTwDcnQt9
+                qB70GEeaVHaHDegwjzSo7Q4ngG5Ohb7UCdofwk5qolPUtVeNKh2adZDsT6GJ6OnfVYfqpKpGJmtLPl3R
+                U/7XJki+RUTyrwF2gnalWNaqjWmO3sdE9zHtc17VVrmuTJUVOFFQ/Ja2mfDUVFX019pY0Y2rVYqhETJO
+                6ImaO8qoi5/Zz41KpJeRdtzbrmmQAEuQAAAAAAAAAAAAAkWA2o/HdlRyZp9KYvrTahqUy3gHv9svpLfi
+                akKy9bA9EvmrqyK32+prZ1VIaeJ0r1T+VqKq/wCyFGVumrEMtU91JTUMEGf1GOYr3ZeNc0zXyIhcOMO8
+                u++gT+7cZTEK5l2uiYimVhb82Kv5aD2C/Med+bFXJQewX5iF2qz3C91zaK20slTUOTPVZwInKqrsRPGq
+                5EtTRBi5UzWmpk8S1DSWWmu/VG6dvfvzYq5KD2K/MN+bFXJQexX5j0bz+LebU3aEG8/i3m1N2hB5Lbyf
+                29+/NirkoPYr8w35sVclB7FfmPRvP4t5tTdoQbz+LebU3aEHkbyf292/Nin+Wg9gvzHyaMXrU6TqCeRE
+                V73TSLlwZrG/+5yb/gq/4ajSa5UKtgVckmjcj2IvIqpwevI6eijwjW37Mvu3BWmq5N2mK/lpI518u0Ni
+                slZc52q6OmjV6tRdrl4k9a5J6zokU0l+Dy8ebb+dpV69yZimZhVdRppxLJM50MFBFGq/VZ3Jzsk8a621
+                T1782Kv5aD2C/MQKmpp6ypjpqaF808jtVkbGqrnL4kQmcOiTF0sTXrRwRqqZ6r525p1ZlnkU3L9fpmX1
+                b82KuSg9ivzDfmxVyUHsV+Y9G8/i3m1N2hBvP4t5tTdoQeS28n9vfvzYq5KD2K/MN+bFXJQexX5j0bz+
+                LebU3aEG8/i3m1N2hB5G8n9vfvzYq5KD2C/MN+bFX8tB7BfmOReNG+KLLRPrKm3pJAxM3vgkR+onKqJt
+                y8eWSETClV29T6ploXRzpCnxdLUUNfTxRVsLO6o6HNGvZnkuxVXJUVU49ufEWEUFoR79Kv7vf7yMvwiX
+                p4tc124mpXmmdjXYGRVTa2rjVPEuTk+Jnw0Lpl7xF9Kj+JnomGDO90ABLEAAAAAAAAAAAAAJHgHv9svp
+                LfiakMt4B7/bL6S34mpCsvWwPRLiYw7y756BP7txlM1ZjDvLvn3fP7txlMmHHP8AVDQWhy1QUmDEr2sT
+                u9bK9z35bdVqq1G+RMlX1qWKQrRP4OLb9qb3riYTypBTyTO2tjarly8SEN1iIi3D2goSTTdiJ0jlioLY
+                2NV+qjmSOVE8a66Z9SH537sS8ytXspPnGnLxlr5X4eSgt+3EvMrV7KT5y0sAYpnxdhxa+qgjhnjndC9I
+                s9VVREXNM81TY5ONeAadLeRRcnVKQXChp7nb6iiqo0kgnYrHtXjRTPujGFabShRwKuaxLOxV5co3IaMX
+                gM8aPPC7F52p/I8Q45Mf6UT+2iCJ6TPB5ePNt/O0lhE9Jng8vHm2/naRDTd9FX8QHQfa6eWpud0kYjpo
+                UZDEqp+yjs1cvlXJE6+UukqbQX+7Lx56P8qltEy5YkRFqHgFMYm0v3m14jr7fQ0VB3ClmdCizse5zlau
+                SrscicKLxHK37cS8ytXspPnGkTl2onS/AUHv3Yl5navZSfOTvRvj6uxhNXU9wpqeKWna17XQI5EVFzRU
+                VFVduxOMaWoybddXGFgKiKmSpmimXMdWuCzY2ulDTNRsLJUcxqJsajmo7JPEmtl6jUpmnSl4SLv5YvdM
+                EOOfH0RLs6Ee/Wr+73+8jL9KC0I9+tX93v8AeRl+iV8L2le6Ze8RfSo/iZ6NC6Ze8RfSo/iZ6JhjzvdA
+                ASxAAAAAAAAAAAAACR4B7/bL6S34mpDLeAe/2y+kt+JqQrL1sD0S4mMO8u+fd8/u3GUzVmMO8u+fd8/u
+                3GUyYcc/1Q0lon8HFt+1N71xK7l+66vzL/yqRTRP4OLb9qb3riV3L911fmX/AJVKt1r2o/jIR+4o3zSs
+                ijarnvcjWtRM1VV2Ih+DqYcVG4otDnKiNSthVVXgRNdCzw4jdWli0Og2smpY5K29RU87kzdFHTrIjfFr
+                ayZ9RZGCMJrg6yy29a36X3SodN3RIu55ZtamWWa/y8PjJKnAeSHt28e3bndMebwV3h3Rcthxey/fphJ0
+                a+R3cfo2r+2jk/a114M+TiLEBDpVbpqmJn8ByMTWVcRYdrLSk/cPpDUb3XU1tXJyLwZpnwcp1wEzETGp
+                RHAuCVwXS1kK3D6Z9Je1+fce56uSKn8y58JLgAU0xTHGFU3nQy67XuuuP6eSL6VO+buf0TW1dZVXLPXT
+                Ph5Cu8aYDrsGywulnZVUk6qjJ2NVv1k4lTbkvJtU02VhpvVNylAmaay1zVRP9DyYljyMe3FE1RHmoctj
+                QX+97v5hn5lKnLY0F/ve7+YZ+ZSZYsX3YXeZo0peEi7+WL3TDS5mjSl4SLv5YvdMIhuzvbj+u1oR79av
+                7vf7yMv0oLQj361f3e/3kZfolbC9pXumXvEX0qP4mejQumXvEX0qP4meiYY873QAEsQAAAAAAAAAAAAA
+                keAe/wBsvpLfiakMt4B7/bL6S34mpCsvWwPRLiYw7y7593z+7cZTNWYw7y7593z+7cZTJhxz/VDSWifw
+                cW37U3vXEruX7rq/Mv8AyqRTRP4OLb9qb3riZSxtlifG9M2varVTxKVbrXtR/GOzyiqioqLkqcClzSaC
+                olkcsWIHtYq/Va6kRyonjXXTPqQ/O8Q3/MS9i/5ltvLnEvb+yM0WmHFNHSRwOWjqVYmSSTxOV6p41RyZ
+                9WZa+jrFFdizD09fcGQMmZVOhRIGq1uSNavGq7c3KQ7eIb/mJexf8ywcH4WhwhY/0dDUPqFdK6WSVzdX
+                WcqImxOJMkTjUhsx6L8VfX9kg4iqMKaSb1e8dsslVDRNpXPmbrRxuR+TWuVNquVOJOItdTPGjzwuxeeq
+                fyPDpfrqproiPzLQ5w8YXeosOFK+50jY3T07EViSoqtXNyJtRFTl5TukT0l+Du8ebb+dpDtcmYomYfBo
+                1xjcsX0dfNcY6ZjqeRjWdwYrUVFRc881UnRUugv92Xjz0f5VLaJUx6pqtxMqSxBpcxDa8RXKggp7csNN
+                UyRMV8T1cqNcqJnk9NpA8S4tu+K6mOa5zNVsSKkcUbdVjM+HJOVcuFVVS2cQaHILzfKu5RXl9MlTIsro
+                1p0fk5eHJdZNmfiOdvEt/wAxL2L/AJk+TFdtZFUzH4U0WxoM/e938wz8yn27xDf8xL2L/mS/A2AIMFvq
+                5Ur31k1SjWq5Y9RGtTPYiZry8vERsx8a5TciqqEzM0aUvCRd/LF7phpczRpS8JF38sXumCHfO9uP67Wh
+                Hv1q/u9/vIy/SgtCPfrV/d7/AHkZfolbC9pXumXvEX0qP4mejQumXvEX0qP4meiYY873QAEsQAAAAAAA
+                AAAAAAkeAe/2y+kt+JqQy3gHv9svpLfiakKy9bA9EuJjDvKvn3fP7txlM1ZjDvKvv3fP7txlMmHHP9UL
+                40NYgpqnDjrI6Rrauke57Y1Xa+Ny55p5FVUX1cpZxj6CompZ2T08skMzFzbJG5WuavKiptQ7iY7xSiIi
+                X6uyTllI0mzmRRRFNUNTAy1u8xV09W+0G7zFXT1b7QadPH0fDUoMtbvMVdPVvtBu8xV09W+0Gjx9Hw0l
+                fb1SYfs9Rca2RGxRNVUTPa93E1PGvAUHovldPpNoZn/tyLO52XKsblUi1yvVzvEjX3G4VFWrf2e7SK5G
+                +RF2J6iS6KPCNbfsy+7cTpwqv9W7T8NJkT0meDy8ebb+dpLCJ6TPB5ePNt/O0rD0rvt1fxW+he/01BdK
+                201MjY1rUY6BzlyRXtzRW+VUXZ5PGheZjpFVFzRclTjQ70WNsTwRNjjvtcjGpkiLMq7PKpaYedYy4t08
+                aoaoBlrd5irp6t9oN3mKunq32hGnbx9Hw1KDLW7zFXT1b7QbvMVdPVvtBo8fR8NPzzxUsD555GxxRtVz
+                3vXJGonCqqZaxfeI7/iy5XOHPuM0v6vNMs2tRGtX1oiKei44lvd3h7jcLrV1EOefc5JVVufLlwHKJiGb
+                IyerEREeSytCPfrV/d7/AHkZfpQWhLv0q1/9Pf7yMv0iW3D9pXumXvEX0qP4mejQumXvEX0qP4meiYY8
+                73QAEsQAAAAAAAAAAAAAkOBpWw45sr3Lki1bG+tVyT+pqUx7DLJTzRzxOVkkbkcxycKKi5opqTCOJ6XF
+                Vihr4HNSZERtREi7Y35bU8nGniKy9PArjU0u1UQR1NPLTzMR8UrFY9q8CoqZKhUVZoMR1U91Fe9SBVza
+                yWn1nNTkVUcmfUhcR4DZctUXPVClt4mp6fi7MvzDeJqen4uzL8xdQG3Lwlr4UrvE1PT8XZl+YbxNT0/F
+                2ZfmLqA2nwlr4UrvE1PT8XZl+YbxNT0/F2ZfmLqA2jwln4UrvFVKJ+/ouyr8xHNGMC02lGjgV2t3J07M
+                8uHKN6GjF4DPGjzwuxeeqfyPDhds0W66OMfloc4+KLK7EOG6y1NnSB1Q1GpIrdbVyci8Gach2QQ3zETG
+                pUrvE1PT0XZl+YbxNT0/F2ZfmLqBO2fwln4UrvE1PT8XZl+YbxNT0/F2ZfmLqA2eEs/Cld4mp6fi7Mvz
+                DeJqen4uzL8xdQGzwln4UrvE1PT8XZl+YbxNT0/F2ZfmLqA2nwlr4Q3A+AKXBjJ5EqXVdZOiNfKrNVEa
+                m3VRM14+Fc+JCYnkEO1NEURqlXOmiVrMEMYq7ZKyNqdTl+Bn4sfS3iyG+XiK2UUiSUlAq672rmj5V2Ll
+                yoiJlnyqpXBaHkZdcV3J0AAllAAAAAAAAAAAAAA6ljxBc8OV6VlsqXQycDk4WvTkcnAqf/UPdhO3U92x
+                XbKCrYr6eedGSNRypmnJmm1C9t6bB3RsnaZPmIlpsWK6/qolErfpzyiRtysqrIibX08uxf8ASvB1qfdv
+                52rois/G07+9Ng7o2TtMnzDelwd0bJ2mT5iPJuijJj8w4G/la+iKz8bRv52rois/G06NboawxURqlOtZ
+                SP4lZLrJ60cilUYzwJccHVDFmelRQyu1YqljckVf5XJxLx8K58S8ORyuV5NuNysbfytfRFZ+No38rV0R
+                WfjaUcWRotwPRYnWurLtC6Wjhyijaj1brSLtVc0VF2Jl+InTnbyL1yrjEpTv5Wrois/G0b+Vq6IrPxtJ
+                BvTYO6Nk7TJ8xF8faMrNbcK1FwslI+KopVSR/wCte/Wj/i2Kq8GefkRSGirxNMb3D6N/K1dEVn42kI0Z
+                z/SdKVJOjdXurp35Z55ZxvXIgpNNFHhGtv2ZfduJZKb1dy5Ty+WkjmYgvMWH7FVXWaJ8sdO1HKxmWa5q
+                ibM/KdQ4eLrPNf8ACtwtlO9rJp48mK/gzRUVEXqyz8ZV69e+M6QXfytXRFZ+No38rV0RWfjaUtWUdRb6
+                yWjq4Xw1ELla+NybUVD32Smirb9bqWdutDNVRxvRFVM2q5EVM08SltPJ8Ve3ra4t/K19EVv42jfytXRF
+                Z+Np396bB3RsnaZPmK90qYPsuF6S2yWmldC6eR7ZFWVz80REy4VXlIaa5yKKeUzCR7+dr6IrPxtG/la+
+                iKz8bSs8A2ijvuNKC3XCNZaWXumuxHK3PKNzk2pt4UQuvemwd0bJ2mT5graryLsbplwN/O19EVn42jfy
+                tXRFZ+NpytJ2B7BhvDMNba6N8M7qpsauWZ7vqq1yqmSqqcSFVUdJUV9XFSUkL5qiZyNjjYmauVQ53L9+
+                3VxmfNdDtOVtRq6lnq1dxIsjUT4kPxNpYvV/p30lKxttpHpk5sT1dI5ORX7NnkRCe4f0PWSntMSXuJ1X
+                Xu+tI5krmNYq/wAKZKmeXKvCeMQ4G0f4atMlwuFC9rG7GMSpk1pHcTWprbV//VDpVTkVU7qq1ChAfRWS
+                wz1kstNTNpoHOVWQo9XaicSZrtXy/wBOA+cs82QABAAAAAAAAAAAAAAkeAe/2y+kt+JqQy3gHv8AbL6S
+                34mpCsvWwPRKHaSr5ccO4UWutk6Q1Hd2M1lYjti557FRUK9wdpLxZcsTUNBPqV8M8qMkakCNcxme1yK1
+                EyyTbt5C75I45W6srGvbw5OTNDxHDDFmkUbGZ8Oq1EDtXaqqr5RVp7CGaVH0rdH1wSpVubljSJF4Vfro
+                qZepF9WZLqju/cH/AEZY0my+r3RFVufjyKE0n0GMvpDKu+rFNQNdlE6kz7jGq8qLtRV5Vz5EUQZNfG3P
+                ltXSIqqiImarxIalwVYkw7hOgt7m5TIzuk/Ksjtrurg8iIUVozsP6dxpSpI3OnpP8TLnwLq5aqfiVNnJ
+                maVEs2Db8prl80ldTQ3CChklRtROx74mL/Ejctb8yHtngjqaeSCZqPikarHtXgVFTJUKQxZimri0tU9w
+                hjmdS2uRtP8AVYq6zeCX1/WcnqQvFrke1HNXNHJmipyBrt3IuTVHwyfiKzyWDENda5M/8PKrWqvC5q7W
+                r60VF9ZIdFHhHtv2ZfduJXpusOrJRX6Fmx3+GnVOXarF/MmfiQieijwjW37Mvu3EvM6fTyIp/bSQBzL/
+                AHiOwWWouczHPigVqvRvDqq5EVU8aIufqKvYmYiNyi+kTAEWKqNa2ia2O7Qt+ovAkzU/gcvLyLxeQoyw
+                wS02MbXBPG6OWOvia9j0yVqpIiKioaopaqGtpYqqmkbLBK1Hse1c0ci8CoQ/FeA4Lxe7dfaFGxXCmqYn
+                zJwJOxrkVc/+5ETYvq5MpiWO/jxXMV0JtxFSadf+gs3nZf6NLb4ipNOv/QWbzsv9GiPu65Xsyg+inwj2
+                vyTe6eaUM16KfCPa/JN7p5pQS5YPtz/VdaY6eaqwlRwU8T5ZpLhGxkbEzVyq16IiIfTo80fw4VpEra1r
+                ZLvM367uFIUX+Fq/1X4cM4fFHI+Nz42uVjtZiqmequSpmnIuSqnrU9g279GmbnUly79fqHDlpluNwl1I
+                WbERNrnu4mtTjVf/AJ4DNeK8V1+Lbs6sq3KyFubYKdFzbE3k8arxrx+TJE0niGx0mJLJUWysb+rlT6r0
+                TbG5OByeNF/txmXb1aKqw3eottazVngdqrlwOTicniVMlQQyZ01+Xw54ALPMAAAAAAAAAAAAAAAASPAP
+                f7ZfSWmpDLGCZ4aXGtonqJWRQsqWq573IjWp41XgNJbprD01bu1M/uVl6uDVEUTtHdKdFX1+DlhttPUT
+                1H0hi6kDVc7Lbnwbcip8P4dx9HdoHUFPc6ORHJ+tn1o40TP+LW2KniyXPkUvrdNYemrd2pn9z8rijD7e
+                G921PLVM/uHW5aorr5cnVTYm3hOdiCGmqMO3KKsRq07qaTumtwImqu31cJ8NTjnC1JGr5b9QKicUUySL
+                1NzUrnFukinxRJFhyzSLT0lXK2Kprp1SNNRV25IvAmXCq5KvBkF7l6imnW0g0OWH9G4WfcpW5T3B+smf
+                FG3NG9a6y+RULGVUamaqiJ4ziUt8w5RUcFLT3i2shhY2NjUqmbGomSJw8iEA0u4uo5cPwWm21sFQtXJr
+                TrBKj0RjdqIuS7M3ZfhUK86bNr+LX7rF/OzrQ/TXNcmbXIvjQx0WhocxLT2q4V1srqmOCmqGJNG+V6Na
+                j27FTNdmaov/ALRpxtZsV1RTMaW9imysxDhqutbstaaNe5qvE9NrV60QojRZG+LSXQRSNVr2d2a5qpkq
+                Kkb0VC+901h6at3amf3KtalotmnCnuNPcqJaGqZJO6Rs7FbG9Y3I5FXPYqrt/wBQhbIppmumuPlc5E9J
+                ng7vHm2/nadfdNYemrd2pn9yL6Q77aKvAd1gprrRTTPjajWR1DHOX67eBEXNRDvdqjhPmgGi7H36Eqm2
+                W5y/+GzO/VSOXZA9f6NVeHkXbyl955oY5Lm0YaRo0p22K+VTY+5NypamVyIitT+ByrxpxLybOTNMMeJk
+                6+ipcJUenX932bzsv9Glj7prD01bu1M/uVbpoulvuNDaUoq6mqVZJIrkhla/VzROHJVyENGVVE2p1KJa
+                KfCRa/JN7p5pQzNozqqei0gWyeqnighb3XWklejWpnE5EzVdibVyNCbprD01bu1M/uJc8KqItzv5erE+
+                JKTCtkludYjnIioyONvDI9UXJvi4F28iKQDR5pLqr3iGpt15kY11W9X0itTJrFRP/L6kzTPbmi8OZ+9L
+                94tlwwfBDR3GkqJUrWOVkM7Xqiaj9uSL5CkoZpIJmTRPcyWNyOY9q5K1yLmip48xEKZGRVRdjX2bDK+0
+                o4L3RWj9I0UWdzo2qqI1NssfCrfGvCqetOM+3CGP7Ze8PQVFfX0lLWs/VzxyytZm5P4kRVTYvD/txHf3
+                TWHpq3dqZ/cNdU0XaNTP3ZOPBPNJ1mtNJef0pZq6jmpqxyrJDBO1yxScKrki/srw+Jc/EQMl4tyjhVxA
+                AS5gAAAAAAAAAAAAAAAkAAAAAAAAAAQAAJAAAAAQAAJAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAWnuftPMIeobn7TzCHqOkD5TrXO6W3jDm7n7TzCHqG5+08wh6jpAda53ScYc3c/aeYQ9Q3P2nmEPU
+                dIDrXO6TjDm7n7TzCHqG5+08wh6jpAda53ScYc3c/aeYQ9Q3P2nmEPUdIDrXO6TjDm7n7TzCHqG5+08w
+                h6jpAda53ScYc3c/aeYQ9Q3P2nmEPUdIDrXO6TjDm7n7TzCHqG5+08wh6jpAda53ScYc3c/aeYQ9Q3P2
+                nmEPUdIDrXO6TjDm7n7TzCHqG5+08wh6jpAda53ScYc3c/aeYQ9Q3P2nmEPUdIDrXO6TjDm7n7TzCHqG
+                5+08wh6jpAda53ScYc3c/aeYQ9Q3P2nmEPUdIDrXO6TjDm7n7TzCHqG5+08wh6jpAda53ScYc3c/aeYQ
+                9Q3P2nmEPUdIDrXO6TjDm7n7TzCHqG5+08wh6jpAda53ScYc3c/aeYQ9Q3P2nmEPUdIDrXO6TjDm7n7T
+                zCHqG5+08wh6jpAda53ScYc3c/aeYQ9Q3P2nmEPUdIDrXO6TjAADkkAAAAAAAAAAAAAAAAAAAAAAAAAA
+                AAAAAAAAAAAAAAAAAAAAAB//2SAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAg
+                ICA=
+</property>
+        </structure>
+    </list-property>
+</report>

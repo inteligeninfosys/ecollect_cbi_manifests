@@ -1,0 +1,1252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.6.0.v201606072122</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/first_report.gif</property>
+    <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.firstreport</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <list-property name="cssStyleSheets">
+        <structure>
+            <property name="fileName">slateGray.css</property>
+            <property name="useExternalCss">false</property>
+        </structure>
+    </list-property>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="248">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaJndiName">java:comp/env/jdbc/ecollect</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="249">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">CARDNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CARDNUMBER</text-property>
+                    <text-property name="heading">CARDNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CARDNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CARDNAME</text-property>
+                    <text-property name="heading">CARDNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CARDSTATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CARDSTATUS</text-property>
+                    <text-property name="heading">CARDSTATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ACCOUNTSTATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACCOUNTSTATUS</text-property>
+                    <text-property name="heading">ACCOUNTSTATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CARDACCT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CARDACCT</text-property>
+                    <text-property name="heading">CARDACCT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ACCOUNTNO</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACCOUNTNO</text-property>
+                    <text-property name="heading">ACCOUNTNO</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">OUTBALANCE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">OUTBALANCE</text-property>
+                    <text-property name="heading">OUTBALANCE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LIMIT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">LIMIT</text-property>
+                    <text-property name="heading">LIMIT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EXPPMNT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EXPPMNT</text-property>
+                    <text-property name="heading">EXPPMNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PREVDEBT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PREVDEBT</text-property>
+                    <text-property name="heading">PREVDEBT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PAYMENT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PAYMENT</text-property>
+                    <text-property name="heading">PAYMENT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CYCLE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CYCLE</text-property>
+                    <text-property name="heading">CYCLE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ADDRESS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ADDRESS</text-property>
+                    <text-property name="heading">ADDRESS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CITY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CITY</text-property>
+                    <text-property name="heading">CITY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RPCODE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RPCODE</text-property>
+                    <text-property name="heading">RPCODE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">TEL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">TEL</text-property>
+                    <text-property name="heading">TEL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MOBILE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">MOBILE</text-property>
+                    <text-property name="heading">MOBILE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EMAIL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EMAIL</text-property>
+                    <text-property name="heading">EMAIL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">AGEINMONTHS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">AGEINMONTHS</text-property>
+                    <text-property name="heading">AGEINMONTHS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">LASTPAYMENTDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">LASTPAYMENTDATE</text-property>
+                    <text-property name="heading">LASTPAYMENTDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BASESUPP</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BASESUPP</text-property>
+                    <text-property name="heading">BASESUPP</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DAYSINARREARS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DAYSINARREARS</text-property>
+                    <text-property name="heading">DAYSINARREARS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SQNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SQNUMBER</text-property>
+                    <text-property name="heading">SQNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLLECTIONSTATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COLLECTIONSTATUS</text-property>
+                    <text-property name="heading">COLLECTIONSTATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">COLOFFICER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">COLOFFICER</text-property>
+                    <text-property name="heading">COLOFFICER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REVIEWDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REVIEWDATE</text-property>
+                    <text-property name="heading">REVIEWDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EXCUSE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EXCUSE</text-property>
+                    <text-property name="heading">EXCUSE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ROUTETOSTATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ROUTETOSTATE</text-property>
+                    <text-property name="heading">ROUTETOSTATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DATERECEIVED</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DATERECEIVED</text-property>
+                    <text-property name="heading">DATERECEIVED</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PRIMARY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PRIMARY</text-property>
+                    <text-property name="heading">PRIMARY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EMPLOYER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EMPLOYER</text-property>
+                    <text-property name="heading">EMPLOYER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DOB</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DOB</text-property>
+                    <text-property name="heading">DOB</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EMAILUPDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EMAILUPDATE</text-property>
+                    <text-property name="heading">EMAILUPDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ADDRESSUPDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ADDRESSUPDATE</text-property>
+                    <text-property name="heading">ADDRESSUPDATE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PHONE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PHONE</text-property>
+                    <text-property name="heading">PHONE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">EMPSTATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">EMPSTATUS</text-property>
+                    <text-property name="heading">EMPSTATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MARITAL</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">MARITAL</text-property>
+                    <text-property name="heading">MARITAL</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SALARY</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SALARY</text-property>
+                    <text-property name="heading">SALARY</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">CMDSTATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">CMDSTATUS</text-property>
+                    <text-property name="heading">CMDSTATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHSTATUS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHSTATUS</text-property>
+                    <text-property name="heading">BRANCHSTATUS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DUEDATE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DUEDATE</text-property>
+                    <text-property name="heading">DUEDATE</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">CARDNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">CARDNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">CARDSTATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">ACCOUNTSTATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">CARDACCT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">ACCOUNTNO</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">OUTBALANCE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">LIMIT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">EXPPMNT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">PREVDEBT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">PAYMENT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">CYCLE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">ADDRESS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">CITY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">RPCODE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">16</property>
+                        <property name="name">TEL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">17</property>
+                        <property name="name">MOBILE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">18</property>
+                        <property name="name">EMAIL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">19</property>
+                        <property name="name">AGEINMONTHS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">20</property>
+                        <property name="name">LASTPAYMENTDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">21</property>
+                        <property name="name">BASESUPP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">22</property>
+                        <property name="name">DAYSINARREARS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">23</property>
+                        <property name="name">SQNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">24</property>
+                        <property name="name">COLLECTIONSTATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">25</property>
+                        <property name="name">COLOFFICER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">26</property>
+                        <property name="name">REVIEWDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">27</property>
+                        <property name="name">EXCUSE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">28</property>
+                        <property name="name">ROUTETOSTATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">29</property>
+                        <property name="name">DATERECEIVED</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">30</property>
+                        <property name="name">PRIMARY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">31</property>
+                        <property name="name">EMPLOYER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">32</property>
+                        <property name="name">DOB</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">33</property>
+                        <property name="name">EMAILUPDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">34</property>
+                        <property name="name">ADDRESSUPDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">35</property>
+                        <property name="name">PHONE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">36</property>
+                        <property name="name">EMPSTATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">37</property>
+                        <property name="name">MARITAL</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">38</property>
+                        <property name="name">SALARY</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">39</property>
+                        <property name="name">CMDSTATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">40</property>
+                        <property name="name">BRANCHSTATUS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">41</property>
+                        <property name="name">DUEDATE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">CARDNUMBER</property>
+                    <property name="nativeName">CARDNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">CARDNAME</property>
+                    <property name="nativeName">CARDNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">CARDSTATUS</property>
+                    <property name="nativeName">CARDSTATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">ACCOUNTSTATUS</property>
+                    <property name="nativeName">ACCOUNTSTATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">CARDACCT</property>
+                    <property name="nativeName">CARDACCT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">ACCOUNTNO</property>
+                    <property name="nativeName">ACCOUNTNO</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">OUTBALANCE</property>
+                    <property name="nativeName">OUTBALANCE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">LIMIT</property>
+                    <property name="nativeName">LIMIT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">EXPPMNT</property>
+                    <property name="nativeName">EXPPMNT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">PREVDEBT</property>
+                    <property name="nativeName">PREVDEBT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">PAYMENT</property>
+                    <property name="nativeName">PAYMENT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">CYCLE</property>
+                    <property name="nativeName">CYCLE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">ADDRESS</property>
+                    <property name="nativeName">ADDRESS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">CITY</property>
+                    <property name="nativeName">CITY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">RPCODE</property>
+                    <property name="nativeName">RPCODE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">16</property>
+                    <property name="name">TEL</property>
+                    <property name="nativeName">TEL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">17</property>
+                    <property name="name">MOBILE</property>
+                    <property name="nativeName">MOBILE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">18</property>
+                    <property name="name">EMAIL</property>
+                    <property name="nativeName">EMAIL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">19</property>
+                    <property name="name">AGEINMONTHS</property>
+                    <property name="nativeName">AGEINMONTHS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">20</property>
+                    <property name="name">LASTPAYMENTDATE</property>
+                    <property name="nativeName">LASTPAYMENTDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">21</property>
+                    <property name="name">BASESUPP</property>
+                    <property name="nativeName">BASESUPP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">22</property>
+                    <property name="name">DAYSINARREARS</property>
+                    <property name="nativeName">DAYSINARREARS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">23</property>
+                    <property name="name">SQNUMBER</property>
+                    <property name="nativeName">SQNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">24</property>
+                    <property name="name">COLLECTIONSTATUS</property>
+                    <property name="nativeName">COLLECTIONSTATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">25</property>
+                    <property name="name">COLOFFICER</property>
+                    <property name="nativeName">COLOFFICER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">26</property>
+                    <property name="name">REVIEWDATE</property>
+                    <property name="nativeName">REVIEWDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">27</property>
+                    <property name="name">EXCUSE</property>
+                    <property name="nativeName">EXCUSE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">28</property>
+                    <property name="name">ROUTETOSTATE</property>
+                    <property name="nativeName">ROUTETOSTATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">29</property>
+                    <property name="name">DATERECEIVED</property>
+                    <property name="nativeName">DATERECEIVED</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">30</property>
+                    <property name="name">PRIMARY</property>
+                    <property name="nativeName">PRIMARY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">31</property>
+                    <property name="name">EMPLOYER</property>
+                    <property name="nativeName">EMPLOYER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">32</property>
+                    <property name="name">DOB</property>
+                    <property name="nativeName">DOB</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">33</property>
+                    <property name="name">EMAILUPDATE</property>
+                    <property name="nativeName">EMAILUPDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">34</property>
+                    <property name="name">ADDRESSUPDATE</property>
+                    <property name="nativeName">ADDRESSUPDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">35</property>
+                    <property name="name">PHONE</property>
+                    <property name="nativeName">PHONE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">36</property>
+                    <property name="name">EMPSTATUS</property>
+                    <property name="nativeName">EMPSTATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">37</property>
+                    <property name="name">MARITAL</property>
+                    <property name="nativeName">MARITAL</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">38</property>
+                    <property name="name">SALARY</property>
+                    <property name="nativeName">SALARY</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">39</property>
+                    <property name="name">CMDSTATUS</property>
+                    <property name="nativeName">CMDSTATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">40</property>
+                    <property name="name">BRANCHSTATUS</property>
+                    <property name="nativeName">BRANCHSTATUS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">41</property>
+                    <property name="name">DUEDATE</property>
+                    <property name="nativeName">DUEDATE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select *
+from qcards where primary='P' and CYCLE = '17']]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CARDNUMBER</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>NotNullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CARDNUMBER</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CARDNUMBER</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CARDNAME</design:name>
+              <design:position>2</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CARDNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CARDNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CARDACCT</design:name>
+              <design:position>3</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CARDACCT</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CARDACCT</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>FILENO</design:name>
+              <design:position>4</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>FILENO</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>FILENO</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>OUTBALANCE</design:name>
+              <design:position>5</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>OUTBALANCE</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>OUTBALANCE</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CARDSTATUS</design:name>
+              <design:position>6</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CARDSTATUS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CARDSTATUS</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DATERECEIVED</design:name>
+              <design:position>7</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DATERECEIVED</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DATERECEIVED</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>BRANCHSTATUS</design:name>
+              <design:position>8</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>BRANCHSTATUS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BRANCHSTATUS</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>CMDSTATUS</design:name>
+              <design:position>9</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>200</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>CMDSTATUS</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>CMDSTATUS</design:label>
+            <design:formattingHints>
+              <design:displaySize>200</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <styles>
+        <style name="report" id="110">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="246">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="247">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <label id="245">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">x-large</property>
+            <property name="fontWeight">bold</property>
+            <property name="textAlign">center</property>
+            <text-property name="text">Portfolio Movement Credit Cards</text-property>
+        </label>
+        <table id="384">
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">CARDNUMBER</property>
+                    <text-property name="displayName">CARDNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CARDNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CARDNAME</property>
+                    <text-property name="displayName">CARDNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CARDNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CARDACCT</property>
+                    <text-property name="displayName">CARDACCT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CARDACCT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OUTBALANCE</property>
+                    <text-property name="displayName">OUTBALANCE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OUTBALANCE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CYCLE</property>
+                    <text-property name="displayName">CYCLE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CYCLE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">COLOFFICER</property>
+                    <text-property name="displayName">COLOFFICER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["COLOFFICER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">EXCUSE</property>
+                    <text-property name="displayName">EXCUSE</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["EXCUSE"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">DATERECEIVED</property>
+                    <text-property name="displayName">DATERECEIVED</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["DATERECEIVED"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">CMDSTATUS</property>
+                    <text-property name="displayName">CMDSTATUS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["CMDSTATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">BRANCHSTATUS</property>
+                    <text-property name="displayName">BRANCHSTATUS</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["BRANCHSTATUS"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+            <column id="438"/>
+            <column id="439"/>
+            <column id="440"/>
+            <column id="441"/>
+            <column id="442"/>
+            <column id="443"/>
+            <column id="444"/>
+            <column id="445"/>
+            <column id="446"/>
+            <column id="447"/>
+            <header>
+                <row id="385">
+                    <cell id="386">
+                        <label id="387">
+                            <text-property name="text">CARDNUMBER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="388">
+                        <label id="389">
+                            <text-property name="text">CARDNAME</text-property>
+                        </label>
+                    </cell>
+                    <cell id="390">
+                        <label id="391">
+                            <text-property name="text">CARDACCT</text-property>
+                        </label>
+                    </cell>
+                    <cell id="392">
+                        <label id="393">
+                            <text-property name="text">OUTBALANCE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="394">
+                        <label id="395">
+                            <text-property name="text">CYCLE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="396">
+                        <label id="397">
+                            <text-property name="text">COLOFFICER</text-property>
+                        </label>
+                    </cell>
+                    <cell id="398">
+                        <label id="399">
+                            <text-property name="text">EXCUSE</text-property>
+                        </label>
+                    </cell>
+                    <cell id="400">
+                        <label id="401">
+                            <text-property name="text">DATERECEIVED</text-property>
+                        </label>
+                    </cell>
+                    <cell id="402">
+                        <label id="403">
+                            <text-property name="text">CMDSTATUS</text-property>
+                        </label>
+                    </cell>
+                    <cell id="404">
+                        <label id="405">
+                            <text-property name="text">BRANCHSTATUS</text-property>
+                        </label>
+                    </cell>
+                </row>
+            </header>
+            <detail>
+                <row id="406">
+                    <cell id="407">
+                        <data id="408">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">CARDNUMBER</property>
+                        </data>
+                    </cell>
+                    <cell id="409">
+                        <data id="410">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">CARDNAME</property>
+                        </data>
+                    </cell>
+                    <cell id="411">
+                        <data id="412">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">CARDACCT</property>
+                        </data>
+                    </cell>
+                    <cell id="413">
+                        <data id="414">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">OUTBALANCE</property>
+                        </data>
+                    </cell>
+                    <cell id="415">
+                        <data id="416">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">CYCLE</property>
+                        </data>
+                    </cell>
+                    <cell id="417">
+                        <data id="418">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">COLOFFICER</property>
+                        </data>
+                    </cell>
+                    <cell id="419">
+                        <data id="420">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">EXCUSE</property>
+                        </data>
+                    </cell>
+                    <cell id="421">
+                        <data id="422">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">DATERECEIVED</property>
+                        </data>
+                    </cell>
+                    <cell id="423">
+                        <data id="424">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">CMDSTATUS</property>
+                        </data>
+                    </cell>
+                    <cell id="425">
+                        <data id="426">
+                            <property name="textAlign">left</property>
+                            <property name="resultSetColumn">BRANCHSTATUS</property>
+                        </data>
+                    </cell>
+                </row>
+            </detail>
+            <footer>
+                <row id="427">
+                    <cell id="428"/>
+                    <cell id="429"/>
+                    <cell id="430"/>
+                    <cell id="431"/>
+                    <cell id="432"/>
+                    <cell id="433"/>
+                    <cell id="434"/>
+                    <cell id="435"/>
+                    <cell id="436"/>
+                    <cell id="437"/>
+                </row>
+            </footer>
+        </table>
+    </body>
+</report>

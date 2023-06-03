@@ -1,0 +1,2848 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="createdBy">Eclipse BIRT Designer Version 4.9.0.v201905231911</property>
+    <property name="units">in</property>
+    <property name="iconFile">/templates/crosstab.gif</property>
+    <property name="cheatSheet">org.eclipse.birt.report.designer.ui.cheatsheet.crosstab</property>
+    <property name="layoutPreference">auto layout</property>
+    <property name="bidiLayoutOrientation">ltr</property>
+    <property name="imageDPI">96</property>
+    <template-parameter-definitions>
+        <template-parameter-definition name="NewTemplateParameterDefinition" id="14">
+            <property name="allowedType">ExtendedItem</property>
+            <text-property name="description">Double-click this cross tab.
+Follow the instructions in the cheat sheet to set up the data to display.</text-property>
+            <default>
+                <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="15">
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="16"/>
+                    </property>
+                </extended-item>
+            </default>
+        </template-parameter-definition>
+    </template-parameter-definitions>
+    <parameters>
+        <scalar-parameter name="param1" id="23">
+            <text-property name="promptText">Select Start Date</text-property>
+            <property name="valueType">static</property>
+            <expression name="sortByColumn">dataSetRow["ACTION_DATE"]</expression>
+            <property name="sortDirection">desc</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="Param2" id="24">
+            <text-property name="promptText">Select End Date</text-property>
+            <property name="valueType">static</property>
+            <expression name="sortByColumn">dataSetRow["ACTION_DATE"]</expression>
+            <property name="sortDirection">desc</property>
+            <property name="dataType">date</property>
+            <property name="distinct">true</property>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">text-box</property>
+            <structure name="format">
+                <property name="category">Custom</property>
+                <property name="pattern">yyyy-MM-dd</property>
+            </structure>
+        </scalar-parameter>
+        <scalar-parameter name="team" id="123">
+            <property name="hidden">false</property>
+            <text-property name="promptText">Select Team</text-property>
+            <property name="valueType">dynamic</property>
+            <property name="isRequired">true</property>
+            <property name="dataSetName">Division</property>
+            <expression name="valueExpr" type="javascript">dataSetRow["TEAM"]</expression>
+            <expression name="labelExpr" type="javascript">dataSetRow["TEAM"]</expression>
+            <expression name="sortByColumn">dataSetRow["TEAM"]</expression>
+            <property name="sortDirection">asc</property>
+            <property name="dataType">string</property>
+            <property name="distinct">true</property>
+            <simple-property-list name="defaultValue">
+                <value type="constant">REMEDIAL CREDIT</value>
+            </simple-property-list>
+            <list-property name="selectionList"/>
+            <property name="paramType">simple</property>
+            <property name="controlType">list-box</property>
+            <property name="mustMatch">true</property>
+            <property name="fixedOrder">false</property>
+            <structure name="format">
+                <property name="category">Unformatted</property>
+            </structure>
+        </scalar-parameter>
+        <cascading-parameter-group name="NewCascadingParameterGroup" id="164">
+            <text-property name="promptText">Select Region and Branch (user ctrl to multi select)</text-property>
+            <property name="dataSet">region</property>
+            <property name="dataSetMode">multiple</property>
+            <parameters>
+                <scalar-parameter name="region" id="165">
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">false</property>
+                    <property name="dataSetName">region</property>
+                    <expression name="valueExpr">row["REGION"]</expression>
+                    <expression name="labelExpr">row["REGION"]</expression>
+                    <expression name="sortByColumn">dataSetRow["REGION"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">simple</property>
+                    <property name="concealValue">false</property>
+                    <property name="controlType">list-box</property>
+                    <property name="mustMatch">true</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+                <scalar-parameter name="branchname" id="166">
+                    <property name="valueType">dynamic</property>
+                    <property name="isRequired">true</property>
+                    <property name="dataSetName">branchname</property>
+                    <expression name="valueExpr">row["BRANCHNAME"]</expression>
+                    <expression name="labelExpr">row["BRANCHNAME"]</expression>
+                    <expression name="sortByColumn">dataSetRow["BRANCHNAME"]</expression>
+                    <property name="sortDirection">asc</property>
+                    <property name="dataType">string</property>
+                    <property name="paramType">multi-value</property>
+                    <property name="controlType">list-box</property>
+                    <property name="fixedOrder">false</property>
+                    <structure name="format"/>
+                </scalar-parameter>
+            </parameters>
+        </cascading-parameter-group>
+    </parameters>
+    <data-sources>
+        <oda-data-source extensionID="org.eclipse.birt.report.data.oda.jdbc" name="Data Source" id="18">
+            <list-property name="privateDriverProperties">
+                <ex-property>
+                    <name>metadataBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledMetadataBidiFormatStr</name>
+                </ex-property>
+                <ex-property>
+                    <name>contentBidiFormatStr</name>
+                    <value>ILYNN</value>
+                </ex-property>
+                <ex-property>
+                    <name>disabledContentBidiFormatStr</name>
+                </ex-property>
+            </list-property>
+            <property name="odaDriverClass">oracle.jdbc.OracleDriver</property>
+            <property name="odaJndiName">java:comp/env/jdbc/ecollect</property>
+        </oda-data-source>
+    </data-sources>
+    <data-sets>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Data Set" id="19">
+            <property name="nullsOrdering">nulls lowest</property>
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">FULLNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">FULLNAME</text-property>
+                    <text-property name="heading">FULLNAME</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">DIVISION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">DIVISION</text-property>
+                    <text-property name="heading">DIVISION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">OC</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">OC</text-property>
+                    <text-property name="heading">OC</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">IC</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">IC</text-property>
+                    <text-property name="heading">IC</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">MET</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">MET</text-property>
+                    <text-property name="heading">MET</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">SMS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">SMS</text-property>
+                    <text-property name="heading">SMS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">UPLOADS</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">UPLOADS</text-property>
+                    <text-property name="heading">UPLOADS</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">ACCOUNTNUMBER</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">ACCOUNTNUMBER</text-property>
+                    <text-property name="heading">ACCOUNTNUMBER</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RPC</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RPC</text-property>
+                    <text-property name="heading">RPC</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PTP</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PTP</text-property>
+                    <text-property name="heading">PTP</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">PROMISEAMOUNT</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">PROMISEAMOUNT</text-property>
+                    <text-property name="heading">PROMISEAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RESTRUCTURE</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">RESTRUCTURE</text-property>
+                    <text-property name="heading">RESTRUCTURE</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">RESTRUCTUREAMOUNT</property>
+                    <property name="analysis">measure</property>
+                    <text-property name="displayName">RESTRUCTUREAMOUNT</text-property>
+                    <text-property name="heading">RESTRUCTUREAMOUNT</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">REGION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGION</text-property>
+                    <text-property name="heading">REGION</text-property>
+                </structure>
+                <structure>
+                    <property name="columnName">BRANCHNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <text-property name="heading">BRANCHNAME</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">param1</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+                <structure>
+                    <property name="name">param_2</property>
+                    <property name="paramName">Param2</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">0</property>
+                    <property name="position">2</property>
+                    <property name="isOptional">false</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">FULLNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">2</property>
+                        <property name="name">DIVISION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">3</property>
+                        <property name="name">OC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">4</property>
+                        <property name="name">IC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">5</property>
+                        <property name="name">MET</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">6</property>
+                        <property name="name">SMS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">7</property>
+                        <property name="name">UPLOADS</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">8</property>
+                        <property name="name">ACCOUNTNUMBER</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">9</property>
+                        <property name="name">RPC</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">10</property>
+                        <property name="name">PTP</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">11</property>
+                        <property name="name">PROMISEAMOUNT</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">12</property>
+                        <property name="name">RESTRUCTURE</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">13</property>
+                        <property name="name">RESTRUCTUREAMOUNT</property>
+                        <property name="dataType">decimal</property>
+                    </structure>
+                    <structure>
+                        <property name="position">14</property>
+                        <property name="name">REGION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                    <structure>
+                        <property name="position">15</property>
+                        <property name="name">BRANCHNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <method name="beforeOpen"><![CDATA[var parmcount = params["branchname"].value.length
+			var whereclause = "";
+			if( parmcount > 0 ){
+				whereclause = " and branchname in ( '";
+			}
+			for( i=0; i < parmcount; i++ ){
+				if( i == 0 ){
+                                    if(params["branchname"].value[i] == "A ALL BRANCHES") {
+				      whereclause = "";
+				    }else {
+				      whereclause = whereclause + params["branchname"].value[i] + "'";
+				    }
+				
+				}else{
+					whereclause = whereclause + " , '" + params["branchname"].value[i]  + "'";	
+				}
+			}
+			if( parmcount > 0 ){
+                               if(params["region"] == "ALL REGIONS") {
+                                  whereclause = "";
+				  this.queryText = this.queryText + whereclause + " and team = '" + params["team"] + "'"; 
+				} else {
+				  this.queryText = this.queryText + whereclause + " ) and team = '" + params["team"] + "' and region = '" + params["region"] + "'";
+				}
+			}
+			]]></method>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">FULLNAME</property>
+                    <property name="nativeName">FULLNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">2</property>
+                    <property name="name">DIVISION</property>
+                    <property name="nativeName">DIVISION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">3</property>
+                    <property name="name">OC</property>
+                    <property name="nativeName">OC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">4</property>
+                    <property name="name">IC</property>
+                    <property name="nativeName">IC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">5</property>
+                    <property name="name">MET</property>
+                    <property name="nativeName">MET</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">6</property>
+                    <property name="name">SMS</property>
+                    <property name="nativeName">SMS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">7</property>
+                    <property name="name">UPLOADS</property>
+                    <property name="nativeName">UPLOADS</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">8</property>
+                    <property name="name">ACCOUNTNUMBER</property>
+                    <property name="nativeName">ACCOUNTNUMBER</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">9</property>
+                    <property name="name">RPC</property>
+                    <property name="nativeName">RPC</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">10</property>
+                    <property name="name">PTP</property>
+                    <property name="nativeName">PTP</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">11</property>
+                    <property name="name">PROMISEAMOUNT</property>
+                    <property name="nativeName">PROMISEAMOUNT</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">12</property>
+                    <property name="name">RESTRUCTURE</property>
+                    <property name="nativeName">RESTRUCTURE</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">13</property>
+                    <property name="name">RESTRUCTUREAMOUNT</property>
+                    <property name="nativeName">RESTRUCTUREAMOUNT</property>
+                    <property name="dataType">decimal</property>
+                    <property name="nativeDataType">2</property>
+                </structure>
+                <structure>
+                    <property name="position">14</property>
+                    <property name="name">REGION</property>
+                    <property name="nativeName">REGION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+                <structure>
+                    <property name="position">15</property>
+                    <property name="name">BRANCHNAME</property>
+                    <property name="nativeName">BRANCHNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[SELECT UPPER(FIRSTNAME||' '||SURNAME ||' (' || username || ') ') FULLNAME,DIVISION,DECODE(ACTION, 'OC', '1','0') OC,DECODE(ACTION, 'IC', '1','0') IC,DECODE(ACTION, 'MET', '1','0') + DECODE(ACTION, 'EMPVISIT', '1','0') MET, DECODE(ACTION, 'SMS', '1','0') SMS
+,DECODE(ACTION, 'UPLOAD', '1','0') UPLOADS,ACCOUNTNUMBER,DECODE(PARTY,'1','1','0') RPC,
+ DECODE(PTP, 'Yes', '1','0') PTP,PROMISEAMOUNT, DECODE(RESTRUCTURE, 'true', '1','0') RESTRUCTURE, RESTRUCTUREAMOUNT, REGION, BRANCHNAME
+FROM ACTIVITYLOGS
+left join TBLUSERS on upper(ACTIVITYLOGS.OWNER) = upper(TBLUSERS.USERNAME)
+left join BRANCHES on branch=branchcode 
+where
+(actiondate >= to_date(?, 'YYYY-MM-DD') and actiondate < to_date(?, 'YYYY-MM-DD') + 1)]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="Division" id="122">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">TEAM</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">TEAM</text-property>
+                    <text-property name="heading">TEAM</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">TEAM</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">TEAM</property>
+                    <property name="nativeName">TEAM</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct TEAM
+from tblusers]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>DIVISION</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>20</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>DIVISION</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>DIVISION</design:label>
+            <design:formattingHints>
+              <design:displaySize>20</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="region" id="160">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">REGION</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">REGION</text-property>
+                    <text-property name="heading">REGION</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters"/>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">REGION</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">REGION</property>
+                    <property name="nativeName">REGION</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct region
+from branches]]></xml-property>
+        </oda-data-set>
+        <oda-data-set extensionID="org.eclipse.birt.report.data.oda.jdbc.JdbcSelectDataSet" name="branchname" id="161">
+            <list-property name="columnHints">
+                <structure>
+                    <property name="columnName">BRANCHNAME</property>
+                    <property name="analysis">dimension</property>
+                    <text-property name="displayName">BRANCHNAME</text-property>
+                    <text-property name="heading">BRANCHNAME</text-property>
+                </structure>
+            </list-property>
+            <list-property name="parameters">
+                <structure>
+                    <property name="name">param_1</property>
+                    <property name="paramName">region</property>
+                    <property name="nativeName"></property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                    <property name="position">1</property>
+                    <property name="isOptional">true</property>
+                    <property name="allowNull">true</property>
+                    <property name="isInput">true</property>
+                    <property name="isOutput">false</property>
+                </structure>
+            </list-property>
+            <structure name="cachedMetaData">
+                <list-property name="resultSet">
+                    <structure>
+                        <property name="position">1</property>
+                        <property name="name">BRANCHNAME</property>
+                        <property name="dataType">string</property>
+                    </structure>
+                </list-property>
+            </structure>
+            <property name="dataSource">Data Source</property>
+            <list-property name="resultSet">
+                <structure>
+                    <property name="position">1</property>
+                    <property name="name">BRANCHNAME</property>
+                    <property name="nativeName">BRANCHNAME</property>
+                    <property name="dataType">string</property>
+                    <property name="nativeDataType">12</property>
+                </structure>
+            </list-property>
+            <xml-property name="queryText"><![CDATA[select distinct branchname
+from branches where region=?]]></xml-property>
+            <xml-property name="designerValues"><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<model:DesignValues xmlns:design="http://www.eclipse.org/datatools/connectivity/oda/design" xmlns:model="http://www.eclipse.org/birt/report/model/adapter/odaModel">
+  <Version>2.0</Version>
+  <DataSetParameters>
+    <parameter>
+      <design:ParameterDefinition>
+        <design:inOutMode>In</design:inOutMode>
+        <design:attributes>
+          <design:identifier>
+            <design:name></design:name>
+            <design:position>1</design:position>
+          </design:identifier>
+          <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+          <design:precision>255</design:precision>
+          <design:scale>0</design:scale>
+          <design:nullability>Nullable</design:nullability>
+        </design:attributes>
+        <design:inputAttributes>
+          <design:elementAttributes>
+            <design:optional>true</design:optional>
+          </design:elementAttributes>
+        </design:inputAttributes>
+      </design:ParameterDefinition>
+    </parameter>
+  </DataSetParameters>
+  <design:ResultSets derivedMetaData="true">
+    <design:resultSetDefinitions>
+      <design:resultSetColumns>
+        <design:resultColumnDefinitions>
+          <design:attributes>
+            <design:identifier>
+              <design:name>BRANCHNAME</design:name>
+              <design:position>1</design:position>
+            </design:identifier>
+            <design:nativeDataTypeCode>12</design:nativeDataTypeCode>
+            <design:precision>50</design:precision>
+            <design:scale>0</design:scale>
+            <design:nullability>Nullable</design:nullability>
+            <design:uiHints>
+              <design:displayName>BRANCHNAME</design:displayName>
+            </design:uiHints>
+          </design:attributes>
+          <design:usageHints>
+            <design:label>BRANCHNAME</design:label>
+            <design:formattingHints>
+              <design:displaySize>50</design:displaySize>
+            </design:formattingHints>
+          </design:usageHints>
+        </design:resultColumnDefinitions>
+      </design:resultSetColumns>
+      <design:criteria/>
+    </design:resultSetDefinitions>
+  </design:ResultSets>
+</model:DesignValues>]]></xml-property>
+        </oda-data-set>
+    </data-sets>
+    <cubes>
+        <tabular-cube name="Data Cube - Data Set" id="32">
+            <property name="dimensions">
+                <tabular-dimension name="Group" id="33">
+                    <property name="defaultHierarchy">NewTabularHierarchy</property>
+                    <property name="hierarchies">
+                        <tabular-hierarchy name="NewTabularHierarchy" id="34">
+                            <property name="levels">
+                                <tabular-level name="FULLNAME" id="35">
+                                    <property name="dataType">string</property>
+                                    <property name="columnName">FULLNAME</property>
+                                </tabular-level>
+                            </property>
+                        </tabular-hierarchy>
+                    </property>
+                </tabular-dimension>
+            </property>
+            <property name="measureGroups">
+                <tabular-measure-group name="Summary Field" id="36">
+                    <property name="measures">
+                        <tabular-measure name="IC" id="37">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["IC"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="OC" id="38">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["OC"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="RPC" id="39">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["RPC"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="MET" id="40">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["MET"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="PTP" id="41">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["PTP"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="PROMISEAMOUNT" id="42">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["PROMISEAMOUNT"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="ACCOUNTNUMBER" id="43">
+                            <property name="function">count</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["ACCOUNTNUMBER"]</expression>
+                            <property name="dataType">integer</property>
+                        </tabular-measure>
+                        <tabular-measure name="SMS" id="126">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["SMS"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="UPLOADS" id="127">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["UPLOADS"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="RESTRUCTURE" id="142">
+                            <property name="function">sum</property>
+                            <property name="isCalculated">false</property>
+                            <expression name="measureExpression" type="javascript">dataSetRow["RESTRUCTURE"]</expression>
+                            <property name="dataType">float</property>
+                            <property name="isVisible">true</property>
+                        </tabular-measure>
+                        <tabular-measure name="RESTRUCTUREAMOUNT" id="145">
+                            <expression name="measureExpression" type="javascript">dataSetRow["RESTRUCTUREAMOUNT"]</expression>
+                            <property name="dataType">decimal</property>
+                        </tabular-measure>
+                    </property>
+                </tabular-measure-group>
+            </property>
+            <property name="dataSet">Data Set</property>
+        </tabular-cube>
+    </cubes>
+    <styles>
+        <style name="report" id="4">
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+        </style>
+        <style name="crosstab-cell" id="5">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+        <style name="crosstab" id="6">
+            <property name="borderBottomColor">#CCCCCC</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">1pt</property>
+            <property name="borderLeftColor">#CCCCCC</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">1pt</property>
+            <property name="borderRightColor">#CCCCCC</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">1pt</property>
+            <property name="borderTopColor">#CCCCCC</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">1pt</property>
+        </style>
+    </styles>
+    <page-setup>
+        <simple-master-page name="Simple MasterPage" id="2">
+            <page-footer>
+                <text id="3">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+    <body>
+        <grid id="7">
+            <property name="width">12.944444444444445in</property>
+            <column id="8">
+                <property name="width">12.944444444444445in</property>
+            </column>
+            <row id="9">
+                <cell id="10">
+                    <label id="11">
+                        <property name="fontSize">14pt</property>
+                        <property name="fontWeight">bold</property>
+                        <property name="textAlign">center</property>
+                        <text-property name="text">Collector Activity Report</text-property>
+                    </label>
+                </cell>
+            </row>
+            <row id="124">
+                <cell id="125">
+                    <image id="17">
+                        <property name="height">109px</property>
+                        <property name="width">192px</property>
+                        <property name="source">embed</property>
+                        <property name="imageName">coop.png</property>
+                    </image>
+                </cell>
+            </row>
+        </grid>
+        <extended-item extensionName="Crosstab" extensionVersion="3.7.0" id="20">
+            <property name="cube">Data Cube - Data Set</property>
+            <property name="measures">
+                <extended-item extensionName="MeasureView" id="50">
+                    <property name="measure">IC</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="51">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="52">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">IC_Group/FULLNAME_1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="101">
+                            <property name="content">
+                                <data id="102">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">IC</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="53">
+                            <property name="content">
+                                <label id="54">
+                                    <text-property name="text">INCOMING CALLS</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="55">
+                    <property name="measure">OC</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="56">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="57">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">OC_Group/FULLNAME_1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="103">
+                            <property name="content">
+                                <data id="104">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">OC</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="58">
+                            <property name="content">
+                                <label id="59">
+                                    <text-property name="text">OUTGOING CALLS</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="60">
+                    <property name="measure">RPC</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="61">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="62">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">RPC_Group/FULLNAME_1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="105">
+                            <property name="content">
+                                <data id="106">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">RPC</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="63">
+                            <property name="content">
+                                <label id="64">
+                                    <text-property name="text">RIGHT PARTY</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="128">
+                    <property name="measure">SMS</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="129">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="132">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">SMS_Group/FULLNAME</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="130">
+                            <property name="content">
+                                <data id="131">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">SMS</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="133">
+                            <property name="content">
+                                <label id="134">
+                                    <text-property name="text">SMS</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="135">
+                    <property name="measure">UPLOADS</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="136">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="139">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">UPLOADS_Group/FULLNAME</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="137">
+                            <property name="content">
+                                <data id="138">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">UPLOADS</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="140">
+                            <property name="content">
+                                <label id="141">
+                                    <text-property name="text">UPLOADS</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="65">
+                    <property name="measure">MET</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="66">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="67">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">MET_Group/FULLNAME_1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="107">
+                            <property name="content">
+                                <data id="108">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">MET</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="68">
+                            <property name="content">
+                                <label id="69">
+                                    <text-property name="text">VISITED</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="70">
+                    <property name="measure">PTP</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="71">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="72">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">PTP_Group/FULLNAME_1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="109">
+                            <property name="content">
+                                <data id="110">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">PTP</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="73">
+                            <property name="content">
+                                <label id="74">
+                                    <text-property name="text">NO_OF_PROMISE</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="75">
+                    <property name="measure">PROMISEAMOUNT</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="76">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="77">
+                                    <structure name="numberFormat">
+                                        <property name="category">Fixed</property>
+                                        <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                    </structure>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">PROMISEAMOUNT_Group/FULLNAME_1</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="111">
+                            <property name="content">
+                                <data id="112">
+                                    <property name="fontWeight">bold</property>
+                                    <structure name="numberFormat">
+                                        <property name="category">Fixed</property>
+                                        <property name="pattern">#,##0{RoundingMode=HALF_UP}</property>
+                                    </structure>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">PROMISEAMOUNT</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="78">
+                            <property name="content">
+                                <label id="79">
+                                    <text-property name="text">VALUE_OF_PROMISE</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="80">
+                    <property name="measure">ACCOUNTNUMBER</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="81">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data id="82">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">ACCOUNTNUMBER_Group/FULLNAME</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="113">
+                            <property name="content">
+                                <data id="114">
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">ACCOUNTNUMBER</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="83">
+                            <property name="content">
+                                <label id="84">
+                                    <text-property name="text">TOTAL ACTIONS</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="ComputedMeasureView" name="TOTAL_CALLS" id="85">
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="86">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="content">
+                                <data name="TOTAL_CALLS1" id="89">
+                                    <property name="textAlign">center</property>
+                                    <property name="resultSetColumn">TOTAL_CALLS</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="115"/>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="87">
+                            <property name="content">
+                                <label id="88">
+                                    <text-property name="text">TOTAL_CALLS</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="146">
+                    <property name="measure">RESTRUCTURE</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="147">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="textAlign">center</property>
+                            <property name="content">
+                                <data id="150">
+                                    <property name="resultSetColumn">RESTRUCTURE_Group/FULLNAME</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="148">
+                            <property name="textAlign">center</property>
+                            <property name="content">
+                                <data id="149">
+                                    <property name="resultSetColumn">RESTRUCTURE</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="151">
+                            <property name="content">
+                                <label id="152">
+                                    <text-property name="text">PROPOSED REMEDIAL PRODUCT</text-property>
+                                </label>
+                            </property>
+                            <property name="textAlign">center</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="MeasureView" id="153">
+                    <property name="measure">RESTRUCTUREAMOUNT</property>
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="154">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="textAlign">center</property>
+                            <property name="content">
+                                <data id="157">
+                                    <property name="resultSetColumn">RESTRUCTUREAMOUNT_Group/FULLNAME</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="155">
+                            <property name="textAlign">center</property>
+                            <property name="content">
+                                <data id="156">
+                                    <property name="resultSetColumn">RESTRUCTUREAMOUNT</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="158">
+                            <property name="content">
+                                <label id="159">
+                                    <text-property name="text">PROPOSED CURE AMOUNT</text-property>
+                                </label>
+                            </property>
+                            <property name="textAlign">center</property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="ComputedMeasureView" name="%RPC" id="90">
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="91">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="textAlign">center</property>
+                            <property name="content">
+                                <data name="%RPC1" id="94">
+                                    <structure name="numberFormat">
+                                        <property name="category">Percent</property>
+                                        <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                    </structure>
+                                    <property name="resultSetColumn">%RPC</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="116"/>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="92">
+                            <property name="content">
+                                <label id="93">
+                                    <text-property name="text">%RPC</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+                <extended-item extensionName="ComputedMeasureView" name="%PTP" id="95">
+                    <property name="detail">
+                        <extended-item extensionName="AggregationCell" id="96">
+                            <property name="aggregationOnRow">Group/FULLNAME</property>
+                            <property name="textAlign">center</property>
+                            <property name="content">
+                                <data name="%PTP1" id="99">
+                                    <structure name="numberFormat">
+                                        <property name="category">Percent</property>
+                                        <property name="pattern">###0.00%{RoundingMode=HALF_UP}</property>
+                                    </structure>
+                                    <property name="resultSetColumn">%PTP</property>
+                                </data>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="aggregations">
+                        <extended-item extensionName="AggregationCell" id="117"/>
+                    </property>
+                    <property name="header">
+                        <extended-item extensionName="CrosstabCell" id="97">
+                            <property name="content">
+                                <label id="98">
+                                    <text-property name="text">%PTP</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="rows">
+                <extended-item extensionName="CrosstabView" id="44">
+                    <property name="grandTotal">
+                        <extended-item extensionName="CrosstabCell" id="100">
+                            <property name="content">
+                                <label id="118">
+                                    <property name="fontSize">small</property>
+                                    <property name="fontWeight">bold</property>
+                                    <property name="textAlign">left</property>
+                                    <text-property name="text">Grand Total</text-property>
+                                </label>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="views">
+                        <extended-item extensionName="DimensionView" id="45">
+                            <property name="dimension">Group</property>
+                            <property name="levels">
+                                <extended-item extensionName="LevelView" name="NewLevel View" id="46">
+                                    <property name="level">Group/FULLNAME</property>
+                                    <property name="member">
+                                        <extended-item extensionName="CrosstabCell" id="47">
+                                            <property name="content">
+                                                <data name="FULLNAME" id="48">
+                                                    <property name="textAlign">left</property>
+                                                    <property name="resultSetColumn">FULLNAME</property>
+                                                </data>
+                                            </property>
+                                        </extended-item>
+                                    </property>
+                                </extended-item>
+                            </property>
+                        </extended-item>
+                    </property>
+                    <property name="grandTotalLocation">after</property>
+                </extended-item>
+            </property>
+            <property name="header">
+                <extended-item extensionName="CrosstabCell" id="21">
+                    <property name="content">
+                        <label id="49">
+                            <property name="textAlign">left</property>
+                            <text-property name="text">FULLNAME</text-property>
+                        </label>
+                    </property>
+                </extended-item>
+            </property>
+            <property name="fontSize">x-small</property>
+            <property name="borderTopStyle">solid</property>
+            <property name="borderTopWidth">medium</property>
+            <property name="borderLeftStyle">solid</property>
+            <property name="borderLeftWidth">medium</property>
+            <property name="borderBottomStyle">solid</property>
+            <property name="borderBottomWidth">medium</property>
+            <property name="borderRightStyle">solid</property>
+            <property name="borderRightWidth">medium</property>
+            <property name="refTemplateParameter">NewTemplateParameterDefinition</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FULLNAME</property>
+                    <expression name="expression">dimension["Group"]["FULLNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">IC_Group/FULLNAME</property>
+                    <expression name="expression">measure["IC"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">OC_Group/FULLNAME</property>
+                    <expression name="expression">measure["OC"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">RPC_Group/FULLNAME</property>
+                    <expression name="expression">measure["RPC"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">MET_Group/FULLNAME</property>
+                    <expression name="expression">measure["MET"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">PTP_Group/FULLNAME</property>
+                    <expression name="expression">measure["PTP"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">PROMISEAMOUNT_Group/FULLNAME</property>
+                    <expression name="expression">measure["PROMISEAMOUNT"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">ACCOUNTNUMBER_Group/FULLNAME</property>
+                    <expression name="expression">measure["ACCOUNTNUMBER"]</expression>
+                    <property name="dataType">integer</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">IC_Group/FULLNAME_1</property>
+                    <expression name="expression">measure["IC"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">OC_Group/FULLNAME_1</property>
+                    <expression name="expression">measure["OC"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">RPC_Group/FULLNAME_1</property>
+                    <expression name="expression">measure["RPC"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">MET_Group/FULLNAME_1</property>
+                    <expression name="expression">measure["MET"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">PTP_Group/FULLNAME_1</property>
+                    <expression name="expression">measure["PTP"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">PROMISEAMOUNT_Group/FULLNAME_1</property>
+                    <expression name="expression">measure["PROMISEAMOUNT"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">TOTAL_CALLS</property>
+                    <expression name="expression" type="javascript">data["IC_Group/FULLNAME"]+data["OC_Group/FULLNAME"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">%RPC</property>
+                    <expression name="expression" type="javascript">data["RPC_Group/FULLNAME_1"]/(data["IC_Group/FULLNAME"]+data["OC_Group/FULLNAME"])</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">%PTP</property>
+                    <expression name="expression" type="javascript">data["PTP_Group/FULLNAME"]/data["RPC_Group/FULLNAME"]</expression>
+                    <property name="dataType">float</property>
+                </structure>
+                <structure>
+                    <property name="name">IC</property>
+                    <expression name="expression">measure["IC"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">OC</property>
+                    <expression name="expression">measure["OC"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">RPC</property>
+                    <expression name="expression">measure["RPC"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">MET</property>
+                    <expression name="expression">measure["MET"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">PTP</property>
+                    <expression name="expression">measure["PTP"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">PROMISEAMOUNT</property>
+                    <expression name="expression">measure["PROMISEAMOUNT"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">ACCOUNTNUMBER</property>
+                    <expression name="expression">measure["ACCOUNTNUMBER"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">SMS</property>
+                    <expression name="expression">measure["SMS"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">SMS_Group/FULLNAME</property>
+                    <expression name="expression">measure["SMS"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">UPLOADS</property>
+                    <expression name="expression">measure["UPLOADS"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">UPLOADS_Group/FULLNAME</property>
+                    <expression name="expression">measure["UPLOADS"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">RESTRUCTURE</property>
+                    <expression name="expression">measure["RESTRUCTURE"]</expression>
+                    <property name="dataType">float</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">RESTRUCTURE_Group/FULLNAME</property>
+                    <expression name="expression">measure["RESTRUCTURE"]</expression>
+                    <property name="dataType">float</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">RESTRUCTUREAMOUNT</property>
+                    <expression name="expression">measure["RESTRUCTUREAMOUNT"]</expression>
+                    <property name="dataType">decimal</property>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+                <structure>
+                    <property name="name">RESTRUCTUREAMOUNT_Group/FULLNAME</property>
+                    <expression name="expression">measure["RESTRUCTUREAMOUNT"]</expression>
+                    <property name="dataType">decimal</property>
+                    <simple-property-list name="aggregateOn">
+                        <value>Group/FULLNAME</value>
+                    </simple-property-list>
+                    <property name="aggregateFunction">SUM</property>
+                </structure>
+            </list-property>
+        </extended-item>
+        <extended-item extensionName="Chart" id="121">
+            <xml-property name="xmlRepresentation"><![CDATA[<model:ChartWithAxes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:attribute="http://www.birt.eclipse.org/ChartModelAttribute" xmlns:data="http://www.birt.eclipse.org/ChartModelData" xmlns:layout="http://www.birt.eclipse.org/ChartModelLayout" xmlns:model="http://www.birt.eclipse.org/ChartModel" xmlns:type="http://www.birt.eclipse.org/ChartModelType">
+  <Version>2.6.1</Version>
+  <Type>Bar Chart</Type>
+  <SubType>Side-by-side</SubType>
+  <Block>
+    <Children xsi:type="layout:TitleBlock">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <Label>
+        <Caption>
+          <Value>Total Activity</Value>
+          <Font>
+            <Size>10.0</Size>
+            <Bold>true</Bold>
+            <Alignment>
+              <horizontalAlignment>Center</horizontalAlignment>
+              <verticalAlignment>Center</verticalAlignment>
+            </Alignment>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>true</Visible>
+      </Label>
+    </Children>
+    <Children xsi:type="layout:Plot">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>true</Visible>
+      <HorizontalSpacing>5</HorizontalSpacing>
+      <VerticalSpacing>5</VerticalSpacing>
+      <ClientArea>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>0</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>0.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>0.0</Right>
+        </Insets>
+      </ClientArea>
+    </Children>
+    <Children xsi:type="layout:Legend">
+      <Bounds>
+        <Left>0.0</Left>
+        <Top>0.0</Top>
+        <Width>0.0</Width>
+        <Height>0.0</Height>
+      </Bounds>
+      <Insets>
+        <Top>3.0</Top>
+        <Left>3.0</Left>
+        <Bottom>3.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Row>-1</Row>
+      <Column>-1</Column>
+      <Rowspan>-1</Rowspan>
+      <Columnspan>-1</Columnspan>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </Outline>
+      <Visible>false</Visible>
+      <ClientArea>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>0</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>2.0</Top>
+          <Left>2.0</Left>
+          <Bottom>2.0</Bottom>
+          <Right>2.0</Right>
+        </Insets>
+      </ClientArea>
+      <Text>
+        <Value></Value>
+        <Font>
+          <Alignment/>
+        </Font>
+      </Text>
+      <Orientation>Vertical</Orientation>
+      <Direction>Top_Bottom</Direction>
+      <Separator>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </Separator>
+      <Position>Right</Position>
+      <ItemType>Categories</ItemType>
+      <Title>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Title>
+      <TitlePosition>Above</TitlePosition>
+    </Children>
+    <Bounds>
+      <Left>0.0</Left>
+      <Top>0.0</Top>
+      <Width>571.0</Width>
+      <Height>285.5</Height>
+    </Bounds>
+    <Insets>
+      <Top>3.0</Top>
+      <Left>3.0</Left>
+      <Bottom>3.0</Bottom>
+      <Right>3.0</Right>
+    </Insets>
+    <Row>-1</Row>
+    <Column>-1</Column>
+    <Rowspan>-1</Rowspan>
+    <Columnspan>-1</Columnspan>
+    <Outline>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>0</Green>
+        <Blue>0</Blue>
+      </Color>
+      <Visible>false</Visible>
+    </Outline>
+    <Visible>true</Visible>
+  </Block>
+  <Dimension>Two_Dimensional_With_Depth</Dimension>
+  <Units>Points</Units>
+  <SeriesThickness>10.0</SeriesThickness>
+  <ExtendedProperties>
+    <Name>enable.area.alt</Name>
+    <Value>false</Value>
+  </ExtendedProperties>
+  <SampleData>
+    <BaseSampleData>
+      <DataSetRepresentation>'A','B','C','D','E'</DataSetRepresentation>
+    </BaseSampleData>
+    <OrthogonalSampleData>
+      <DataSetRepresentation>6,4,12,8,10</DataSetRepresentation>
+      <SeriesDefinitionIndex>0</SeriesDefinitionIndex>
+    </OrthogonalSampleData>
+  </SampleData>
+  <Interactivity/>
+  <EmptyMessage>
+    <Caption>
+      <Value>This chart contains no data.</Value>
+      <Font>
+        <Alignment>
+          <horizontalAlignment>Center</horizontalAlignment>
+          <verticalAlignment>Center</verticalAlignment>
+        </Alignment>
+      </Font>
+    </Caption>
+    <Background xsi:type="attribute:ColorDefinition">
+      <Transparency>64</Transparency>
+      <Red>127</Red>
+      <Green>127</Green>
+      <Blue>127</Blue>
+    </Background>
+    <Outline>
+      <Color>
+        <Transparency>128</Transparency>
+        <Red>127</Red>
+        <Green>127</Green>
+        <Blue>127</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </Outline>
+    <Insets>
+      <Top>10.0</Top>
+      <Left>10.0</Left>
+      <Bottom>10.0</Bottom>
+      <Right>10.0</Right>
+    </Insets>
+    <Visible>false</Visible>
+  </EmptyMessage>
+  <Axes>
+    <Type>Text</Type>
+    <Title>
+      <Caption>
+        <Value>X-Axis Title</Value>
+        <Font>
+          <Size>14.0</Size>
+          <Bold>true</Bold>
+          <Alignment>
+            <horizontalAlignment>Center</horizontalAlignment>
+            <verticalAlignment>Center</verticalAlignment>
+          </Alignment>
+        </Font>
+      </Caption>
+      <Background xsi:type="attribute:ColorDefinition">
+        <Transparency>0</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Background>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+      </Outline>
+      <Insets>
+        <Top>0.0</Top>
+        <Left>2.0</Left>
+        <Bottom>0.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Visible>false</Visible>
+    </Title>
+    <TitlePosition>Below</TitlePosition>
+    <AssociatedAxes>
+      <Type>Linear</Type>
+      <Title>
+        <Caption>
+          <Value>Y-Axis Title</Value>
+          <Font>
+            <Size>14.0</Size>
+            <Bold>true</Bold>
+            <Alignment>
+              <horizontalAlignment>Center</horizontalAlignment>
+              <verticalAlignment>Center</verticalAlignment>
+            </Alignment>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>false</Visible>
+      </Title>
+      <TitlePosition>Left</TitlePosition>
+      <SeriesDefinitions>
+        <Query>
+          <Definition></Definition>
+        </Query>
+        <SeriesPalette>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>80</Red>
+            <Green>166</Green>
+            <Blue>218</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>242</Red>
+            <Green>88</Green>
+            <Blue>106</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>232</Red>
+            <Green>172</Green>
+            <Blue>57</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>255</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>64</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>170</Red>
+            <Green>85</Green>
+            <Blue>85</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>192</Red>
+            <Green>192</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>192</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>7</Red>
+            <Green>146</Green>
+            <Blue>94</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>128</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>128</Green>
+            <Blue>192</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>64</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>80</Red>
+            <Green>240</Green>
+            <Blue>120</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>64</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>0</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>0</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>64</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>128</Red>
+            <Green>128</Green>
+            <Blue>128</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>64</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Entries>
+          <Entries xsi:type="attribute:ColorDefinition">
+            <Transparency>255</Transparency>
+            <Red>255</Red>
+            <Green>128</Green>
+            <Blue>0</Blue>
+          </Entries>
+        </SeriesPalette>
+        <Series xsi:type="type:BarSeries">
+          <Visible>true</Visible>
+          <Label>
+            <Caption>
+              <Value></Value>
+              <Font>
+                <Alignment/>
+              </Font>
+            </Caption>
+            <Background xsi:type="attribute:ColorDefinition">
+              <Transparency>0</Transparency>
+              <Red>255</Red>
+              <Green>255</Green>
+              <Blue>255</Blue>
+            </Background>
+            <Outline>
+              <Style>Solid</Style>
+              <Thickness>1</Thickness>
+              <Color>
+                <Transparency>255</Transparency>
+                <Red>0</Red>
+                <Green>0</Green>
+                <Blue>0</Blue>
+              </Color>
+              <Visible>false</Visible>
+            </Outline>
+            <Insets>
+              <Top>0.0</Top>
+              <Left>2.0</Left>
+              <Bottom>0.0</Bottom>
+              <Right>3.0</Right>
+            </Insets>
+            <Visible>false</Visible>
+          </Label>
+          <DataDefinition>
+            <Definition>row[&quot;ACCOUNTNUMBER&quot;]</Definition>
+            <Grouping>
+              <Enabled>true</Enabled>
+              <GroupType>Text</GroupType>
+              <AggregateExpression>Count</AggregateExpression>
+            </Grouping>
+          </DataDefinition>
+          <SeriesIdentifier>Series 1</SeriesIdentifier>
+          <DataPoint>
+            <Components>
+              <Type>Orthogonal_Value</Type>
+            </Components>
+            <Separator>, </Separator>
+          </DataPoint>
+          <LabelPosition>Outside</LabelPosition>
+          <Stacked>false</Stacked>
+          <Triggers>
+            <Condition>onmouseover</Condition>
+            <Action>
+              <Type>Show_Tooltip</Type>
+              <Value xsi:type="attribute:TooltipValue">
+                <Text></Text>
+                <Delay>200</Delay>
+              </Value>
+            </Action>
+          </Triggers>
+          <Riser>Rectangle</Riser>
+        </Series>
+      </SeriesDefinitions>
+      <Orientation>Vertical</Orientation>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </LineAttributes>
+      <Label>
+        <Caption>
+          <Value></Value>
+          <Font>
+            <Alignment/>
+          </Font>
+        </Caption>
+        <Background xsi:type="attribute:ColorDefinition">
+          <Transparency>0</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Background>
+        <Outline>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>0</Red>
+            <Green>0</Green>
+            <Blue>0</Blue>
+          </Color>
+        </Outline>
+        <Insets>
+          <Top>0.0</Top>
+          <Left>2.0</Left>
+          <Bottom>0.0</Bottom>
+          <Right>3.0</Right>
+        </Insets>
+        <Visible>true</Visible>
+      </Label>
+      <LabelPosition>Left</LabelPosition>
+      <MajorGrid>
+        <LineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>196</Red>
+            <Green>196</Green>
+            <Blue>196</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </LineAttributes>
+        <TickStyle>Across</TickStyle>
+        <TickAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>196</Red>
+            <Green>196</Green>
+            <Blue>196</Blue>
+          </Color>
+          <Visible>true</Visible>
+        </TickAttributes>
+      </MajorGrid>
+      <MinorGrid>
+        <LineAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>225</Red>
+            <Green>225</Green>
+            <Blue>225</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </LineAttributes>
+        <TickStyle>Across</TickStyle>
+        <TickAttributes>
+          <Style>Solid</Style>
+          <Thickness>1</Thickness>
+          <Color>
+            <Transparency>255</Transparency>
+            <Red>225</Red>
+            <Green>225</Green>
+            <Blue>225</Blue>
+          </Color>
+          <Visible>false</Visible>
+        </TickAttributes>
+      </MinorGrid>
+      <Scale>
+        <MinorGridsPerUnit>5</MinorGridsPerUnit>
+      </Scale>
+      <Origin>
+        <Type>Min</Type>
+        <Value xsi:type="data:NumberDataElement">
+          <Value>0.0</Value>
+        </Value>
+      </Origin>
+      <PrimaryAxis>true</PrimaryAxis>
+      <Percent>false</Percent>
+    </AssociatedAxes>
+    <SeriesDefinitions>
+      <Query>
+        <Definition></Definition>
+      </Query>
+      <SeriesPalette>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>80</Red>
+          <Green>166</Green>
+          <Blue>218</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>242</Red>
+          <Green>88</Green>
+          <Blue>106</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>232</Red>
+          <Green>172</Green>
+          <Blue>57</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>255</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>64</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>170</Red>
+          <Green>85</Green>
+          <Blue>85</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>192</Red>
+          <Green>192</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>192</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>7</Red>
+          <Green>146</Green>
+          <Blue>94</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>128</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>128</Green>
+          <Blue>192</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>0</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>64</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>80</Red>
+          <Green>240</Green>
+          <Blue>120</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>64</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>0</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>0</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>64</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>128</Red>
+          <Green>128</Green>
+          <Blue>128</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>64</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>255</Green>
+          <Blue>255</Blue>
+        </Entries>
+        <Entries xsi:type="attribute:ColorDefinition">
+          <Transparency>255</Transparency>
+          <Red>255</Red>
+          <Green>128</Green>
+          <Blue>0</Blue>
+        </Entries>
+      </SeriesPalette>
+      <Series>
+        <Visible>true</Visible>
+        <Label>
+          <Caption>
+            <Value></Value>
+            <Font>
+              <Alignment/>
+            </Font>
+          </Caption>
+          <Background xsi:type="attribute:ColorDefinition">
+            <Transparency>0</Transparency>
+            <Red>255</Red>
+            <Green>255</Green>
+            <Blue>255</Blue>
+          </Background>
+          <Outline>
+            <Style>Solid</Style>
+            <Thickness>1</Thickness>
+            <Color>
+              <Transparency>255</Transparency>
+              <Red>0</Red>
+              <Green>0</Green>
+              <Blue>0</Blue>
+            </Color>
+            <Visible>false</Visible>
+          </Outline>
+          <Insets>
+            <Top>0.0</Top>
+            <Left>2.0</Left>
+            <Bottom>0.0</Bottom>
+            <Right>3.0</Right>
+          </Insets>
+          <Visible>false</Visible>
+        </Label>
+        <DataDefinition>
+          <Definition>row[&quot;FULLNAME&quot;]</Definition>
+        </DataDefinition>
+        <SeriesIdentifier></SeriesIdentifier>
+        <DataPoint>
+          <Components>
+            <Type>Orthogonal_Value</Type>
+          </Components>
+          <Separator>, </Separator>
+        </DataPoint>
+        <LabelPosition>Outside</LabelPosition>
+        <Stacked>false</Stacked>
+      </Series>
+      <Grouping>
+        <Enabled>true</Enabled>
+        <GroupType>Text</GroupType>
+        <AggregateExpression>Sum</AggregateExpression>
+      </Grouping>
+    </SeriesDefinitions>
+    <Orientation>Horizontal</Orientation>
+    <LineAttributes>
+      <Style>Solid</Style>
+      <Thickness>1</Thickness>
+      <Color>
+        <Transparency>255</Transparency>
+        <Red>0</Red>
+        <Green>0</Green>
+        <Blue>0</Blue>
+      </Color>
+      <Visible>true</Visible>
+    </LineAttributes>
+    <Label>
+      <Caption>
+        <Value></Value>
+        <Font>
+          <Alignment/>
+          <Rotation>65.0</Rotation>
+        </Font>
+      </Caption>
+      <Background xsi:type="attribute:ColorDefinition">
+        <Transparency>0</Transparency>
+        <Red>255</Red>
+        <Green>255</Green>
+        <Blue>255</Blue>
+      </Background>
+      <Outline>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>0</Red>
+          <Green>0</Green>
+          <Blue>0</Blue>
+        </Color>
+      </Outline>
+      <Insets>
+        <Top>0.0</Top>
+        <Left>2.0</Left>
+        <Bottom>0.0</Bottom>
+        <Right>3.0</Right>
+      </Insets>
+      <Visible>true</Visible>
+    </Label>
+    <LabelPosition>Below</LabelPosition>
+    <MajorGrid>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>196</Red>
+          <Green>196</Green>
+          <Blue>196</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </LineAttributes>
+      <TickStyle>Across</TickStyle>
+      <TickAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>196</Red>
+          <Green>196</Green>
+          <Blue>196</Blue>
+        </Color>
+        <Visible>true</Visible>
+      </TickAttributes>
+    </MajorGrid>
+    <MinorGrid>
+      <LineAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>225</Red>
+          <Green>225</Green>
+          <Blue>225</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </LineAttributes>
+      <TickStyle>Across</TickStyle>
+      <TickAttributes>
+        <Style>Solid</Style>
+        <Thickness>1</Thickness>
+        <Color>
+          <Transparency>255</Transparency>
+          <Red>225</Red>
+          <Green>225</Green>
+          <Blue>225</Blue>
+        </Color>
+        <Visible>false</Visible>
+      </TickAttributes>
+    </MinorGrid>
+    <Scale>
+      <MinorGridsPerUnit>5</MinorGridsPerUnit>
+    </Scale>
+    <Origin>
+      <Type>Min</Type>
+      <Value xsi:type="data:NumberDataElement">
+        <Value>0.0</Value>
+      </Value>
+    </Origin>
+    <PrimaryAxis>true</PrimaryAxis>
+    <CategoryAxis>true</CategoryAxis>
+    <Percent>false</Percent>
+  </Axes>
+  <Orientation>Vertical</Orientation>
+  <UnitSpacing>50.0</UnitSpacing>
+  <Rotation>
+    <Angles>
+      <XAngle>-20.0</XAngle>
+      <YAngle>45.0</YAngle>
+      <ZAngle>0.0</ZAngle>
+      <Type>None</Type>
+    </Angles>
+  </Rotation>
+</model:ChartWithAxes>
+]]></xml-property>
+            <property name="outputFormat">SVG</property>
+            <property name="inheritColumns">false</property>
+            <property name="height">5.138888888888889in</property>
+            <property name="width">12.680555555555555in</property>
+            <property name="dataSet">Data Set</property>
+            <list-property name="boundDataColumns">
+                <structure>
+                    <property name="name">FULLNAME</property>
+                    <text-property name="displayName">FULLNAME</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["FULLNAME"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">OC</property>
+                    <text-property name="displayName">OC</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["OC"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">IC</property>
+                    <text-property name="displayName">IC</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["IC"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">MET</property>
+                    <text-property name="displayName">MET</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["MET"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">ACCOUNTNUMBER</property>
+                    <text-property name="displayName">ACCOUNTNUMBER</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["ACCOUNTNUMBER"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">RPC</property>
+                    <text-property name="displayName">RPC</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["RPC"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PTP</property>
+                    <text-property name="displayName">PTP</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PTP"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+                <structure>
+                    <property name="name">PROMISEAMOUNT</property>
+                    <text-property name="displayName">PROMISEAMOUNT</text-property>
+                    <expression name="expression" type="javascript">dataSetRow["PROMISEAMOUNT"]</expression>
+                    <property name="dataType">string</property>
+                </structure>
+            </list-property>
+        </extended-item>
+    </body>
+    <list-property name="images">
+        <structure>
+            <property name="name">coop.png</property>
+            <property name="type">image/png</property>
+            <property name="data">
+                iVBORw0KGgoAAAANSUhEUgAAAMMAAADDCAMAAAAIoVWYAAAAkFBMVEX////+/v4AUjsAUTuJiYne3t5a
+                j4C50MlUi3yYubCkwbmRtKoydGFjlYfO3dkDVD2gvrampqaCqp+tx8B1oZUYYk0fZ1PR4NzB1dAQXUfv
+                9PNLhXX29vbd6OVvnZDq6uq7u7ucnJzOzs7W1tasrKzExMQucV7h4eGQkJBBfm29vb18pprn7uwwcmDb
+                5+OpqalsMh7GAAANF0lEQVR4nO1ZaZerLBIGtF1i1MREowbNno4db/r//7upKsAl3TN35syn9xyevlGW
+                AmoHvIxZWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhY
+                WFj8w/FahDO8GJP+vClc9PMx9S5Jej5Ud3HXLYOST0n6LbR1G2iTURwEgfeE/iYKNDbMb/EdZ69hGN/X
+                +IwNTbDYPWFgtANKLwQyDsPb+hnk1YgNLBCnYo4V393FO6qIExj8+mhZpVWaLqM6SWBiHlZRzWVYZaqf
+                4OdtjU+vRgLRJX6XxtDtibBpmle75ayv0qRZ5OnCjClFiBMUUZLsxSLx9zHnHbTx+i62KALn3hJm5U8h
+                ogaRZCkMiRSPjv6hDHUhxtpQGIRY5KJYNXVfxmle4fqL9EkdUToKmlQByeMD48gcPGHaBeNbscH2GobI
+                PIWiL6paS+6JJb5aKiaM11ss+LiEs1ckHdb4RjgrLXcbcdY5jiOcCcRqhc83OE4llb2jVHS1Mr9fOWDJ
+                Oq+wzrHQEONQ6dKEaKBQMlY6MfTH+Nw64F7wB56oZKgrJyFK1t+XAkbxHZkLZIAS9xwfOmWRNkjyWpKK
+                Ng7IoAaVGWdLIdLnaopXDK7jJzNAk9gxpVhRKJZRPQLssBJ7qjMWiEwVWCJyXAtKmfBABrADY62IGQM7
+                QLEGxsgOIEwqGuSGsyxbCJQVp1YyQCPYAfue6EycbSOm7AAer5iQwBbI0KnVBnhCFNKEmXotQAalLQiV
+                aKDkS2A6Fq2uPsVelyLR6dJGFCQD8H0HN0IZYNwiROWSDLHw1CLy3si8UsmDZNDM+JQh0hzinRe9nlQo
+                O7AeWVw66Ku8Drct4umjDkAGzl8ZtbTZDhUOMlCogtl67YowfJUxHoinboiUP2PQOXtm4rTCR1eWewqN
+                rfgD+QoikeIhev4pMqkoNx6qOzKhkZiCr9+g+U2sSR2xUoEX4HMpwEvZqxAmBgKpZNhUJhYgVBcQ2aSY
+                Fvo4m9ktcLbaYqB9LUOm7ADz+yLHeNiHWYQRgjGNTqjtUHqgAEXJuxL0lt4ljlK+hJOSDAxNuUQSpRnt
+                SxAfd+wDXwIf7CYpKCQZ+moM6PSlfIkT4d6YgatVnuAMyixP8KqgAPQL585UzCxQLvIl5b+Ul8Z4qO8Q
+                88gHZLJl13WVcn+GdiDRIKbVWsu0VBENZZAhxtDNikLZAeaHuEq3GWIPPJIMwHVBLRlGgIkHDmnXY3OU
+                ZBnEHnJIFgNqSP21iZFMx4OCkgFmqlU8JGlBlDwOlYb3OgzGeCA7QEgG21BHKMjwZw+4pwUjO4AvNZBs
+                lC4TCHHPcQoZOk7LtF+ILfkSVgrH8fgMaJuS3k3VDa2tdmwJRlH7g8pk2pdgA1mhHWh6DwfXkO0wzRTp
+                i9zfScintB1ophRJZvHAF/fBDigD2VoqGSB9hkK0krxFyUB24JiWTMYZ8CqWqEoZFC+dUIGlZd4gz9sK
+                04pPuYf0uYWNDlAve5KB4U4M2xTPWuIZ+jHLQaIolfMFtD8gMkq8NI3OS6g/bBpkIJUXOXh/6gjYgWGT
+                yD0MsNEOtCBS6iQO2xSdkV7dfZUslt1LxzYJ4RVRuQnuJbp6IHKfjld1eRfL5/PZFh1rwtSJXmi+NC5X
+                VYd2Zq8AUkjd+7mIMSCw4CUqCJoqUWpQMpAIbPEmA6sncaxQDr4kVJA9McLVcPwrtfck0TZLNPf6yV/Q
+                5tOaPqJBFnvf4MUSfNFurFpKmghLfa/qTNPrBLLhZmGSgTOTV1AGrnyJ86WYHzKqZioDUoCvicxkJchJ
+                e52SdCbVB4BZo16ZDdlMDWVDPx9GKX8zB8fJVMMEahGTW+kXjTIgRb8CPRfQVGGC7cLdj5hGZ8p7czqt
+                c5NoJyH+s/Zb24/ynOh3GBoVD7rcTmMaaSimMbdiTCs1ZcLZDmcN9oKI6aTa5uCcQAF++EAclJYkHlM4
+                1GH7/fz4lNjFVZ3UfTifsUjt2MWo+KlIdKOUNAiaPj9xZpzvgGPVEmAHJ1Qm4U1RKjvA/lAtyPWeRoaV
+                EEvlp51wMr1P06m6cMSyxPE7IFSHi5t7+ri6R7L48UZiPdwr5MO1ZBfXBak+Th/Ue1ifDvLrcQH+3MfH
+                5/mBEn+47kGRyId7+7ycLtCL08F4uXZPMO7jKnFSqbwOLgwtOVXtwy6n9+nppScjGV7Tq1Ey2gFyS3ZP
+                0/x+z6t9ubmTRS7umklihB1cWoivH8gE/Du4LuOXoz65n9xPen4QIZcXqcdokpN74YfDBca77o3zL9LG
+                B+PYya/uGecIt5h76BIHKbTVMc3LMSMta3VeysbTRzue+ZRPNj5s9D6e/SiZcJABNHfCw9vXyT1j0/GC
+                TBw5Bxnk11k78gW5hU73myPjUrVj8XimuUGGw5kDze3mgjg3nBEmvoBUYEMoYR6bodZnPmiP9wpZzfS5
+                dROolmDBzdl7zCYqSRgAa8fH6RNaD7ez+0DbHNkZmFAynEAaRXhDx+D4QvscT2cKK03CyQ7XEyn7Brw/
+                Pm+4757cI7op2OKkDPG+yYIdPMXOEP1aBpPt6eTmOPpSovKfya06eaIdDo8H2PxL0kKwIEMm1uRLYJKz
+                okcB4fVFMjzk+UyTQPGsScAOlzPOfkPXeRyVhlwK6Bs/gwq4Sbo6nTOKh2pRTtFP70Ba7foeN28cixgP
+                bO0e2eF6ux1J10e0BZZABlgbfJpCnQKcXd2bCgLTCuKAqDoePhiEPFrg2/2eDDrebrcHdP9kosN7g6Nv
+                D/RegQyVN0Pn0BHD7M6TfK0MgXaQOD+EHhZAk0fsv57Ilzj5hc5g4FaHx1pSEOipqIgkZAdIyVcuv6Bd
+                nr5VtwtucfhilACl8YaBDTw8vAFlcMaANjDnXv2aquPwtf6+XY8f/LIGNX1e19fD+RsVJoGZ2xoaL+v1
+                9YOWvXwfv75vksnzen2WNM+E5PK9Pt6w/3z9xL3mSBsKUsrj8UCDbjNfIm+qu99kED/E2Jozgtr0J2cE
+                PpWLj16mCWfNw2HqTQt8aDYHlrfQnXA8ncdMWy7maECGNJ+hCHx9nBmm5Gxa5dO1uUkFpnF6nhq4NerQ
+                XYZuCFaTNQa1DaldrzwGN30ua3qq91BgeIUVeS1ljcmXHlL2SDNTy6glPlPY/4ufk03Ohz8IVKXCMHbS
+                JRzk69wRd7yPQ0sG0qWOU9apcHb4Mcwpkh9jZ+W5u7C5VueC8jkzsyqfTc5nbz6aazYONugugHPcnvGV
+                vjFgPKQLPMwKlEHsfCBaNoyN0TTzg/mKxn3mrjv6FJ+plr25Px9cZTL96Ll8mHlaBDsksA3j98ylKCoR
+                KBlEVQ4yZHAqCeqJUlVeG9dl5ig/RLry3SbCo4i/YeXLMGd2Rz7NCYO/z91+CIqhfdTc5C7J0Q7FvRLF
+                jpXALdwEG5QBOM9LIwOaZfPDbf6OpN2kJbik90rjv1P/iv9uJbo3V6JqgfV0B+eiJ8pQ4V0IEquSAX5F
+                z/+GucqgEPQ1pOQIriv37o3qlysPmzf+eiV6b9RTkS/1lZP6qZMWBX7SoLwUq/s0ylBtoHk/i7RfIm9i
+                YtVb5y8fNLJPG9Z6Oh6115ja4FxjAPD5v3kKHLxnzgfIsI2A4dQzm9rCEw7k1m6QoWQgH2YqtTIzXjnZ
+                8Qezj5sIxNcmFn5dwSXlGfHQ8+hesQjaKOy7JEz4Ig5woy6DTR9HrG/jmCdeWbeZkWcqzrg049PFGNlB
+                OXxcOOlLyo26x+U1fqY2eQk/9wj8f4T/DVwWlaRPfF4fBUmKG0yW91tRRmJb8NX+RZ9I9lUdik1fRMuC
+                e1W9UR+gJhb+d9MPpTBCbHZ9FOGnMxlF4QZ+HLNKFPVQj2r87yugGb3gr5GhHglkuVaEvGnr/Bngh78+
+                BeeqeNndW160XkZNMe/y+pk2VcDzPY/Nd/Xfnd9UJowM6fHtRGAyOP9N9HlO5zN/HY8K+Ik0rAvYcdq+
+                EUEPdz5o8Xfpvo7L1PfTPTQx7ouNn3r1n0ruI19kfb7k5S9r/tbCJ/wMkpnl+bgBDG+zpQxBYASdnaRm
+                K/qijTP4Jayu8ijwsaWLiyKA/NfFVZV5G/y4Hy/F09uL0GtbEcRFHvhmyfFt1D3sHPNdabJ3jSqcbIoT
+                rU/oprloEukm5tTYp7eTbfyCkh/EO5xp29aruOe9F0IsxxBpTG6zoIpkH8dwVmvbfuHt+KCUwWfezD5s
+                6ob9X9xszOHGJqO1fuyzw+F0MM7QO8le4/hJnsXiLq5i0z9SsomGh8cbzSQeRqHmTs9M8h7NMmTmKek0
+                IGZe+97+Gx1nrV+9xtpsZ3iz+Sz8JpWJKw961eqf+slMzkEZs3HvXA5x9EOGua4ir5zT/GScs+nIeUz/
+                p/RrYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWFhYWHx
+                T8C/AI2Q3ojGCLOaAAAAAElFTkSuQmCC
+</property>
+        </structure>
+    </list-property>
+</report>
