@@ -16,7 +16,7 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: ecollect-app
+            name: ecollect-svc
             port:
               number: 4430
       - path: /cbiapi
