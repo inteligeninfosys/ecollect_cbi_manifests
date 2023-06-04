@@ -4,8 +4,6 @@ kind: Service
 metadata:
   name: upload-svc
   namespace: ecollect
-  label:
-    app: upload
 spec:
   selector:
     app: upload
