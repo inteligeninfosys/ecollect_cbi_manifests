@@ -3,5 +3,7 @@
 2. Create config maps
 
 
-Fixex:
+Fixes:
 setsebool -P haproxy_connect_any=1
+journalctl -u haproxy -n 100 -f
+
