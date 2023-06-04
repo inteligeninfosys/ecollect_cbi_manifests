@@ -4,8 +4,6 @@ kind: Service
 metadata:
   name: mongorest-svc
   namespace: ecollect
-  label:
-    app: mongorest
 spec:
   selector:
     app: mongorest
