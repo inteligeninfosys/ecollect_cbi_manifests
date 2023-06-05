@@ -1,0 +1,47 @@
+-------
+http://ecollectweb.co-opbank.co.ke/nodeapi/uploads/getuploads?custnumber=1869363&newcustnumber=101869363
+http://ecollectweb.co-opbank.co.ke/activitylog/notes?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&sys=collections&outsbalance=-1000000&totalarrears=undefined&daysinarr=0
+-------
+http://ecollectweb.co-opbank.co.ke/nodeapi/guarantordetails/getg?custnumber=1869363&newcustnumber=101869363
+http://ecollectweb.co-opbank.co.ke/activitylog/notes?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&sys=collections&outsbalance=-1000000&totalarrears=undefined&daysinarr=0
+------
+http://ecollectweb.co-opbank.co.ke/cache/nodeapi/tqall?filter[include]=guarantors&filter[include]=demandsdues&filter[where][accnumber]=02T15186936300
+http://ecollectweb.co-opbank.co.ke/activitylog/activityaction?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&sys=collections&outsbalance=-1000000&totalarrears=undefined&daysinarr=0
+------
+http://ecollectweb.co-opbank.co.ke/nodeapi/activitylogs
+422 Unprocessable Entity
+http://ecollectweb.co-opbank.co.ke/activitylog/sms?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&outsbalance=-1000000&totalarrears=undefined&daysinarr=0&sys=collections
+----
+http://ecollectweb.co-opbank.co.ke/nodeapi/tbl_s_account_plans
+404 Not Found
+http://ecollectweb.co-opbank.co.ke/activitylog/accplan?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&outsbalance=-1000000&totalarrears=undefined&daysinarr=0&sys=collections
+-----
+http://ecollectweb.co-opbank.co.ke/nodeapi/teles
+422 Unprocessable Entity
+http://ecollectweb.co-opbank.co.ke/activitylog/contacts?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&outsbalance=-1000000&totalarrears=undefined&daysinarr=0&sys=collections
+----
+http://ecollectweb.co-opbank.co.ke/nodeapi/notehis
+422 Unprocessable Entity
+http://ecollectweb.co-opbank.co.ke/activitylog/bulknotes?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&outsbalance=-1000000&totalarrears=undefined&daysinarr=0&sys=collections
+-----
+http://ecollectweb.co-opbank.co.ke/nodeapi/writeoffstory
+404 Not Found
+http://ecollectweb.co-opbank.co.ke/activitylog/writeoffstory?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&outsbalance=-1000000&totalarrears=undefined&daysinarr=0&sys=collections
+---
+
+http://ecollectweb.co-opbank.co.ke/nodeapi/tbl_productofferings?filter[where][accnumber]=02T15186936300
+404 Not Found
+http://ecollectweb.co-opbank.co.ke/activitylog/products?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&sys=collections
+---
+http://ecollectweb.co-opbank.co.ke/nodeapi/uploads/getproducts?custnumber=1869363&newcustnumber=101869363
+400 Bad Request
+http://ecollectweb.co-opbank.co.ke/activitylog/products?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&sys=collections
+----
+http://ecollectweb.co-opbank.co.ke/restssl/Account/AccountDetails/Get/3.0
+403
+http://ecollectweb.co-opbank.co.ke/activitylog/clientactionplan?accnumber=02T15186936300&custnumber=1869363&newcustnumber=101869363&username=marithi&sys=collections
+--
+
+
+
+
